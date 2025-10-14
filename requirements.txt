@@ -71,11 +71,13 @@ gunicorn>=20.1.0
 joblib>=1.3.0
 Pillow>=10.0.0
 
-# ===== Legal-specific tools (when available) =====
-# TODO: Uncomment when repos are public
+# ===== Legal-specific tools =====
+# Iusmorfos Enterprise (private repository with proprietary enhancements)
+iusmorfos-enterprise @ git+https://github.com/adrianlerer/iusmorfos-enterprise.git
+
+# TODO: Uncomment when repos are available
 # jurisrank-demo @ git+https://github.com/adrianlerer/jurisrank-demo.git
 # rootfinder-demo @ git+https://github.com/adrianlerer/rootfinder-demo.git
-# iusmorfos-demo @ git+https://github.com/adrianlerer/iusmorfos-demo.git
 
 # ===== Version pins for reproducibility =====
 certifi==2023.5.7
