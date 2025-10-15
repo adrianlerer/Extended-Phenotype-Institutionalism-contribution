@@ -1,0 +1,61 @@
+Case_ID,Country,Year,Crisis_Catalyzed,Event_Name,Geographic_Region,Legal_Family,Conflict_Type,International_Tribunal,Verified_Status,Primary_Sources
+CRISIS_001,United Kingdom,2016,1,Brexit Referendum,Europe,Common Law,Constitutional Crisis,ECJ,Verified,Official referendum records + ECJ cases
+CRISIS_002,Hungary,2015,1,Refugee Quota Resistance,Europe,Civil Law,Migration Crisis,ECJ,Verified,ECJ Case C-647/15
+CRISIS_003,Poland,2017,1,Judicial Reform Crisis,Europe,Civil Law,Rule of Law Crisis,ECJ,Verified,ECJ Case C-619/18
+CRISIS_004,Catalonia,2017,1,Independence Referendum,Europe,Civil Law,Secessionist Crisis,Constitutional Court,Verified,Spanish Constitutional Court rulings
+CRISIS_005,Greece,2015,1,Debt Crisis Negotiations,Europe,Civil Law,Economic Crisis,ECJ,Verified,Troika agreements + ECJ oversight
+CRISIS_006,Italy,2018,1,Budget Confrontation EU,Europe,Civil Law,Fiscal Crisis,ECJ,Verified,EU Commission proceedings
+CRISIS_007,Czech Republic,2015,1,Refugee Quota Rejection,Europe,Civil Law,Migration Crisis,ECJ,Verified,ECJ Case C-715/17
+CRISIS_008,Slovakia,2015,1,Refugee Quota Opposition,Europe,Civil Law,Migration Crisis,ECJ,Verified,ECJ Case C-715/17
+CRISIS_009,Denmark,2015,1,Border Control Crisis,Europe,Civil Law,Migration Crisis,ECJ,Verified,Schengen suspension records
+CRISIS_010,Austria,2015,1,Migration Emergency Measures,Europe,Civil Law,Migration Crisis,ECJ,Verified,Border control documentation
+CRISIS_011,Netherlands,2016,1,Ukraine Association Referendum,Europe,Civil Law,Treaty Crisis,ECJ,Verified,Referendum records + treaty docs
+CRISIS_012,France,2005,1,EU Constitution Referendum,Europe,Civil Law,Constitutional Crisis,Constitutional Council,Verified,Referendum official records
+CRISIS_013,Ireland,2008,1,Lisbon Treaty Referendum I,Europe,Common Law,Treaty Crisis,ECJ,Verified,Referendum Commission reports
+CRISIS_014,Romania,2012,1,Presidential Impeachment Crisis,Europe,Civil Law,Constitutional Crisis,Constitutional Court,Verified,Constitutional Court decisions
+CRISIS_015,Slovenia,2015,1,Border Fence Construction,Europe,Civil Law,Migration Crisis,ECJ,Verified,Border infrastructure records
+CRISIS_016,Belgium,2017,1,Ceta Wallonia Blockage,Europe,Civil Law,Trade Treaty Crisis,ECJ,Verified,Regional parliament records
+CRISIS_017,Sweden,2015,1,Border Control Reimposition,Europe,Civil Law,Migration Crisis,ECJ,Verified,Schengen suspension notification
+CRISIS_018,Germany,2015,1,Refugee Crisis Response,Europe,Civil Law,Migration Crisis,ECJ,Verified,Federal government decisions
+CRISIS_019,Finland,2015,1,Eurozone Bailout Resistance,Europe,Civil Law,Economic Crisis,ECJ,Verified,Parliamentary records
+CRISIS_020,Lithuania,2015,1,Energy Security Crisis Russia,Europe,Civil Law,Energy Crisis,ECJ,Verified,EU energy security proceedings
+CRISIS_021,Argentina,2006,1,Botnia Pulp Mill Case,Latin America,Civil Law,Environmental Conflict,ICJ,Verified,ICJ Case 135 (2006-2010)
+CRISIS_022,Bolivia,2006,1,Hydrocarbon Nationalization,Latin America,Civil Law,Resource Nationalism,ICSID,Verified,ICSID Case ARB/07/30
+CRISIS_023,Ecuador,2008,1,Occidental Petroleum Dispute,Latin America,Civil Law,Investment Treaty Termination,ICSID,Verified,ICSID Case ARB/06/11
+CRISIS_024,Venezuela,2007,1,Oil Sector Nationalization,Latin America,Civil Law,Resource Nationalism,ICSID,Verified,ICSID Cases ARB/07/27
+CRISIS_025,Argentina,2012,1,YPF Repsol Expropriation,Latin America,Civil Law,Resource Nationalism,ICSID,Verified,Law 26.741 + ICSID Case
+CRISIS_026,Peru,2015,1,Tia Maria Mining Conflict,Latin America,Civil Law,Extractive Conflict,ILO 169,Verified,Government reports + ILO
+CRISIS_027,Chile,2010,1,HidroAysen Dam Opposition,Latin America,Civil Law,Extractive Conflict,Regional Court,Verified,Environmental permits + court decisions
+CRISIS_028,Brazil,2013,1,Belo Monte Dam Conflict,Latin America,Civil Law,Extractive Conflict,IACHR,Verified,IACHR Case MC 382/10
+CRISIS_029,Colombia,2010,1,Cerrejon Coal Mining Dispute,Latin America,Civil Law,Extractive Conflict,Constitutional Court,Verified,Constitutional Court T-025/09
+CRISIS_030,Mexico,2013,1,Energy Reform Opposition,Latin America,Civil Law,Resource Nationalism,Constitutional Challenges,Verified,Constitutional reforms + court cases
+CONTROL_001,Norway,2014,0,EEA Agreement Renewal,Europe,Civil Law,Treaty Compliance,EFTA Court,Verified,EFTA Court records
+CONTROL_002,Switzerland,2014,0,Bilateral Agreements Update,Europe,Civil Law,Treaty Compliance,Swiss Federal Court,Verified,Treaty documentation
+CONTROL_003,Portugal,2013,0,Troika Program Compliance,Europe,Civil Law,Economic Adjustment,ECJ,Verified,Troika compliance reports
+CONTROL_004,Spain,2014,0,Banking Union Integration,Europe,Civil Law,Financial Integration,ECJ,Verified,ECB Single Supervisory Mechanism
+CONTROL_005,Estonia,2015,0,Digital Governance Framework,Europe,Civil Law,Administrative Cooperation,ECJ,Verified,e-Estonia documentation
+CONTROL_006,Latvia,2014,0,Euro Adoption Process,Europe,Civil Law,Monetary Integration,ECJ,Verified,ECB convergence reports
+CONTROL_007,Croatia,2013,0,EU Accession Completion,Europe,Civil Law,Enlargement,ECJ,Verified,Accession Treaty + monitoring
+CONTROL_008,Bulgaria,2015,0,Schengen Application Process,Europe,Civil Law,Border Cooperation,ECJ,Verified,Schengen evaluation reports
+CONTROL_009,Malta,2014,0,Migration Cooperation Malta,Europe,Common Law,Migration Management,ECJ,Verified,EU migration pact documents
+CONTROL_010,Cyprus,2013,0,Banking Crisis Resolution,Europe,Civil Law,Financial Stabilization,ECJ,Verified,Troika program + ECB oversight
+CONTROL_011,Luxembourg,2015,0,Tax Rulings Investigation,Europe,Civil Law,Tax Cooperation,ECJ,Verified,EU Commission state aid investigation
+CONTROL_012,Iceland,2015,0,EU Accession Negotiation,Europe,Civil Law,Enlargement Process,EFTA Court,Verified,Accession negotiation reports
+CONTROL_013,Liechtenstein,2014,0,EEA Financial Contributions,Europe,Civil Law,Financial Cooperation,EFTA Court,Verified,EEA grants documentation
+CONTROL_014,Monaco,2014,0,EU Association Agreement,Europe,Civil Law,External Relations,ECJ,Verified,Association agreement texts
+CONTROL_015,Andorra,2015,0,Customs Union Negotiation,Europe,Civil Law,Trade Integration,ECJ,Verified,Trade agreement documentation
+CONTROL_016,San Marino,2014,0,Association Agreement EU,Europe,Civil Law,External Relations,ECJ,Verified,Association treaty records
+CONTROL_017,Albania,2014,0,EU Candidate Status Progress,Europe,Civil Law,Enlargement,ECJ,Verified,EU progress reports
+CONTROL_018,Serbia,2014,0,EU Accession Negotiations,Europe,Civil Law,Enlargement,ECJ,Verified,Negotiation chapters documentation
+CONTROL_019,Montenegro,2015,0,NATO Integration Process,Europe,Civil Law,Security Cooperation,ICJ,Verified,NATO accession protocol
+CONTROL_020,Macedonia,2014,0,EU Accession Dialogue,Europe,Civil Law,Enlargement,ECJ,Verified,EU dialogue reports
+CONTROL_021,Uruguay,2010,0,Botnia Compliance Implementation,Latin America,Civil Law,Environmental Cooperation,ICJ,Verified,ICJ judgment compliance reports
+CONTROL_022,Costa Rica,2014,0,CAFTA Implementation,Latin America,Civil Law,Trade Integration,ICSID,Verified,CAFTA trade statistics
+CONTROL_023,Panama,2015,0,Canal Expansion Treaties,Latin America,Civil Law,Infrastructure Cooperation,Canal Authority,Verified,Panama Canal Authority reports
+CONTROL_024,Paraguay,2013,0,Itaipu Binational Treaty,Latin America,Civil Law,Energy Cooperation,Bilateral Treaty,Verified,Itaipu Treaty documentation
+CONTROL_025,Guatemala,2014,0,CAFTA Compliance Monitoring,Latin America,Civil Law,Trade Integration,ICSID,Verified,CAFTA compliance reports
+CONTROL_026,Honduras,2014,0,Mining Code Reform,Latin America,Civil Law,Regulatory Reform,Domestic Courts,Verified,Mining law documentation
+CONTROL_027,El Salvador,2015,0,Water Law Implementation,Latin America,Civil Law,Environmental Regulation,Constitutional Court,Verified,Water law + court decisions
+CONTROL_028,Nicaragua,2014,0,Canal Concession China,Latin America,Civil Law,Infrastructure Development,National Assembly,Verified,Concession law documentation
+CONTROL_029,Dominican Republic,2014,0,CAFTA Arbitration Participation,Latin America,Civil Law,Investment Arbitration,ICSID,Verified,ICSID case participation
+CONTROL_030,Jamaica,2015,0,Caribbean Court of Justice,Latin America,Common Law,Regional Integration,CCJ,Verified,CCJ jurisdiction acceptance
