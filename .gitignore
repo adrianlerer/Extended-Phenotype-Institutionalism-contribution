@@ -114,3 +114,11 @@ neo4j-data/
 # Temporary files
 tmp/
 temp/
+
+# Node.js / Frontend
+node_modules/
+package-lock.json
+.npm
+.eslintcache
+dist/
+*.tsbuildinfo
