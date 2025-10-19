@@ -117,8 +117,8 @@ temp/
 
 # Node.js / Frontend
 node_modules/
-package-lock.json
 .npm
 .eslintcache
 dist/
 *.tsbuildinfo
+# Note: package-lock.json is committed for reproducible builds in CI
