@@ -2,7 +2,25 @@
 
 **Integrated Platform for Legal Concept Evolution Analysis**
 
-Combines JurisRank, RootFinder, Iusmorfos, and Peralta methodologies into a unified analytical framework for studying legal system evolution.
+Combines JurisRank, RootFinder, Iusmorfos, Peralta, and **Universal EGT Framework** methodologies into a unified analytical framework for studying legal system evolution.
+
+---
+
+## ⚠️ CRITICAL: Universal EGT Framework is DOMAIN-AGNOSTIC
+
+**NEW**: This repository now includes a **UNIVERSAL Evolutionary Game Theory (EGT) framework** that works for **ANY constitutional domain:**
+
+- ✅ Labor law reforms
+- ✅ Property rights reforms
+- ✅ Tax/fiscal policy reforms
+- ✅ Free speech doctrine evolution
+- ✅ Environmental regulations
+- ✅ Criminal procedure reforms
+- ✅ **ANY constitutional topic you specify**
+
+**Only input needed**: CLI score from IusMorfos for your domain of interest.
+
+**Quick start**: See [EGT Examples](examples/egt/) for 10-line code examples that work for ANY domain.
 
 ---
 
@@ -12,11 +30,21 @@ This project **reuses the methodological infrastructure** from [peralta-metamorp
 
 ### Integrated Tools
 
-1. **Peralta** (shared foundation): Bootstrap validation, network analysis, visualization methods
-2. **JurisRank**: Legal fitness measurement via citation networks
-3. **RootFinder**: Genealogical tracking of legal concepts across jurisdictions
-4. **Iusmorfos**: Prediction of transplant success (WEIRD vs No-WEIRD contexts)
-5. **PSM Analysis**: Propensity Score Matching for causal inference in legal systems
+1. **Universal EGT Framework** (NEW): Domain-agnostic predictions for ANY constitutional topic
+   - Based on Vince & Brown (2005) Darwinian Dynamics
+   - Input: CLI score → Output: Quantitative reform success predictions
+   - Works universally: labor, property, tax, speech, environment, criminal law, etc.
+   - See [EGT Documentation](docs/egt_framework/README.md) and [Examples](examples/egt/)
+   
+2. **Peralta** (shared foundation): Bootstrap validation, network analysis, visualization methods
+
+3. **JurisRank**: Legal fitness measurement via citation networks
+
+4. **RootFinder**: Genealogical tracking of legal concepts across jurisdictions
+
+5. **Iusmorfos**: Prediction of transplant success (WEIRD vs No-WEIRD contexts)
+
+6. **PSM Analysis**: Propensity Score Matching for causal inference in legal systems
 
 ### Research Foundation
 
@@ -52,6 +80,24 @@ python scripts/replicate_psm_analysis.py
 ```
 
 See [REPLICATION_GUIDE.md](REPLICATION_GUIDE.md) for detailed instructions.
+
+---
+
+### Option 0b: Use Universal EGT Framework (3 lines of Python)
+
+```python
+from src.egt import UniversalEGTPredictor
+
+# Works for ANY constitutional domain
+predictor = UniversalEGTPredictor()
+predictor.fit(cli_score=0.87)  # Your CLI score here
+result = predictor.predict()
+
+print(f"Reform success: {result['reform_success_probability']:.1%}")
+print(f"Status: {result['bifurcation_status']}")
+```
+
+See [EGT Examples](examples/egt/) for labor, property, tax, speech, environment, criminal law examples.
 
 ---
 
