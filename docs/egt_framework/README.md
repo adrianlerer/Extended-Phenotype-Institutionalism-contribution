@@ -1,10 +1,29 @@
 # Evolutionary Game Theory Framework for Constitutional Law
 
+## ⚠️ CRITICAL: This Framework is DOMAIN-AGNOSTIC
+
+**This is a UNIVERSAL tool for analyzing ANY constitutional topic, not limited to specific domains.**
+
+Works for:
+- ✅ Labor law reforms
+- ✅ Property rights reforms  
+- ✅ Tax/fiscal reforms
+- ✅ Free speech doctrine
+- ✅ Environmental regulations
+- ✅ Criminal procedure
+- ✅ **ANY constitutional domain you specify**
+
+**Only input needed**: CLI score from IusMorfos for your domain of interest.
+
+---
+
 ## Overview
 
 This framework implements the **Darwinian Dynamics** approach from Vince (2005) *"Evolutionary Game Theory, Natural Selection, and Darwinian Dynamics"* (Cambridge University Press) applied to constitutional law evolution.
 
 **Core Insight**: Constitutional doctrines evolve as **Evolutionarily Stable Strategies (ESS)** that resist legislative reforms through judicial precedent accumulation.
+
+**Universal Application**: The same G-function, ESS solver, and bifurcation analysis work identically whether analyzing labor rights, property expropriation, tax reform, or free speech limits. The framework is completely domain-agnostic.
 
 ---
 
@@ -200,48 +219,81 @@ Strategy (slow):    du_i/dt = sigma² * ∂G/∂v|_{v=u_i}
 
 ---
 
-## 🚀 Usage Example
+## 🚀 Usage Examples: Multi-Domain Application
 
+### Example 1: Labor Law (Argentina)
 ```python
-from src.egt import (
-    LotkaVolterraGFunction,
-    GFunctionParams,
-    ESSSolver,
-    TimescaleParams,
-    AdaptiveLandscape,
-    LandscapeVisualizer
-)
+from src.egt import LotkaVolterraGFunction, ESSSolver, TimescaleParams
 
-# 1. Define parameters
-base_params = GFunctionParams(
-    r=0.25,
-    K_max=100.0,
-    sigma_k=2.0,
-    sigma_alpha=2.0,
-    beta=0.0
-)
-
-# 2. Create G-function for Argentina (CLI=0.87)
-g_func = LotkaVolterraGFunction(base_params, cli_score=0.87)
-
-# 3. Solve for ESS
-timescale_params = TimescaleParams(sigma_sq=1.0, tau_eco=10.0, tau_evo=1000.0)
+# Analyze labor law reform resistance
+cli_labor = 0.87  # From IusMorfos for Art. 14bis
+g_func = LotkaVolterraGFunction(base_params, cli_labor)
 solver = ESSSolver(g_func, timescale_params)
-result = solver.solve(u0=[0.0], t_max=10000.0)
+result = solver.solve(u0=[0.0])
 
-print(f"ESS Strategy: {result.u_ess}")
-print(f"Stability Type: {result.stability_type.value}")
-print(f"Invasion Resistant: {result.invasion_resistant}")
-
-# 4. Visualize adaptive landscape
-landscape_obj = AdaptiveLandscape(g_func)
-landscape = landscape_obj.compute(result.u_ess, result.x_ess)
-
-import matplotlib.pyplot as plt
-fig, ax = plt.subplots(figsize=(10, 6))
-LandscapeVisualizer.plot_single(landscape, ax=ax, show_ess=True)
-plt.savefig('argentina_adaptive_landscape.png')
+print(f"Labor Law ESS: {result.u_ess}")
+print(f"Reform Viability: {'LOW' if cli_labor > 0.7 else 'HIGH'}")
+# Output: Reform Viability: LOW (strong lock-in)
 ```
+
+### Example 2: Property Rights (Argentina)
+```python
+# Analyze property expropriation doctrine
+cli_property = 0.72  # From IusMorfos for property rights
+g_func = LotkaVolterraGFunction(base_params, cli_property)
+result = solver.solve(u0=[0.0])
+
+print(f"Property ESS: {result.u_ess}")
+print(f"Stability: {result.stability_type.value}")
+# Output: Stability: ESS (invasion resistant)
+```
+
+### Example 3: Free Speech (Spain)
+```python
+# Analyze free speech doctrine evolution
+cli_speech = 0.45  # From IusMorfos for Art. 20 Spanish Constitution
+g_func = LotkaVolterraGFunction(base_params, cli_speech)
+result = solver.solve(u0=[0.0])
+
+print(f"Speech ESS: {result.u_ess}")
+print(f"Reform Viability: {'MODERATE' if 0.3 < cli_speech < 0.6 else 'OTHER'}")
+# Output: Reform Viability: MODERATE (mixed outcomes expected)
+```
+
+### Example 4: Environmental Law (Brazil)
+```python
+# Analyze environmental regulation doctrine
+cli_environment = 0.35  # From IusMorfos for Amazon protection
+g_func = LotkaVolterraGFunction(base_params, cli_environment)
+result = solver.solve(u0=[0.0])
+
+if result.stability_type == StabilityType.CSS:
+    print("⚠️ WARNING: Doctrinal fragmentation risk (disruptive selection)")
+else:
+    print("✓ Stable unified doctrine")
+```
+
+### Example 5: Complete Multi-Domain Analysis
+```python
+from analysis.egt_validation.general_domain_analysis import GeneralDomainAnalyzer
+
+# Analyze ANY constitutional domain
+analyzer = GeneralDomainAnalyzer()
+
+domains = [
+    ConstitutionalDomain("Labor Law", cli=0.87, country="Argentina"),
+    ConstitutionalDomain("Property", cli=0.72, country="Argentina"),
+    ConstitutionalDomain("Free Speech", cli=0.45, country="Spain"),
+    ConstitutionalDomain("Environment", cli=0.35, country="Brazil"),
+    ConstitutionalDomain("Tax/Fiscal", cli=0.87, country="Argentina"),
+]
+
+# Generate comparative analysis
+fig, results = analyzer.compare_domains(domains)
+plt.savefig('multi_domain_comparison.png')
+```
+
+**Key Insight**: Same code, same G-function, different CLI inputs. The framework is completely domain-agnostic.
 
 ---
 
