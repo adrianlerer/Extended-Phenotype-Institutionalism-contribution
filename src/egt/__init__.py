@@ -87,7 +87,18 @@ from .empirical_calibration import (
     ModelValidator,
 )
 
+from .universal_predictor import (
+    UniversalEGTPredictor,
+    VinceParameters,
+    predict_reform_success,
+)
+
 __all__ = [
+    # Universal API (Main entry point for users)
+    "UniversalEGTPredictor",
+    "VinceParameters",
+    "predict_reform_success",
+    
     # G-function classes
     "GFunction",
     "ScalarGFunction",
