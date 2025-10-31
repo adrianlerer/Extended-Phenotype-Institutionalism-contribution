@@ -226,7 +226,7 @@ Si DL acepta, aplicar herramientas a **1 de los 3 pilotos**:
 - `PITCH_DIRECTORIO_LEGISLATIVO_SLIDES.md` (15KB - presentación 24 slides)
 - `EVALUACION_RESEARCH_QUESTIONS_ANALISIS_ESS.md` (27KB - framework académico)
 
-**Estado**: ✅ Todo commiteado, pusheado y documentado en PR #15
+**Estado**: ✅ Todo commiteado, pusheado y documentado en PR #16
 
 ---
 
