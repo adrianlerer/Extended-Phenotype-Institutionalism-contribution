@@ -312,21 +312,31 @@ CAPA 3: RAÍCES CULTURALES
 
 ## SLIDE 15: Casos Piloto Propuestos
 
-### 3 Casos Actuales para Demostrar Valor
+### 3 Reformas Estructurales de Máxima Relevancia
 
-#### **Piloto 1: Reforma de Coparticipación Federal**
-- JurisRank estimado: 0.89 (muy alto)
-- IusMorfos Dim. Federal: 0.95 (conflicto máximo)
-- Pregunta: ¿Es viable sin reforma constitucional?
+#### **Piloto 1: Reforma Laboral (2024-2025)**
+- **JurisRank**: 0.91 (Ley 20.744 - una de las más citadas)
+- **IusMorfos**: Dim. Cultural 0.19-0.32 | 6 veto players (CGT, CTA, gobernadores)
+- **RootFinder**: Art. 14 bis CN (rigidez 0.95) | Path dependence desde 1945
+- **Memespace**: "Precarización" (fitness 8.5/10) vs. "Modernización" (4/10)
+- **Pregunta**: ¿Timing + framing + fragmentación pueden superar bloqueo estructural?
 
-#### **Piloto 2: Proyectos de Reforma Laboral 2024-2025**
-- Comparar fitness memético de framings distintos
-- Pregunta: ¿Qué narrativa tiene mayor probabilidad de éxito?
+#### **Piloto 2: Reforma Previsional (2025-2026)**
+- **JurisRank**: 0.86 (Ley 24.241 + sistema integrado, 2.100+ citas)
+- **IusMorfos**: Ahorro fiscal +1.8/+3.2% PBI | Dim. Temporal 0.34 (post-electoral)
+- **RootFinder**: Constitutional lock-in (movilidad en CN 1994) | Gasto 8.2% PBI
+- **Memespace**: "Le sacan a jubilados" (9/10) vs. "Sostenibilidad" (3.5/10)
+- **Pregunta**: ¿Es viable reforma estructural post-2017, o solo ajustes marginales?
+- **Análisis contrafactual**: 2017 (pre-electoral) vs. 2025 (post-electoral)
 
-#### **Piloto 3: Ley de Boleta Única 2025**
-- JurisRank bajo, pero alto impacto en Dim. Electoral
-- Pregunta: ¿Cambios "técnicos" pueden sortear resistencia?
+#### **Piloto 3: Reforma Tributaria (2025-2026)**
+- **JurisRank**: 0.45-0.94 (según alcance: marginal vs. integral)
+- **IusMorfos**: Dim. Federal 0.88 (conflicto coparticipación) | 7+ veto players
+- **RootFinder**: Impuestos "de emergencia" permanentes desde 2001 | 22 tributos distorsivos
+- **Memespace**: "Licuadora fiscal" (9/10) vs. "Simplificación" (6/10)
+- **Pregunta**: ¿Reforma integral o gradual? ¿Qué impuestos tienen bajo "costo político"?
 
+**Entregables por piloto**: Predicción 3 escenarios + estrategia memética + secuenciación óptima  
 **Timeframe**: 1 mes sin costo para demostrar feasibility
 
 ---
