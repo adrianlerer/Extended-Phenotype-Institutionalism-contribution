@@ -263,7 +263,128 @@ CAPA 3: RAÍCES CULTURALES
 
 ---
 
-## SLIDE 13: Propuesta de Colaboración
+## SLIDE 12B: De Biología Evolutiva a Análisis Legislativo
+
+### El Puente Conceptual: Dawkins → Dennett → Lerer
+
+```
+DAWKINS (1976): The Selfish Gene
+├─ "Los genes son replicadores que usan cuerpos como vehículos"
+├─ Introduce concepto de MEME (unidad de información cultural)
+└─ Pregunta clave: ¿Qué hace que una idea se replique exitosamente?
+
+        ↓ APLICADO A CULTURA
+
+DENNETT (1995): Darwin's Dangerous Idea
+├─ Los memes evolucionan por selección natural (como genes)
+├─ "Fitness memético" = capacidad de replicación
+├─ Algoritmo universal: VARIACIÓN → SELECCIÓN → REPLICACIÓN
+└─ No necesitan ser "verdaderos", solo EXITOSOS en replicarse
+
+        ↓ APLICADO A LEGISLACIÓN
+
+LERER (2025): Legal Evolution Framework
+├─ Las LEYES son "extended phenotype" de instituciones
+├─ Las NARRATIVAS POLÍTICAS son memes que compiten
+├─ El BLOQUEO LEGISLATIVO es un equilibrio evolutivo (ESS)
+└─ Las 4 herramientas rastrean esta evolución cultural-legal
+```
+
+**Insight clave**: Las ideas políticas no sobreviven por ser "correctas", sino por su **fitness de replicación**
+
+---
+
+## SLIDE 13: Los 3 Niveles de Análisis Evolutivo
+
+### Cómo Dawkins/Dennett Informan Cada Herramienta
+
+#### **Nivel 1: GENES (Dawkins) → NORMAS (JurisRank + IusMorfos)**
+```
+Genes:
+- Algunos genes son más "centrales" en la red genética
+- Mutaciones en genes centrales = mayor impacto fenotípico
+- Selección natural favorece genes con alto "fitness"
+
+Normas legales:
+- Algunas normas son más "centrales" en red de citas (JurisRank)
+- Reformas a normas centrales = mayor impacto sistémico
+- Normas con alto IusMorfos "fitness" (12D) sobreviven intentos de reforma
+```
+
+**Ejemplo**: Ley 20.744 (JurisRank 0.91) = Gen "Hox" del derecho laboral argentino
+
+---
+
+#### **Nivel 2: EXTENDED PHENOTYPE (Dawkins) → INSTITUCIONES (RootFinder)**
+```
+Extended Phenotype (Fenotipo Extendido):
+- Los genes construyen más que cuerpos: también nidos, presas, comportamientos
+- El fenotipo de un gen castórido incluye LA PRESA que construye
+- Estos "fenotipos externos" retroalimentan la selección del gen
+
+Instituciones legales:
+- El Art. 14 bis CN no solo "existe": genera 187 tribunales laborales
+- Genera 3.847 sindicatos, 2.100+ fallos CSJN, 65 facultades de derecho
+- Este "extended phenotype institucional" DEFIENDE la norma que lo generó
+```
+
+**Ejemplo RootFinder**: Reforma laboral enfrenta no solo la ley, sino todo su ecosistema institucional
+
+---
+
+#### **Nivel 3: MEMES (Dawkins/Dennett) → NARRATIVAS (Memespace)**
+```
+Memes (Dawkins 1976):
+- "Unidades de información cultural que se replican de cerebro a cerebro"
+- Ejemplos: melodías, ideas, eslóganes, creencias
+- Evolucionan por selección natural (variación + replicación + selección)
+
+Fitness memético (Dennett 1995):
+- ¿Por qué "All You Need Is Love" se replica más que teorema de Fermat?
+- Fitness = Replicabilidad × Longevidad × Fecundidad
+- Memes con alta "emotional salience" tienen mayor fitness
+
+Narrativas legislativas (Memespace):
+- "Precarización" (fitness 8.5/10) vs "Modernización" (4/10)
+- Memes adversariales ("Traidor", "Casta") replican más que cooperativos
+- Este fitness asimétrico GENERA equilibrio de bloqueo legislativo
+```
+
+**Ejemplo histórico**: IVE 2018 → 2020
+- Mismo texto legal
+- Cambio en fitness memético ("Marea verde" pasó de 6/10 a 8.5/10)
+- Resultado opuesto (rechazo → aprobación)
+
+---
+
+### 🧬 Síntesis: Por Qué Esto Importa para DL
+
+**Insight Dawkins/Dennett aplicado a Argentina**:
+
+| Pregunta tradicional | Pregunta evolutiva (Lerer) |
+|---------------------|----------------------------|
+| ¿Por qué no se aprueba reforma X? | ¿Qué "fitness" tiene la reforma en este ecosistema institucional? |
+| ¿Cómo convencer a legisladores? | ¿Qué narrativas tienen mayor "fitness de replicación"? |
+| ¿Cuándo es buen momento para reforma? | ¿Cuál es la "presión de selección" actual? (IusMorfos Dim. Temporal) |
+| ¿Por qué siempre fracasan reformas laborales? | ¿Hay "constitutional lock-in" del extended phenotype institucional? |
+
+**Ventaja de este enfoque**:
+- Predice comportamiento sin asumir "racionalidad" de actores
+- Explica patrones recurrentes (path dependence)
+- Identifica cuándo un sistema está en equilibrio ESS (muy difícil de mover)
+- Cuantifica "fitness" de narrativas (Memespace) para diseñar mejor comunicación
+
+---
+
+**De la biología evolutiva a las herramientas para DL**:
+1. **JurisRank**: Identifica "genes centrales" del sistema legal
+2. **IusMorfos**: Mide "fitness" de proyectos en espacio 12D
+3. **RootFinder**: Mapea "extended phenotype" institucional que defiende status quo
+4. **Memespace**: Cuantifica fitness de memes políticos en competencia
+
+---
+
+## SLIDE 14: Propuesta de Colaboración
 
 ### Opción 1: Colaboración Académica (Recomendada)
 
@@ -287,7 +408,7 @@ CAPA 3: RAÍCES CULTURALES
 
 ---
 
-## SLIDE 14: Roadmap de Implementación
+## SLIDE 15: Roadmap de Implementación
 
 ### 6 Meses hacia Sistema Productivo
 
@@ -310,7 +431,7 @@ CAPA 3: RAÍCES CULTURALES
 
 ---
 
-## SLIDE 15: Casos Piloto Propuestos
+## SLIDE 16: Casos Piloto Propuestos
 
 ### 3 Reformas Estructurales de Máxima Relevancia
 
@@ -341,7 +462,7 @@ CAPA 3: RAÍCES CULTURALES
 
 ---
 
-## SLIDE 16: Ventaja Competitiva para DL
+## SLIDE 17: Ventaja Competitiva para DL
 
 ### ¿Por qué DL debería adoptar esto?
 
@@ -364,7 +485,7 @@ CAPA 3: RAÍCES CULTURALES
 
 ---
 
-## SLIDE 17: Outputs Concretos para DL
+## SLIDE 18: Outputs Concretos para DL
 
 ### ¿Qué vería un usuario de DL?
 
@@ -391,7 +512,7 @@ Proyecto 1234-D-2025: Reforma Laboral X
 
 ---
 
-## SLIDE 18: Testimonios (Validación Previa)
+## SLIDE 19: Testimonios (Validación Previa)
 
 ### Feedback de Usuarios Alfa
 
@@ -408,7 +529,7 @@ Proyecto 1234-D-2025: Reforma Laboral X
 
 ---
 
-## SLIDE 19: Comparación Internacional
+## SLIDE 20: Comparación Internacional
 
 ### Nadie en LATAM tiene esto
 
@@ -424,7 +545,7 @@ Proyecto 1234-D-2025: Reforma Laboral X
 
 ---
 
-## SLIDE 20: Próximos Pasos
+## SLIDE 21: Próximos Pasos
 
 ### ¿Cómo Avanzamos?
 
@@ -445,7 +566,7 @@ Proyecto 1234-D-2025: Reforma Laboral X
 
 ---
 
-## SLIDE 21: Contacto y Recursos
+## SLIDE 22: Contacto y Recursos
 
 ### Material Disponible
 
@@ -468,7 +589,7 @@ Proyecto 1234-D-2025: Reforma Laboral X
 
 ---
 
-## SLIDE 22: Resumen Ejecutivo
+## SLIDE 23: Resumen Ejecutivo
 
 ### En 3 Puntos
 
@@ -488,7 +609,7 @@ Colaboración académica de 6 meses (sin costo) para:
 
 ---
 
-## SLIDE 23: ¿Por Qué Ahora?
+## SLIDE 24: ¿Por Qué Ahora?
 
 ### Timing Estratégico
 
@@ -514,7 +635,7 @@ Colaboración académica de 6 meses (sin costo) para:
 
 ---
 
-## SLIDE 24: Invitación
+## SLIDE 25: Invitación
 
 ### Construyamos Juntos el Futuro del Análisis Legislativo
 
