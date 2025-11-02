@@ -644,7 +644,7 @@ Colaboración académica de 6 meses (sin costo) para:
 
 **¿Nos juntamos para una demo?**
 
-📧 Contacto: adrian.lerer@example.com  
+📧 Contacto: adrian@lerer.com.ar
 📂 Repo: github.com/adrianlerer/legal-evolution-unified
 
 **Gracias por su tiempo.**
