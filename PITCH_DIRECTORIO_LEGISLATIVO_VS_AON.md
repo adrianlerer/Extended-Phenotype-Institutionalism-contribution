@@ -118,19 +118,20 @@ Recomendación: "Consultar con abogados locales para evaluar viabilidad legislat
    - Metodología Prakash & Sunstein (2024)
    - Validado en 5 casos (100% precisión)
 
-**Lo que está en DISEÑO AVANZADO** (implementación 4 semanas):
+**Lo que está en DISEÑO AVANZADO** (implementación 2-4 semanas):
 5. 🔨 **Temporal Decay Model (TDM)**: Predicción de vida útil legislativa
    - Arquitectura completa documentada (29 KB)
-   - Dataset histórico a ensamblar (42+ casos)
+   - Dataset histórico: 70 casos ya disponibles, requiere investigar year_reversed (research work)
    - Target: MAE < 1.5 años en backtesting
 6. 🔨 **BillAnalyzer**: Orquestador unificado de análisis
    - Integra RRI + IusMorfos 12D + ESS Fitness
-   - Código estructurado (36 KB diseño), pendiente implementación
+   - Código estructurado (36 KB diseño), implementación: 1-2 semanas (sin dependencias externas)
 
-**Lo que NO está (honestidad científica)**:
-- ❌ RootFinder (extinción doctrinal por análisis de citaciones) → requiere acceso a bases citacionales
-- ❌ IusSpace (trayectorias constitucionales 12D) → requiere datos longitudinales 20+ años
-- ❌ Dashboard interactivo → no prioritario para clientes B2B
+**Lo que requiere trabajo de investigación adicional**:
+- 🔨 **RootFinder** (extinción doctrinal): Implementable con corpus existente (70 casos), requiere análisis de cross-references entre casos (2-3 semanas)
+- 🔨 **IusSpace trayectorias 12D**: Implementable con datos 1985-2024 ya disponibles, requiere cálculo de dimensiones faltantes con IusMorfos (1-2 semanas)
+- 🔨 **TDM dataset completo**: Requiere investigar year_reversed para 70 casos históricos (trabajo de research, no base de datos externa) (2-3 semanas)
+- ⏸️ **Dashboard interactivo**: No prioritario para clientes B2B (postergado)
 
 ### B. Las 5 Capacidades que AON NO Tiene (y por qué importan)
 
@@ -241,9 +242,10 @@ Recomendación: "Chile tiene instituciones estables, pero hay tensión social po
    - Sistema calibrado para horizontes 1-10 años
    - No predice eventos tácticos (qué senador votará qué)
    
-2. **Análisis sin datos históricos**:
-   - Requiere al menos 3-5 años de datos legislativos del país
-   - Países sin datos (ej. Venezuela post-2015) tienen menor precisión
+2. **TDM requiere trabajo de investigación case-by-case**:
+   - Para validar el modelo, hay que investigar cuándo se revirtió cada política histórica
+   - Esto es trabajo de research (papers, legislación, bases parlamentarias), no limitación técnica
+   - Dataset piloto: 20 casos investigados → MAE calculable en 3 semanas
    
 3. **Eventos exógenos impredecibles**:
    - Guerras, pandemias, golpes de estado no están modelados
@@ -283,17 +285,23 @@ Recomendación: "Chile tiene instituciones estables, pero hay tensión social po
 - API REST para queries programáticas
 - Reporte customizado por proyecto legislativo
 
-### Fase 2: Temporal Decay Model (ENERO 2026)
-**Timeline**: 4 semanas desarrollo + 2 semanas validación  
+### Fase 2: Temporal Decay Model (DICIEMBRE 2025)
+**Timeline**: 2 semanas implementación + 3 semanas research/validación  
 **Capacidades**:
 - Predicción de vida útil legislativa (intervalo confianza 80%)
 - Análisis de escenarios (5-7 escenarios ponderados)
 - Early warning indicators (3-6 meses lead time)
 
+**Trabajo requerido**:
+- Implementar TemporalDecayModel class (1-2 semanas, ~500 líneas código)
+- Investigar year_reversed para 20-30 casos piloto (2-3 semanas research)
+- Calcular MAE en dataset piloto, ajustar parámetros (1 semana)
+
 **Entregables**:
 - Lifespan predictions con comparable históricos
 - Trigger event monitoring dashboard
 - Scenario planning tool
+- Validation report (MAE, RMSE, accuracy metrics)
 
 ### Fase 3: Expansión Geografía (T1 2026)
 **Timeline**: 3 meses  
