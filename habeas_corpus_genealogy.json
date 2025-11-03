@@ -1,0 +1,197 @@
+[
+  {
+    "case_id": "Caso 'Simón' (2005)",
+    "generation": 0,
+    "inherited_elements": [
+      "Protección de la libertad individual",
+      "Control judicial sobre detenciones arbitrarias"
+    ],
+    "mutations": [
+      "Adaptación a contextos de violaciones de derechos humanos durante la dictadura militar",
+      "Incorporación de estándares internacionales de derechos humanos"
+    ],
+    "inheritance_fidelity": 0.8,
+    "mutation_type": "incremental",
+    "citation_strength": 1.0,
+    "doctrinal_distance": 0.19999999999999996,
+    "precedential_weight": 0.7,
+    "conceptual_roots": [
+      {
+        "source": "Derecho Común Británico",
+        "concept_origin": "Habeas Corpus Act de 1679",
+        "year_approximate": 1679,
+        "key_text": "Habeas Corpus Act",
+        "connection_strength": 0.9
+      },
+      {
+        "source": "Derecho Romano",
+        "concept_origin": "Principios de libertad personal y derecho a un recurso",
+        "year_approximate": -100,
+        "key_text": "Corpus Juris Civilis",
+        "connection_strength": 0.8
+      }
+    ],
+    "doctrinal_reasoning": "El caso 'Simón' reafirmó el habeas corpus como herramienta clave para combatir la impunidad por crímenes de lesa humanidad, integrando el derecho internacional de los derechos humanos en la jurisprudencia local.",
+    "historical_context": "Período de transición democrática en Argentina tras la dictadura militar (1976-1983), con un enfoque en la reparación y justicia por violaciones de derechos humanos.",
+    "comparative_insights": [
+      "El habeas corpus en Argentina se asemeja al uso en otros países de América Latina que enfrentaron dictaduras, pero con un enfoque más fuerte en la justicia transicional."
+    ],
+    "confidence_score": 0.85
+  },
+  {
+    "case_id": "Ley 23.098 de Habeas Corpus (1984)",
+    "generation": 1,
+    "inherited_elements": [
+      "Procedimiento rápido para evaluar detenciones",
+      "Protección de derechos fundamentales"
+    ],
+    "mutations": [
+      "Clarificación de los procedimientos para casos de desaparición forzada",
+      "Fortalecimiento de la independencia judicial en su aplicación"
+    ],
+    "inheritance_fidelity": 0.85,
+    "mutation_type": "incremental",
+    "citation_strength": 1.0,
+    "doctrinal_distance": 0.15000000000000002,
+    "precedential_weight": 0.7,
+    "conceptual_roots": [
+      {
+        "source": "Derecho Común Británico",
+        "concept_origin": "Habeas Corpus Act de 1679",
+        "year_approximate": 1679,
+        "key_text": "Habeas Corpus Act",
+        "connection_strength": 0.9
+      },
+      {
+        "source": "Derecho Romano",
+        "concept_origin": "Principios de libertad personal y derecho a un recurso",
+        "year_approximate": -100,
+        "key_text": "Corpus Juris Civilis",
+        "connection_strength": 0.8
+      }
+    ],
+    "doctrinal_reasoning": "La ley fue una respuesta directa a las violaciones masivas de derechos humanos durante la dictadura, buscando restablecer el estado de derecho y la protección de las libertades individuales.",
+    "historical_context": "Inmediatamente después de la dictadura militar, durante el retorno a la democracia, con un fuerte impulso para reformar el sistema judicial.",
+    "comparative_insights": [
+      "Similar a las reformas post-dictatoriales en Chile y Uruguay, pero con un enfoque más específico en la desaparición forzada."
+    ],
+    "confidence_score": 0.85
+  },
+  {
+    "case_id": "Constitución Nacional Argentina (1853, reformas de 1994)",
+    "generation": 2,
+    "inherited_elements": [
+      "Garantía constitucional de la libertad personal",
+      "Derecho a un recurso rápido y efectivo"
+    ],
+    "mutations": [
+      "Incorporación de tratados internacionales de derechos humanos con jerarquía constitucional",
+      "Refuerzo del control judicial sobre el poder ejecutivo"
+    ],
+    "inheritance_fidelity": 0.9,
+    "mutation_type": "incremental",
+    "citation_strength": 1.0,
+    "doctrinal_distance": 0.09999999999999998,
+    "precedential_weight": 0.7,
+    "conceptual_roots": [
+      {
+        "source": "Derecho Común Británico",
+        "concept_origin": "Habeas Corpus Act de 1679",
+        "year_approximate": 1679,
+        "key_text": "Habeas Corpus Act",
+        "connection_strength": 0.9
+      },
+      {
+        "source": "Derecho Romano",
+        "concept_origin": "Principios de libertad personal y derecho a un recurso",
+        "year_approximate": -100,
+        "key_text": "Corpus Juris Civilis",
+        "connection_strength": 0.8
+      }
+    ],
+    "doctrinal_reasoning": "La reforma constitucional de 1994 consolidó el habeas corpus como un derecho fundamental, alineando la Constitución con los estándares internacionales de derechos humanos.",
+    "historical_context": "Período de consolidación democrática y modernización del Estado de derecho en Argentina.",
+    "comparative_insights": [
+      "Comparable a las reformas constitucionales en otros países de América Latina que buscaron fortalecer los derechos fundamentales tras períodos de autoritarismo."
+    ],
+    "confidence_score": 0.85
+  },
+  {
+    "case_id": "Jurisprudencia de la Corte Suprema de Justicia (década de 1880)",
+    "generation": 3,
+    "inherited_elements": [
+      "Principio de legalidad",
+      "Control judicial sobre la detención"
+    ],
+    "mutations": [
+      "Formalización del procedimiento de habeas corpus",
+      "Establecimiento de precedentes sobre la detención preventiva"
+    ],
+    "inheritance_fidelity": 0.75,
+    "mutation_type": "incremental",
+    "citation_strength": 1.0,
+    "doctrinal_distance": 0.25,
+    "precedential_weight": 0.7,
+    "conceptual_roots": [
+      {
+        "source": "Derecho Común Británico",
+        "concept_origin": "Habeas Corpus Act de 1679",
+        "year_approximate": 1679,
+        "key_text": "Habeas Corpus Act",
+        "connection_strength": 0.9
+      },
+      {
+        "source": "Derecho Romano",
+        "concept_origin": "Principios de libertad personal y derecho a un recurso",
+        "year_approximate": -100,
+        "key_text": "Corpus Juris Civilis",
+        "connection_strength": 0.8
+      }
+    ],
+    "doctrinal_reasoning": "La Corte Suprema comenzó a definir el alcance del habeas corpus, sentando las bases para su aplicación en casos futuros.",
+    "historical_context": "Consolidación del Estado argentino, con un enfoque en la modernización del sistema judicial y la centralización del poder.",
+    "comparative_insights": [
+      "El desarrollo del habeas corpus en Argentina siguió un patrón similar al de otros países de tradición civil law, aunque con un enfoque más centralizado."
+    ],
+    "confidence_score": 0.85
+  },
+  {
+    "case_id": "Influencia del Derecho Común Británico (siglo XIX)",
+    "generation": 4,
+    "inherited_elements": [
+      "Concepto de habeas corpus como derecho fundamental",
+      "Procedimiento judicial para la liberación de detenidos"
+    ],
+    "mutations": [
+      "Adaptación del concepto a la estructura jurídica argentina",
+      "Integración en el marco constitucional"
+    ],
+    "inheritance_fidelity": 0.7,
+    "mutation_type": "incremental",
+    "citation_strength": 1.0,
+    "doctrinal_distance": 0.30000000000000004,
+    "precedential_weight": 0.7,
+    "conceptual_roots": [
+      {
+        "source": "Derecho Común Británico",
+        "concept_origin": "Habeas Corpus Act de 1679",
+        "year_approximate": 1679,
+        "key_text": "Habeas Corpus Act",
+        "connection_strength": 0.9
+      },
+      {
+        "source": "Derecho Romano",
+        "concept_origin": "Principios de libertad personal y derecho a un recurso",
+        "year_approximate": -100,
+        "key_text": "Corpus Juris Civilis",
+        "connection_strength": 0.8
+      }
+    ],
+    "doctrinal_reasoning": "El habeas corpus fue adoptado del derecho común británico, pero adaptado a la estructura jurídica de Argentina, que sigue una tradición civil law.",
+    "historical_context": "Período de formación del Estado argentino, con una fuerte influencia del derecho europeo y anglosajón.",
+    "comparative_insights": [
+      "El habeas corpus en Argentina refleja una fusión de tradiciones jurídicas, combinando elementos del derecho común con el civil law."
+    ],
+    "confidence_score": 0.85
+  }
+]
