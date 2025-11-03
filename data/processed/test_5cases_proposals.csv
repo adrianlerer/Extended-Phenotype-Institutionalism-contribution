@@ -1,0 +1,6 @@
+Case_ID,Country,Conflict_Type,Proposed_C,Confidence,Binary_Markers,Technical_Terms,Avg_Sentence_Length,Subordinate_Clauses,Emotional_Words
+ARG-URU-2006,Argentina,Environmental,1.0,0.8999999999999999,3,0,7.25,0,0
+UK-EU-2016,United Kingdom,Constitutional,3.7,0.5,1,0,6.0,2,1
+USA-ICC-2002,United States,International Law,1.4,0.7,3,1,6.666666666666667,1,2
+POL-EU-2021,Poland,Rule of Law,5.5,0.5,0,0,7.333333333333333,1,0
+VEN-IACHR-2012,Venezuela,Human Rights,3.1,0.5,1,1,6.0,1,3

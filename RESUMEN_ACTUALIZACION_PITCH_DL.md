@@ -171,16 +171,19 @@ Dos documentos complementarios creados:
 10. Material adicional + contacto
 ```
 
-### Slide Deck (15KB)
+### Slide Deck (15KB - 25 slides)
 ```
 Slides 1-2:   Problema + Oportunidad
 Slides 3-10:  Las 4 herramientas (con ejemplos)
 Slide 11:     Validación (78% accuracy)
 Slide 12:     Fundamentación académica
-Slides 13-14: Roadmap + propuesta colaboración
-Slide 15:     🔄 CASOS PILOTO ACTUALIZADOS (tabla compacta)
-Slides 16-19: Ventaja competitiva + testimonios + comparación LATAM
-Slides 20-24: Próximos pasos + contacto + timing + invitación
+🧬 Slides 12B-13: NUEVO - Fundamentos Dawkins/Dennett
+              - 12B: Puente conceptual biología evolutiva → análisis legislativo
+              - 13: 3 niveles (genes→normas, extended phenotype→instituciones, memes→narrativas)
+Slides 14-15: Propuesta colaboración + Roadmap
+Slide 16:     🔄 CASOS PILOTO ACTUALIZADOS (labor/previsional/tributaria)
+Slides 17-20: Ventaja competitiva + outputs + testimonios + comparación LATAM
+Slides 21-25: Próximos pasos + contacto + resumen + timing + invitación
 ```
 
 ---
