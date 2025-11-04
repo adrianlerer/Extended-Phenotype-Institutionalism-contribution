@@ -1,0 +1,29 @@
+{
+  "total_cases": 70,
+  "cases_with_doctrinal_refs": 44,
+  "top_doctrines": {
+    "sovereignty": 31,
+    "integration": 7,
+    "constitutional": 7,
+    "opt-out": 3,
+    "supremacy": 3,
+    "ruling": 3,
+    "treaty": 3,
+    "dualism": 1,
+    "parliamentary": 1,
+    "doctrine": 1
+  },
+  "landmark_cases_count": 27,
+  "institution_distribution": {
+    "EU": 14,
+    "European Union": 10,
+    "IACHR": 5,
+    "EU (Maastricht)": 4,
+    "African Court on Human Rights": 3,
+    "EU Courts": 2,
+    "ICC": 2,
+    "European_Union": 2,
+    "EU Constitution": 2,
+    "NAFTA": 2
+  }
+}
