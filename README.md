@@ -2,25 +2,75 @@
 
 **Integrated Platform for Legal Concept Evolution Analysis**
 
-Combines JurisRank, RootFinder, Iusmorfos, Peralta, and **Universal EGT Framework** methodologies into a unified analytical framework for studying legal system evolution.
+Combines JurisRank, RootFinder, Iusmorfos, Peralta, and **Evolutionary Game Theory (EGT)** methodologies into a unified analytical framework for studying legal system evolution.
 
 ---
 
-## ⚠️ CRITICAL: Universal EGT Framework is DOMAIN-AGNOSTIC
+## 🧬 NEW: Evolutionary Game Theory Integration (November 2025)
 
-**NEW**: This repository now includes a **UNIVERSAL Evolutionary Game Theory (EGT) framework** that works for **ANY constitutional domain:**
+**Major Update**: This repository now includes a complete **Evolutionary Game Theory framework** that mathematically explains why institutional systems fail to converge to optimal proportions.
 
-- ✅ Labor law reforms
-- ✅ Property rights reforms
-- ✅ Tax/fiscal policy reforms
-- ✅ Free speech doctrine evolution
-- ✅ Environmental regulations
-- ✅ Criminal procedure reforms
-- ✅ **ANY constitutional topic you specify**
+### Core Contributions
 
-**Only input needed**: CLI score from IusMorfos for your domain of interest.
+1. **Resolves the Golden Ratio Paradox**:
+   - Empirical finding: H/V = φ ≈ 1.618 predicts 100% reform success
+   - Yet 88% of systems deviate substantially from this optimum
+   - **EGT Explanation**: Optimal proportions lie in fitness valleys (CSS), not peaks (ESS)
+   - Non-convergence is evolutionarily stable outcome, not dysfunction
 
-**Quick start**: See [EGT Examples](examples/egt/) for 10-line code examples that work for ANY domain.
+2. **Institutional Parasitism as ESS**:
+   - Formalizes "compliance cosmético" (symbolic compliance) as Evolutionarily Stable Strategy
+   - Proves parasitic strategies dominate when CLI > 0.75 and resource renewal ρ → 0
+   - Explains why dysfunctional institutions persist despite being suboptimal
+
+3. **Three Mechanisms of Lock-in**:
+   - Path Dependence: Precedent weight accumulation shifts adaptive landscapes
+   - Veto Accumulation: Multi-layer ESS with multiplicative blocking
+   - Centralization Ratchet: Asymmetric selection favoring rigidity increases
+
+### Mathematical Framework
+
+Based on **Vince (2005)** *Evolutionary Game Theory, Natural Selection, and Darwinian Dynamics*:
+
+```
+G(v, u, x) = r · [K(v) - Σ a(v,u_j)·x_j] / K(v)
+K(v) = K_max · exp(-v²/(2σ_k²))
+σ_k(CLI) = σ_max · (1 - CLI)
+ρ(CLI) = ρ_max · (1 - CLI)²
+```
+
+**Domain-Agnostic**: Same mathematics applies to labor law, property rights, tax policy, free speech, environmental regulation, criminal procedure, etc.
+
+### Quick Start: EGT Analysis
+
+```python
+from frameworks.institutional_parasitism_ess import analyze_golden_ratio_case
+
+# Analyze any institutional system
+result = analyze_golden_ratio_case(
+    h_v_ratio=4.12,  # Heredity/Variation ratio
+    cli=0.87,        # Constitutional Lock-in Index
+    country="Argentina"
+)
+
+print(f"ESS Location: {result['ess_location']}")
+print(f"Reform Viability: {result['reform_viability']}")
+print(f"Resource Renewal Rate: {result['resource_renewal_rate']:.3f}")
+print(f"Parasitic Advantage: {result['parasitic_advantage']:.2f}")
+```
+
+### Documentation
+
+- **Master Document**: [EGT_INTEGRATION_MASTER.md](EGT_INTEGRATION_MASTER.md) - Complete integration overview
+- **Theory**: [docs/egt_framework/INSTITUTIONAL_PARASITISM_ESS.md](docs/egt_framework/INSTITUTIONAL_PARASITISM_ESS.md) - Full mathematical framework
+- **Methodology**: [docs/theory/egt_institutional_non_convergence.md](docs/theory/egt_institutional_non_convergence.md) - Why systems don't converge to optima
+- **Implementation**: [frameworks/institutional_parasitism_ess.py](frameworks/institutional_parasitism_ess.py) - Production code
+
+### Future Research Pipeline
+
+1. **Paper 2**: "Institutional Parasitism as Evolutionarily Stable Strategy" (3-4 months)
+2. **Paper 3**: "Resource Dynamics and Constitutional Lock-in" (6-8 months)
+3. **Paper 4**: "From Optimal Proportions to Evolutionary Traps" (8-12 months)
 
 ---
 
