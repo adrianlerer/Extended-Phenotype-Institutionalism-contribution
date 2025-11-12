@@ -319,5 +319,170 @@
     },
     "recent_reforms": ["Labor_Reform_2018", "Green_New_Deal_2020"],
     "validation_cases": []
+  },
+  
+  "usa": {
+    "country_name": "United States",
+    "iso_code": "USA",
+    "cultural_metrics": {
+      "rule_of_law_index": 0.77,
+      "institutional_quality": 1.21,
+      "individualism_score": 91,
+      "historical_continuity": 248,
+      "colonial_legacy": false,
+      "informal_institutions_strength": 0.30
+    },
+    "recent_reforms": ["ACA_Repeal_Attempts_2017", "Tax_Cuts_Jobs_Act_2017", "Infrastructure_Act_2021"],
+    "validation_cases": []
+  },
+  
+  "united_states": {
+    "country_name": "United States",
+    "iso_code": "USA",
+    "cultural_metrics": {
+      "rule_of_law_index": 0.77,
+      "institutional_quality": 1.21,
+      "individualism_score": 91,
+      "historical_continuity": 248,
+      "colonial_legacy": false,
+      "informal_institutions_strength": 0.30
+    },
+    "recent_reforms": ["ACA_Repeal_Attempts_2017", "Tax_Cuts_Jobs_Act_2017", "Infrastructure_Act_2021"],
+    "validation_cases": []
+  },
+  
+  "sweden": {
+    "country_name": "Sweden",
+    "iso_code": "SWE",
+    "cultural_metrics": {
+      "rule_of_law_index": 0.89,
+      "institutional_quality": 1.89,
+      "individualism_score": 71,
+      "historical_continuity": 210,
+      "colonial_legacy": false,
+      "informal_institutions_strength": 0.18
+    },
+    "recent_reforms": ["Pension_Reform_2019", "COVID_Response_2020"],
+    "validation_cases": []
+  },
+  
+  "norway": {
+    "country_name": "Norway",
+    "iso_code": "NOR",
+    "cultural_metrics": {
+      "rule_of_law_index": 0.90,
+      "institutional_quality": 1.93,
+      "individualism_score": 69,
+      "historical_continuity": 120,
+      "colonial_legacy": false,
+      "informal_institutions_strength": 0.16
+    },
+    "recent_reforms": ["Oil_Fund_Ethical_Guidelines_2020", "Climate_Plan_2021"],
+    "validation_cases": []
+  },
+  
+  "denmark": {
+    "country_name": "Denmark",
+    "iso_code": "DNK",
+    "cultural_metrics": {
+      "rule_of_law_index": 0.90,
+      "institutional_quality": 1.91,
+      "individualism_score": 74,
+      "historical_continuity": 185,
+      "colonial_legacy": false,
+      "informal_institutions_strength": 0.17
+    },
+    "recent_reforms": ["Pension_Reform_2018", "Digital_Governance_2019"],
+    "validation_cases": []
+  },
+  
+  "switzerland": {
+    "country_name": "Switzerland",
+    "iso_code": "CHE",
+    "cultural_metrics": {
+      "rule_of_law_index": 0.88,
+      "institutional_quality": 1.85,
+      "individualism_score": 68,
+      "historical_continuity": 173,
+      "colonial_legacy": false,
+      "informal_institutions_strength": 0.20
+    },
+    "recent_reforms": ["Corporate_Tax_Reform_2020", "Banking_Transparency_2018"],
+    "validation_cases": []
+  },
+  
+  "netherlands": {
+    "country_name": "Netherlands",
+    "iso_code": "NLD",
+    "cultural_metrics": {
+      "rule_of_law_index": 0.84,
+      "institutional_quality": 1.78,
+      "individualism_score": 80,
+      "historical_continuity": 447,
+      "colonial_legacy": false,
+      "informal_institutions_strength": 0.23
+    },
+    "recent_reforms": ["Climate_Act_2019", "Pension_Reform_2020"],
+    "validation_cases": []
+  },
+  
+  "new_zealand": {
+    "country_name": "New Zealand",
+    "iso_code": "NZL",
+    "cultural_metrics": {
+      "rule_of_law_index": 0.87,
+      "institutional_quality": 1.92,
+      "individualism_score": 79,
+      "historical_continuity": 184,
+      "colonial_legacy": false,
+      "informal_institutions_strength": 0.19
+    },
+    "recent_reforms": ["Zero_Carbon_Act_2019", "COVID_Response_2020"],
+    "validation_cases": []
+  },
+  
+  "chile": {
+    "country_name": "Chile",
+    "iso_code": "CHL",
+    "cultural_metrics": {
+      "rule_of_law_index": 0.68,
+      "institutional_quality": 1.08,
+      "individualism_score": 23,
+      "historical_continuity": 34,
+      "colonial_legacy": true,
+      "informal_institutions_strength": 0.45
+    },
+    "recent_reforms": ["Pension_Reform_2020", "Constitutional_Process_2021"],
+    "validation_cases": []
+  },
+  
+  "uruguay": {
+    "country_name": "Uruguay",
+    "iso_code": "URY",
+    "cultural_metrics": {
+      "rule_of_law_index": 0.70,
+      "institutional_quality": 0.85,
+      "individualism_score": 36,
+      "historical_continuity": 38,
+      "colonial_legacy": true,
+      "informal_institutions_strength": 0.42
+    },
+    "recent_reforms": ["Cannabis_Legalization_2013", "Pension_Reform_2017"],
+    "validation_cases": []
+  },
+  
+  "mexico": {
+    "country_name": "Mexico",
+    "iso_code": "MEX",
+    "cultural_metrics": {
+      "rule_of_law_index": 0.45,
+      "institutional_quality": -0.41,
+      "individualism_score": 30,
+      "historical_continuity": 30,
+      "colonial_legacy": true,
+      "informal_institutions_strength": 0.72
+    },
+    "recent_reforms": ["Judicial_Reform_2024", "USMCA_Implementation_2020"],
+    "validation_cases": []
   }
 }
