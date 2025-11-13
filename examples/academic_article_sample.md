@@ -111,7 +111,7 @@ La teoría institucional dominante, heredera de North (1990), concibe las instit
 Este modelo tiene elegancia teórica pero **falla empíricamente** en tres dimensiones:
 
 **Falla 1: Instituciones sub-óptimas persisten**  
-Argentina 1989-2024: inflación promedio 34% anual, brecha fiscal crónica 4.2% PIB, productividad estancada (TFP growth 0.1% anual).[^12] Instituciones fiscales claramente disfuncionales. ¿Por qué no cambian? Teoría de equilibrio predice: "Porque nadie tiene incentivo para cambiar unilateralmente." Pero reformas constitucionales requieren solo 2/3 del Congreso (Art. 30 CN), umbral alcanzado en 1994, 2001, 2003. Reformas fiscales fueron propuestas. Fueron bloqueadas por Corte Suprema apelando a derechos adquiridos (doctrina Vizzoti). 
+Argentina 1989-2024: inflación promedio 34% anual, brecha fiscal crónica 4.2% PIB, productividad estancada (TFP growth 0.1% anual).[^12] Instituciones fiscales claramente disfuncionales. ¿Por qué no cambian? Teoría de equilibrio predice: "Porque nadie tiene incentivo para cambiar unilateralmente." Pero reformas constitucionales requieren solo 2/3 del Congreso (Art. 30 CN), umbral alcanzado en 1994 (única reforma constitucional). Reformas fiscales *infra-constitucionales* fueron propuestas múltiples veces (2001, 2003, 2016, 2018). Fueron bloqueadas por Corte Suprema apelando a derechos adquiridos constitucionalizados (doctrina Vizzoti 2004, que interpreta Art. 14bis como cláusula pétrea implícita). 
 
 [^12]: Fuentes: INDEC (inflación), Ministerio de Economía (déficit fiscal), Penn World Tables 10.0 (TFP growth).
 
