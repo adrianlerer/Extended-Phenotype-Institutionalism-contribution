@@ -165,7 +165,7 @@ def _run_single_simulation(args: Tuple[ScenarioConfig, int, int]) -> Dict[str, A
     scenario, iteration, seed = args
     
     try:
-        # Create environment
+        # Create environment with triple capture decomposition
         env = SimulationEnvironment(
             n_workers=scenario.n_workers,
             n_unions=scenario.n_unions,
@@ -174,6 +174,10 @@ def _run_single_simulation(args: Tuple[ScenarioConfig, int, int]) -> Dict[str, A
             n_judges=scenario.n_judges,
             initial_cli=scenario.initial_cli,
             initial_mfd=scenario.initial_mfd,
+            # Triple capture components (if provided in scenario)
+            initial_cli_memetic=scenario.initial_cli_memetic,
+            initial_cli_corporate=scenario.initial_cli_corporate,
+            initial_cli_oligarchic=scenario.initial_cli_oligarchic,
             union_militancy_range=scenario.union_militancy_range,
             employer_coordination_range=scenario.employer_coordination_range,
             crisis_probability=scenario.crisis_probability,

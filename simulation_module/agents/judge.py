@@ -70,6 +70,10 @@ class Judge(BaseAgent):
         precedent_support_reform = environment.get('precedent_support_reform', 0.3)
         public_pressure = environment.get('public_pressure', 0.5)
         
+        # TRIPLE CAPTURE: Judges respond to OLIGARCHIC + MEMETIC capture
+        # (They ARE the oligarchic mechanism, but need cultural legitimacy)
+        cli_sensitivity = self._calculate_cli_sensitivity(environment)
+        
         # Calculate ruling score
         ruling_score = 0.0
         
@@ -87,6 +91,9 @@ class Judge(BaseAgent):
         
         # Public pressure (weak effect)
         ruling_score += (public_pressure - 0.5) * 0.1
+        
+        # CLI sensitivity modulates ruling (high CLI = more anti-reform)
+        ruling_score -= cli_sensitivity * 0.3
         
         # Decision
         if ruling_score > 0.3:
@@ -149,3 +156,28 @@ class Judge(BaseAgent):
         
         else:
             return {'interaction_type': 'none'}
+    
+    def _calculate_cli_sensitivity(self, environment: Dict[str, Any]) -> float:
+        """
+        Calculate judge sensitivity to CLI components (Triple Capture)
+        
+        Judges respond to OLIGARCHIC + MEMETIC capture:
+        - High sensitivity to cli_oligarchic (judicial precedent, appointments)
+        - High sensitivity to cli_memetic (need cultural legitimacy)
+        - Low sensitivity to cli_corporate (unions/employers are litigants, not masters)
+        
+        Returns:
+            Weighted CLI sensitivity (0.0 to 1.0)
+        """
+        cli_memetic = environment.get('cli_memetic', 0.5)
+        cli_corporate = environment.get('cli_corporate', 0.5)
+        cli_oligarchic = environment.get('cli_oligarchic', 0.5)
+        
+        # Weighted sensitivity (sums to 1.0)
+        sensitivity = (
+            0.40 * cli_memetic +    # HIGH: Judges need cultural legitimacy ("sentido común")
+            0.10 * cli_corporate +  # Low: Corporate actors are external pressure
+            0.50 * cli_oligarchic   # VERY HIGH: Judges ARE oligarchic capture mechanism
+        )
+        
+        return sensitivity
