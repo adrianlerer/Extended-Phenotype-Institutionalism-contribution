@@ -1,0 +1,12 @@
+Country,Year,Reform_Name,Type,Description,Constitutional_Challenge,Judicial_Outcome,Success,Duration_Months,CLI_at_Time
+Argentina,1991,Menem_Flexibility_Package,Structural,Attempted collective bargaining decentralization,Yes,Suspended,No,8,0.87
+Argentina,1998,Ultraactivity_Modification,Structural,Attempted 2-year maximum agreement duration,Yes,Struck_Down,No,4,0.88
+Argentina,2017,Macri_Reform,Structural,Comprehensive package: ultraactivity + dismissal costs,Yes,Judicial_Suspension,No,6,0.90
+Argentina,2023,Milei_Decree_70,Structural,Emergency decree comprehensive deregulation,Yes,Pending_SC_Review,No,12,0.90
+Chile,1991,Labor_Code_Reform,Structural,Ultraactivity elimination + individual contract expansion,No,Approved,Yes,Permanent,0.24
+Chile,2001,Subcontracting_Rules,Structural,Regulation of temporary work and subcontracting,No,Approved,Yes,Permanent,0.23
+Chile,2016,Multi_Employer_Bargaining,Structural,Attempted mandatory multi-employer sectoral bargaining,No,Partial_Failure,No,24,0.25
+Uruguay,1991,Constitutional_Amendment,Structural,Ultraactivity elimination via constitutional plebiscite,Constitutional,Approved,Yes,Permanent,0.34
+Uruguay,2001,Collective_Bargaining_Expansion,Structural,Extended coverage to new sectors,No,Approved,Yes,Permanent,0.34
+Brazil,2017,Reforma_Trabalhista,Structural,Comprehensive flexibility: individual negotiation options,Yes,Mostly_Approved,Yes,Permanent,0.56
+Spain,2012,Reforma_Laboral,Structural,Comprehensive: dismissal costs + firm-level priority,Yes,Mostly_Approved,Yes,Permanent,0.49

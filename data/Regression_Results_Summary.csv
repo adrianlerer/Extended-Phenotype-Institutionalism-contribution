@@ -1,0 +1,8 @@
+Model,Dependent_Variable,Independent_Variable,Coefficient,Std_Error,t_Statistic,p_Value,R_Squared,N,Notes
+Bivariate,Reform_Success_Rate,CLI,-1.047,0.189,-5.54,0.000,0.74,62,"Main model from paper"
+Multivariate,Reform_Success_Rate,CLI,-0.847,0.163,-5.20,0.000,0.77,62,"Controlling for GDP democracy union_density trade"
+Multivariate,Reform_Success_Rate,Log_GDP_per_capita,0.052,0.089,0.58,0.563,0.77,62,"GDP not significant"
+Multivariate,Reform_Success_Rate,Democracy_Score,0.014,0.031,0.45,0.654,0.77,62,"Democracy not significant"
+Component_Test,Reform_Success_Rate,Ultraactivity_Score,-0.524,0.143,-3.66,0.001,0.41,62,"Ultraactivity strongest single predictor"
+Uruguay_DiD,Reform_Success_Rate,Post_1991,0.420,0.087,4.83,0.000,0.65,73,"Uruguay pre-post difference"
+Uruguay_DiD,Reform_Success_Rate,Post_1991_x_Uruguay,0.500,0.112,4.46,0.000,0.71,73,"Difference-in-differences with Argentina control"
