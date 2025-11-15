@@ -1,0 +1,11 @@
+Country,Year,Constitutional_Score,Ultraactivity_Score,Judicial_Score,CLI,Reform_Attempts,Reform_Successes,Success_Rate,Notes
+Argentina,1990,1.0,1.0,0.8,0.87,23,0,0.00,"Article 14bis + absolute ultraactivity + Vizzoti precedent"
+Argentina,2024,1.0,1.0,1.0,0.90,23,0,0.00,"0% structural reform success over 35 years"
+Chile,1990,0.5,1.0,0.5,0.68,1,0,0.00,"Pre-1991 reform, ultraactivity in effect"
+Chile,1991,0.4,0.0,0.4,0.24,1,1,1.00,"Post ultraactivity elimination"
+Chile,2024,0.4,0.0,0.3,0.25,18,15,0.83,"83% structural reform success"
+Uruguay,1985,0.6,1.0,0.5,0.68,14,3,0.21,"Pre-constitutional amendment"
+Uruguay,1991,0.6,0.0,0.5,0.34,1,1,1.00,"Constitutional amendment eliminates ultraactivity"
+Uruguay,2024,0.6,0.0,0.5,0.34,44,28,0.63,"63% success post-reform"
+Brazil,1995,0.7,0.5,0.5,0.55,24,13,0.54,"Qualified ultraactivity"
+Spain,1995,0.5,0.4,0.6,0.50,19,11,0.58,"Moderate ultraactivity until 2012 reforms"
