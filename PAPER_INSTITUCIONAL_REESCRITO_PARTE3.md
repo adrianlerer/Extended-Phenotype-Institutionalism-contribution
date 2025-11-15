@@ -1,4 +1,4 @@
-## 3. Análisis de Tensiones Democráticas
+﻿## 3. Análisis de Tensiones Democráticas
 
 ### 3.1 La Paradoja de Flexibilidad Institucional en Democracia
 

@@ -1,4 +1,4 @@
-## 6. Respuesta a la Pregunta Central: ¿Es Democrático el Rediseño EPT?
+﻿## 6. Respuesta a la Pregunta Central: ¿Es Democrático el Rediseño EPT?
 
 ### 6.1 Reformulación de la Pregunta
 

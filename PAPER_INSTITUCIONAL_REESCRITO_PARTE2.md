@@ -1,4 +1,4 @@
-## 2. Escenarios de Diseño Institucional
+﻿## 2. Escenarios de Diseño Institucional
 
 ### Escenario A: Legislaturas de Sesión Continua con Cláusulas de Sunset Automático
 
