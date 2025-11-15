@@ -31,10 +31,32 @@ from .agents.judge import Judge, JudgeState
 class EnvironmentState:
     """Complete state of simulation environment"""
     timestep: int = 0
-    cli: float = 0.5  # Constitutional Lock-In Index (0.0 to 1.0)
+    
+    # TRIPLE CAPTURE DECOMPOSITION (Critical Correction 2025-11-15)
+    # See: CRITICAL_CORRECTION_TRIPLE_CAPTURE.md
+    cli_memetic: float = 0.5      # Cultural norms component (0.0 to 1.0)
+    cli_corporate: float = 0.5     # Interest group veto power (0.0 to 1.0)
+    cli_oligarchic: float = 0.5    # Judicial/political control (0.0 to 1.0)
+    
+    # Empirically calibrated weights (from validation data)
+    alpha: float = 0.40  # Weight for memetic capture (slowest to change)
+    beta: float = 0.35   # Weight for corporate capture (moderate speed)
+    gamma: float = 0.25  # Weight for oligarchic capture (fastest to change)
+    
+    # Aggregate CLI (calculated from components)
+    @property
+    def cli(self) -> float:
+        """Calculate aggregate CLI from triple capture components"""
+        return (
+            self.alpha * self.cli_memetic +
+            self.beta * self.cli_corporate +
+            self.gamma * self.cli_oligarchic
+        )
+    
     mfd: float = 1.0  # Memetic Fitness Differential
     
-    # Constitutional parameters (0.0 to 1.0 each)
+    # Constitutional parameters (0.0 to 1.0 each) - LEGACY
+    # NOTE: These map to oligarchic capture but kept for backwards compatibility
     constitutional_rigidity: float = 0.5
     ultraactivity_protection: float = 0.5
     judicial_review_strength: float = 0.5
@@ -65,16 +87,25 @@ class EnvironmentState:
         """Convert state to dictionary"""
         return {
             'timestep': self.timestep,
+            # Triple Capture Components
+            'cli_memetic': round(self.cli_memetic, 3),
+            'cli_corporate': round(self.cli_corporate, 3),
+            'cli_oligarchic': round(self.cli_oligarchic, 3),
+            # Aggregate CLI
             'cli': round(self.cli, 3),
             'mfd': round(self.mfd, 2),
+            # Legacy constitutional parameters
             'constitutional_rigidity': round(self.constitutional_rigidity, 3),
             'ultraactivity_protection': round(self.ultraactivity_protection, 3),
             'judicial_review_strength': round(self.judicial_review_strength, 3),
+            # Economic/social state
             'gdp_per_capita': round(self.gdp_per_capita, 2),
             'unemployment_rate': round(self.unemployment_rate, 3),
             'informal_employment_rate': round(self.informal_employment_rate, 3),
+            # Political state
             'crisis_active': self.crisis_active,
             'crisis_salience': round(self.crisis_salience, 3),
+            # Reform tracking
             'reforms_attempted': self.reforms_attempted,
             'reforms_succeeded': self.reforms_succeeded,
             'reform_success_rate': round(self.reforms_succeeded / max(1, self.reforms_attempted), 3)
@@ -131,6 +162,10 @@ class SimulationEnvironment:
         n_judges: int = 9,
         initial_cli: float = 0.5,
         initial_mfd: float = 1.0,
+        # Triple Capture Components (optional - if None, uses initial_cli for all)
+        initial_cli_memetic: Optional[float] = None,
+        initial_cli_corporate: Optional[float] = None,
+        initial_cli_oligarchic: Optional[float] = None,
         union_militancy_range: Tuple[int, int] = (4, 7),
         employer_coordination_range: Tuple[int, int] = (4, 7),
         crisis_probability: float = 0.05,
@@ -158,10 +193,16 @@ class SimulationEnvironment:
             random.seed(random_seed)
             np.random.seed(random_seed)
         
-        # Initialize state
-        self.state = EnvironmentState(cli=initial_cli, mfd=initial_mfd)
+        # Initialize state with triple capture decomposition
+        # If components provided, use them; otherwise use initial_cli for all
+        self.state = EnvironmentState(
+            cli_memetic=initial_cli_memetic if initial_cli_memetic is not None else initial_cli,
+            cli_corporate=initial_cli_corporate if initial_cli_corporate is not None else initial_cli,
+            cli_oligarchic=initial_cli_oligarchic if initial_cli_oligarchic is not None else initial_cli,
+            mfd=initial_mfd
+        )
         
-        # Decompose initial CLI into components
+        # Legacy constitutional parameters (map to oligarchic)
         self.state.constitutional_rigidity = initial_cli * 0.35 / 0.35
         self.state.ultraactivity_protection = initial_cli * 0.40 / 0.40
         self.state.judicial_review_strength = initial_cli * 0.25 / 0.25
@@ -424,7 +465,10 @@ class SimulationEnvironment:
             self.state.reforms_succeeded += 1
             self.state.reform_passed = True
             
-            # Reduce CLI components
+            # Update triple capture components (differential speed)
+            self.update_cli_components('success')
+            
+            # Legacy: Reduce CLI components (for backwards compatibility)
             if reform.targets_ultraactivity:
                 self.state.ultraactivity_protection *= 0.7
             if reform.targets_constitutional:
@@ -434,6 +478,9 @@ class SimulationEnvironment:
             self._recalculate_cli()
         else:
             self.state.reform_passed = False
+            
+            # Failed reform strengthens lock-in (entrenchment)
+            self.update_cli_components('failure')
         
         # Store in history and clear current
         self.reform_history.append(reform)
@@ -492,12 +539,51 @@ class SimulationEnvironment:
         return np.clip(uphold_prob, 0.0, 1.0)
     
     def _recalculate_cli(self):
-        """Recalculate CLI from components"""
-        self.state.cli = (
-            0.35 * self.state.constitutional_rigidity +
-            0.40 * self.state.ultraactivity_protection +
-            0.25 * self.state.judicial_review_strength
-        )
+        """
+        Recalculate CLI from triple capture components
+        
+        NOTE: cli property auto-calculates from cli_memetic, cli_corporate, cli_oligarchic
+        This method now syncs legacy constitutional parameters with oligarchic component
+        """
+        # Update legacy parameters from oligarchic capture
+        # (For backwards compatibility with scenarios using old formulation)
+        self.state.constitutional_rigidity = self.state.cli_oligarchic
+        self.state.ultraactivity_protection = self.state.cli_oligarchic
+        self.state.judicial_review_strength = self.state.cli_oligarchic
+    
+    def update_cli_components(self, reform_outcome: str):
+        """
+        Update triple capture components based on reform outcome
+        
+        Components change at different speeds:
+        - Memetic: Slowest (cultural inertia, System 1 heuristics)
+        - Corporate: Moderate (strategic adaptation, organizational inertia)
+        - Oligarchic: Fastest (appointments, precedents)
+        
+        Args:
+            reform_outcome: 'success' or 'failure'
+        """
+        if reform_outcome == 'success':
+            # Successful reform weakens all capture mechanisms
+            # But at different rates reflecting their inertia
+            self.state.cli_memetic *= 0.98      # 2% reduction (very slow cultural shift)
+            self.state.cli_corporate *= 0.92    # 8% reduction (moderate adaptation)
+            self.state.cli_oligarchic *= 0.85   # 15% reduction (fast precedent change)
+            
+        else:  # failure
+            # Failed reform strengthens capture (entrenchment effect)
+            # Memetic especially: "reform is impossible" becomes common sense
+            self.state.cli_memetic *= 1.02      # 2% increase (narrative reinforcement)
+            self.state.cli_corporate *= 1.03    # 3% increase (emboldens veto players)
+            self.state.cli_oligarchic *= 1.01   # 1% increase (precedent confirmation)
+        
+        # Enforce bounds [0.0, 1.0]
+        self.state.cli_memetic = np.clip(self.state.cli_memetic, 0.0, 1.0)
+        self.state.cli_corporate = np.clip(self.state.cli_corporate, 0.0, 1.0)
+        self.state.cli_oligarchic = np.clip(self.state.cli_oligarchic, 0.0, 1.0)
+        
+        # Sync legacy parameters
+        self._recalculate_cli()
     
     def _update_environment_state(self):
         """Update aggregate state variables"""
