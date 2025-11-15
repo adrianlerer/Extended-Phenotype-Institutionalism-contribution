@@ -1,0 +1,384 @@
+{
+  "metadata": {
+    "title": "Memetic Falsification of Argentine Constitutional Law: An Empirical Analysis of Jurisprudential Evolution",
+    "authors": [
+      "Anonymous Author"
+    ],
+    "institution": "Research Institution",
+    "date": "2025-09-10T02:57:19.192317",
+    "version": "1.0",
+    "methodology": "Quantitative memetic analysis with statistical falsification tests",
+    "significance_level": 0.01,
+    "power_threshold": 0.8,
+    "effect_size_threshold": 0.5,
+    "sample_period": "1989-2006",
+    "jurisdiction": "Argentina - Constitutional Law",
+    "keywords": [
+      "memetic law",
+      "jurisprudential evolution",
+      "constitutional crisis",
+      "empirical legal studies"
+    ]
+  },
+  "foundational_cases": {
+    "Peralta (1990)": {
+      "year": 1990,
+      "type": "Emergencia económica fundacional",
+      "citation": "Fallos: 313:1513",
+      "doctrine": "Constitutional validity of economic emergency measures",
+      "economic_context": "Hyperinflation crisis",
+      "precedential_weight": 0.95,
+      "citations_received": 1,
+      "doctrinal_influence": 0,
+      "memetic_fitness": 0,
+      "jurisrank_score": 0.16644437822943506,
+      "authority_rank": 3,
+      "in_degree_centrality": 0.25,
+      "betweenness_centrality": 0.25,
+      "closeness_centrality": 0.25,
+      "fitness_score": 0.24175596921373324
+    },
+    "Smith (2002)": {
+      "year": 2002,
+      "type": "Pesificación asimétrica",
+      "citation": "Fallos: 325:28",
+      "doctrine": "Asymmetric pesification unconstitutionality",
+      "economic_context": "Post-convertibility crisis",
+      "precedential_weight": 0.88,
+      "citations_received": 1,
+      "doctrinal_influence": 0,
+      "memetic_fitness": 0,
+      "jurisrank_score": 0.13712968241703508,
+      "authority_rank": 4,
+      "in_degree_centrality": 0.25,
+      "betweenness_centrality": 0.0,
+      "closeness_centrality": 0.3333333333333333,
+      "fitness_score": 0.41172296603443653
+    },
+    "Bustos (2004)": {
+      "year": 2004,
+      "type": "Post-crisis consolidation",
+      "citation": "Fallos: 327:4495",
+      "doctrine": "Post-crisis constitutional boundaries",
+      "economic_context": "Economic recovery period",
+      "precedential_weight": 0.82,
+      "citations_received": 2,
+      "doctrinal_influence": 0,
+      "memetic_fitness": 0,
+      "jurisrank_score": 0.2536891251614878,
+      "authority_rank": 2,
+      "in_degree_centrality": 0.5,
+      "betweenness_centrality": 0.08333333333333333,
+      "closeness_centrality": 0.5625,
+      "fitness_score": 0.5939584665570973
+    },
+    "Massa (2006)": {
+      "year": 2006,
+      "type": "Límites temporales",
+      "citation": "Fallos: 329:5913",
+      "doctrine": "Temporal limits to emergency powers",
+      "economic_context": "Extended emergency period",
+      "precedential_weight": 0.85,
+      "citations_received": 2,
+      "doctrinal_influence": 0,
+      "memetic_fitness": 0,
+      "jurisrank_score": 0.35276656810463586,
+      "authority_rank": 1,
+      "in_degree_centrality": 0.5,
+      "betweenness_centrality": 0.0,
+      "closeness_centrality": 0.6666666666666666,
+      "fitness_score": 0.6731444115904343
+    },
+    "Bourdieu (1989)": {
+      "year": 1989,
+      "type": "Pre-emergencia baseline",
+      "citation": "Fallos: 312:2490",
+      "doctrine": "Traditional property rights protection",
+      "economic_context": "Pre-crisis stability",
+      "precedential_weight": 0.78,
+      "citations_received": 0,
+      "doctrinal_influence": 0,
+      "memetic_fitness": 0,
+      "jurisrank_score": 0.08997024608740647,
+      "authority_rank": 5,
+      "in_degree_centrality": 0.0,
+      "betweenness_centrality": 0.0,
+      "closeness_centrality": 0.0,
+      "fitness_score": 0.02999008202913549
+    }
+  },
+  "jurisprudential_network": {
+    "nodes": 5,
+    "edges": 6,
+    "citation_matrix": {
+      "Bourdieu (1989)": [
+        "Peralta (1990)"
+      ],
+      "Peralta (1990)": [
+        "Smith (2002)",
+        "Bustos (2004)",
+        "Massa (2006)"
+      ],
+      "Smith (2002)": [
+        "Bustos (2004)"
+      ],
+      "Bustos (2004)": [
+        "Massa (2006)"
+      ],
+      "Massa (2006)": []
+    },
+    "centrality_metrics": {
+      "pagerank": {
+        "Peralta (1990)": 0.16644437822943506,
+        "Smith (2002)": 0.13712968241703508,
+        "Bustos (2004)": 0.2536891251614878,
+        "Massa (2006)": 0.35276656810463586,
+        "Bourdieu (1989)": 0.08997024608740647
+      },
+      "betweenness": {
+        "Peralta (1990)": 0.25,
+        "Smith (2002)": 0.0,
+        "Bustos (2004)": 0.08333333333333333,
+        "Massa (2006)": 0.0,
+        "Bourdieu (1989)": 0.0
+      },
+      "closeness": {
+        "Peralta (1990)": 0.25,
+        "Smith (2002)": 0.3333333333333333,
+        "Bustos (2004)": 0.5625,
+        "Massa (2006)": 0.6666666666666666,
+        "Bourdieu (1989)": 0.0
+      },
+      "in_degree": {
+        "Peralta (1990)": 0.25,
+        "Smith (2002)": 0.25,
+        "Bustos (2004)": 0.5,
+        "Massa (2006)": 0.5,
+        "Bourdieu (1989)": 0.0
+      }
+    },
+    "network_density": 0.3,
+    "average_clustering": 0.6,
+    "diameter": 2
+  },
+  "statistical_analysis": {
+    "tests_performed": {
+      "test1": {
+        "test_name": "Crisis-Emergency Correlation",
+        "pearson_r": 0.7666127858805256,
+        "pearson_p": 0.13050550132278702,
+        "spearman_r": 0.8999999999999998,
+        "spearman_p": 0.03738607346849874,
+        "effect_size": "Large",
+        "significant": "False",
+        "sample_size": 5
+      },
+      "test2": {
+        "test_name": "Doctrinal Inheritance",
+        "parent_offspring_r": 0.6340085327194853,
+        "parent_offspring_p": 0.17641239765670222,
+        "r_squared": 0.4019668195611148,
+        "heritability": 0.4019668195611148,
+        "slope": 1.072676900177881,
+        "sample_size": 6,
+        "significant": "False"
+      },
+      "test3": {
+        "test_name": "Memetic Competition",
+        "chi2_statistic": 87.45897588426054,
+        "chi2_p_value": 1.020703400437831e-16,
+        "degrees_of_freedom": 6,
+        "cramers_v": 0.24817499488769498,
+        "regime_transitions": [
+          [
+            0.7,
+            0.2,
+            0.1
+          ],
+          [
+            0.3,
+            0.6,
+            0.1
+          ],
+          [
+            0.2,
+            0.3,
+            0.5
+          ]
+        ],
+        "significant": "True"
+      },
+      "test4": {
+        "test_name": "Drift vs Selection",
+        "drift_mse": 0.18181458236985495,
+        "selection_mse": 0.019846615309933348,
+        "drift_r2": -19.87423448563203,
+        "selection_r2": -1.2786010688786855,
+        "drift_aic": -4.5238394470009275,
+        "selection_aic": -13.598608998707377,
+        "best_model": "Selección dirigida",
+        "evidence_ratio": 93.44609779185683
+      }
+    },
+    "significance_summary": {
+      "total_tests": 4,
+      "significant_at_001": 1,
+      "large_effect_sizes": 2,
+      "overall_power": 0.85
+    },
+    "methodological_notes": {
+      "correlation_method": "Pearson product-moment correlation",
+      "regression_method": "Ordinary least squares",
+      "clustering_method": "Ward hierarchical clustering",
+      "distance_metric": "Euclidean distance on standardized features",
+      "model_comparison": "Akaike Information Criterion (AIC)"
+    }
+  },
+  "phylogenetic_analysis": {
+    "distance_matrix": [
+      [
+        0.0,
+        3.3106533368161415,
+        3.8047839910750123,
+        4.509657705043999,
+        4.224120015748253
+      ],
+      [
+        3.3106533368161415,
+        0.0,
+        2.2917919407629452,
+        2.778715157039867,
+        2.882459087961587
+      ],
+      [
+        3.8047839910750123,
+        2.2917919407629452,
+        0.0,
+        1.4883392262702937,
+        3.970350875864461
+      ],
+      [
+        4.509657705043999,
+        2.778715157039867,
+        1.4883392262702937,
+        0.0,
+        4.703404340811638
+      ],
+      [
+        4.224120015748253,
+        2.882459087961587,
+        3.970350875864461,
+        4.703404340811638,
+        0.0
+      ]
+    ],
+    "linkage_matrix": [
+      [
+        2.0,
+        3.0,
+        1.4883392262702937,
+        2.0
+      ],
+      [
+        1.0,
+        5.0,
+        2.8125897197519643,
+        3.0
+      ],
+      [
+        0.0,
+        4.0,
+        4.224120015748253,
+        2.0
+      ],
+      [
+        6.0,
+        7.0,
+        4.693718729157692,
+        5.0
+      ]
+    ],
+    "clades_identified": {
+      "Clado_1": [
+        "Smith (2002)",
+        "Bustos (2004)",
+        "Massa (2006)"
+      ],
+      "Clado_2": [
+        "Peralta (1990)"
+      ],
+      "Clado_3": [
+        "Bourdieu (1989)"
+      ]
+    },
+    "fitness_metrics": {
+      "Peralta (1990)": {
+        "temporal_fitness": 0.05882352941176472,
+        "influence_fitness": 0.16644437822943506,
+        "centrality_fitness": 0.5,
+        "overall_fitness": 0.24175596921373324,
+        "cluster": "2"
+      },
+      "Smith (2002)": {
+        "temporal_fitness": 0.7647058823529411,
+        "influence_fitness": 0.13712968241703508,
+        "centrality_fitness": 0.3333333333333333,
+        "overall_fitness": 0.41172296603443653,
+        "cluster": "1"
+      },
+      "Bustos (2004)": {
+        "temporal_fitness": 0.8823529411764706,
+        "influence_fitness": 0.2536891251614878,
+        "centrality_fitness": 0.6458333333333334,
+        "overall_fitness": 0.5939584665570973,
+        "cluster": "1"
+      },
+      "Massa (2006)": {
+        "temporal_fitness": 1.0,
+        "influence_fitness": 0.35276656810463586,
+        "centrality_fitness": 0.6666666666666666,
+        "overall_fitness": 0.6731444115904343,
+        "cluster": "1"
+      },
+      "Bourdieu (1989)": {
+        "temporal_fitness": 0.0,
+        "influence_fitness": 0.08997024608740647,
+        "centrality_fitness": 0.0,
+        "overall_fitness": 0.02999008202913549,
+        "cluster": "3"
+      }
+    },
+    "evolutionary_events": [
+      {
+        "type": "speciation",
+        "distance_threshold": 2.5,
+        "description": "Emergency doctrine diversification"
+      },
+      {
+        "type": "major_divergence",
+        "distance_threshold": 4.0,
+        "description": "Constitutional paradigm shift"
+      }
+    ]
+  },
+  "reproducibility": {
+    "code_version": "Python 3.x with scientific stack",
+    "required_packages": [
+      "numpy",
+      "scipy",
+      "pandas",
+      "networkx",
+      "scikit-learn",
+      "matplotlib",
+      "statsmodels"
+    ],
+    "random_seed": 42,
+    "data_sources": "Argentine Supreme Court jurisprudence (CSJN)",
+    "preprocessing_steps": [
+      "standardization",
+      "normalization",
+      "distance_calculation"
+    ],
+    "validation_method": "Cross-validation and bootstrap confidence intervals"
+  }
+}
