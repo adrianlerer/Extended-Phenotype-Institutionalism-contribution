@@ -1,86 +1,45 @@
-# Legal Evolution Unified - Dependencies
-# Base: peralta-metamorphosis requirements
-# Extended: Legal-specific tools
+# Legal Evolution Unified - Requirements
+# ========================================
 
-# ===== Core Data Science (from Peralta) =====
+# Core Scientific Computing
 numpy>=1.24.0
-pandas>=2.0.0
 scipy>=1.10.0
-scikit-learn>=1.3.0
 
-# ===== Network Analysis (from Peralta) =====
-networkx>=3.1
-python-louvain>=0.16
-# Note: community package is deprecated, using python-louvain
-
-# ===== Statistical Analysis (from Peralta) =====
-statsmodels>=0.14.0
-
-# ===== Visualization - Static (from Peralta) =====
+# Data Visualization
 matplotlib>=3.7.0
 seaborn>=0.12.0
-
-# ===== Visualization - Interactive (from Peralta) =====
 plotly>=5.14.0
-kaleido>=0.2.1
-dash>=2.10.0
-dash-bootstrap-components>=1.4.0
 
-# ===== Jupyter and Documentation (from Peralta) =====
-jupyter>=1.0.0
-jupyterlab>=4.0.0
-notebook>=6.5.0
-nbconvert>=7.0.0
-ipywidgets>=8.0.0
-
-# ===== File I/O (from Peralta) =====
-openpyxl>=3.1.0
-h5py>=3.8.0
-PyYAML>=6.0
-
-# ===== Development and Testing (from Peralta) =====
-pytest>=7.4.0
-pytest-cov>=4.1.0
-black>=23.0.0
-flake8>=6.0.0
-
-# ===== Additional Utilities (from Peralta) =====
+# Progress Bars
 tqdm>=4.65.0
-click>=8.1.0
-python-dotenv>=1.0.0
-requests>=2.31.0
 
-# ===== NEW: FastAPI and Web Framework =====
-fastapi>=0.109.0
-uvicorn[standard]>=0.27.0
-pydantic>=2.5.0
-python-multipart>=0.0.6
+# Data Structures
+pandas>=2.0.0
 
-# ===== NEW: Database Support =====
-neo4j>=5.14.0
-sqlalchemy>=2.0.0
+# Type Checking (Development)
+mypy>=1.0.0
 
-# ===== NEW: Caching and Performance =====
-redis>=5.0.0
-diskcache>=5.6.0
+# Testing (Development)
+pytest>=7.3.0
+pytest-cov>=4.0.0
 
-# ===== Development server (from Peralta) =====
-gunicorn>=20.1.0
+# Documentation (Development)
+sphinx>=6.0.0
+sphinx-rtd-theme>=1.2.0
 
-# ===== Additional tools =====
-joblib>=1.3.0
-Pillow>=10.0.0
+# Optional: Web Interface (not required for core functionality)
+# streamlit>=1.28.0
+# fastapi>=0.104.0
+# uvicorn>=0.24.0
 
-# ===== Legal-specific tools =====
-# Iusmorfos Enterprise (private repository with proprietary enhancements)
-iusmorfos-enterprise @ git+https://github.com/adrianlerer/iusmorfos-enterprise.git
+# Optional: RAG/Vector Search (proprietary implementation not included)
+# chromadb>=0.4.0
+# sentence-transformers>=2.2.0
 
-# TODO: Uncomment when repos are available
-# jurisrank-demo @ git+https://github.com/adrianlerer/jurisrank-demo.git
-# rootfinder-demo @ git+https://github.com/adrianlerer/rootfinder-demo.git
+# Optional: LLM Integration (proprietary implementation not included)
+# openai>=1.0.0
+# anthropic>=0.7.0
 
-# ===== Version pins for reproducibility =====
-certifi==2023.5.7
-charset-normalizer==3.1.0
-idna==3.4
-urllib3==2.0.3
+# Note: This system is designed to work WITHOUT external API dependencies
+# The core simulation engine, visualization suite, and reporting framework
+# are fully functional using only the packages listed above.
