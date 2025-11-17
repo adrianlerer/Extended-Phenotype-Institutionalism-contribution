@@ -1,4 +1,4 @@
-## 5. Implicaciones Prácticas y Respuestas a Objeciones Filosóficas
+﻿## 5. Implicaciones Prácticas y Respuestas a Objeciones Filosóficas
 
 ### 5.1 Objeción Hayekiana: El Constructivismo Racionalista
 

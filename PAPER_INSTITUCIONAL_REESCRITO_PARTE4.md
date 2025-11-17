@@ -1,4 +1,4 @@
-## 4. Obstáculos para la Implementación
+﻿## 4. Obstáculos para la Implementación
 
 ### 4.1 El Dilema del Prisionero Político
 

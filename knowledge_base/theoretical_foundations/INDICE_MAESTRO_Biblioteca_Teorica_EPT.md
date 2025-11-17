@@ -7,6 +7,7 @@
 1. **Dawkins, Richard** - *El Fenotipo Extendido* (1982)
 2. **Kuhn, Thomas S.** - *La Estructura de las Revoluciones Científicas* (1962)
 3. **Dennett, Daniel C.** - *La Peligrosa Idea de Darwin* (1995)
+4. **Dennett, Daniel C.** - *Romper el hechizo: La religión como fenómeno natural* (2006)
 
 **Fecha de creación:** 2025-11-12  
 **Usuario:** Ignacio Adrian Lerer  
@@ -119,6 +120,12 @@
    - 8 citas textuales clave
    - Tabla de aplicaciones a teoría jurídica
    - Respuestas a 4 críticas anticipadas
+
+4. **Romper_el_hechizo_-_Daniel_C.pdf** (2.4 MB)
+   - Religión como fenómeno natural evolutivo
+   - Memes religiosos y cohesión social
+   - Instituciones rituales como fenotipos extendidos
+   - Relevante para: legitimación institucional, ritual legal, sacralización constitucional
 
 ---
 

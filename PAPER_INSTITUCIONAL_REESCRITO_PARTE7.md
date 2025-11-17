@@ -1,4 +1,4 @@
-## 7. Síntesis Operativa y Hoja de Ruta
+﻿## 7. Síntesis Operativa y Hoja de Ruta
 
 ### 7.1 Fases de Implementación con Planes de Contingencia
 
