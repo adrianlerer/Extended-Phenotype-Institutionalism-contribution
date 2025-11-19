@@ -1,0 +1,11 @@
+case_id,country,year_enacted,institution,event_type,outcome,year_reversed,actual_lifespan_years,status,reversal_type,notes,research_confidence
+1,United Kingdom,2016,European Union,Withdrawal,Sovereignty_Wins,NULL,8.0,ongoing,none,"Brexit completed 2020, still in effect 2024. No concrete rejoin movement.",medium
+4,USA,2017,Trans-Pacific Partnership,Withdrawal,Sovereignty_Wins,2023,6.0,partial_reversal,partial,"Trump withdrew TPP 2017. Biden launched IPEF (successor framework) 2022-2023. Partial reversal.",medium
+5,USA,2017,Paris Climate Agreement,Withdrawal,Sovereignty_Wins,2021,4.0,reversed,full,"Trump withdrew 2017 (effective 2020), Biden rejoined day 1 (Jan 20, 2021). Clean reversal.",high
+6,Hungary,2010,European Union,Resistance_Ongoing,Sovereignty_Resists,NULL,14.0,ongoing,none,"Orbán illiberal democracy continues 2024. EU froze funds but no reversal of resistance.",high
+8,Venezuela,2012,IACHR,Withdrawal,Sovereignty_Wins,NULL,12.0,ongoing,none,"Venezuela denounced IACHR 2012, still outside as of 2024. Maduro regime continues.",high
+19,Argentina,2017,IACHR,Fontevecchia_Resistance,Sovereignty_Resists,2020,3.0,reversed,partial,"CSJN resisted IACHR 2017 (Fontevecchia). Fernández government complied 2020-2024. Gradual reversal.",medium
+24,USA,2001,Kyoto_Protocol,Non_Ratification,Sovereignty_Wins,2015,14.0,superseded,functional,"Bush refused Kyoto 2001. Obama signed Paris Agreement 2015 (successor). Functional replacement.",medium
+26,European_Union,1992,Maastricht_Treaty,Integration_Deepening,Globalism_Wins,NULL,32.0,ongoing,none,"Maastricht 1992, foundational to EU. Lisbon 2009 amended but didn't reverse. Permanent policy.",high
+27,European_Union,1985,Schengen_Agreement,Borderless_Europe,Globalism_Wins,NULL,39.0,ongoing,none,"Schengen 1985/1995. Temporary suspensions (migration 2015, COVID 2020) but not reversed.",high
+28,Turkey,2016,European_Union,Integration_Stalled,Sovereignty_Wins,NULL,8.0,ongoing,none,"Erdoğan post-coup 2016 froze EU accession. Still stalled 2024, no signs of reversal.",medium

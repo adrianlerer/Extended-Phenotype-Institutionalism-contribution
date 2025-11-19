@@ -1,0 +1,66 @@
+======================================================================
+CRYSTALLIZATION DRIVERS MODEL - VALIDATION REPORT
+======================================================================
+
+1. FORMULA-BASED MODEL (THEORETICAL)
+----------------------------------------------------------------------
+   Sample size: 10 cases
+   MAE (Mean Absolute Error): 0.1599
+   RMSE (Root Mean Squared Error): 0.1906
+   R² (Coefficient of Determination): 0.3527
+   Max Error: 0.3244
+   Median Error: 0.1654
+   Mean Residual: -0.0900
+   Std Residual: 0.1771
+
+   ✓ GOOD: MAE < 0.20 (acceptable)
+
+2. LINEAR REGRESSION BENCHMARK (ML COMPARISON)
+----------------------------------------------------------------------
+   Sample size: 10 cases
+   MAE: 0.0502
+   RMSE: 0.0646
+   R²: 0.9256
+   Cross-validation MAE: 0.2537 ± 0.1647
+
+   Learned Coefficients:
+      ESRI: 0.7850
+      PCI: -0.3483
+      RCA: 0.3898
+      VPFI: -0.1450
+      EILI: 0.4576
+      Intercept: -0.0604
+
+3. MODEL COMPARISON
+----------------------------------------------------------------------
+   Formula-based MAE: 0.1599
+   ML benchmark MAE: 0.0502
+   Difference: 0.1097
+   ⚠ ML benchmark significantly outperforms formula
+
+4. SENSITIVITY ANALYSIS (±10% PERTURBATION)
+----------------------------------------------------------------------
+   ESRI:
+      Elasticity: 0.1678
+      Mean Δ (+10%): 0.0168
+      Mean Δ (-10%): 0.0168
+   PCI:
+      Elasticity: 0.0066
+      Mean Δ (+10%): 0.0007
+      Mean Δ (-10%): 0.0007
+   RCA:
+      Elasticity: 0.0257
+      Mean Δ (+10%): 0.0026
+      Mean Δ (-10%): 0.0026
+   VPFI:
+      Elasticity: 0.1520
+      Mean Δ (+10%): 0.0120
+      Mean Δ (-10%): 0.0184
+   EILI:
+      Elasticity: 0.2332
+      Mean Δ (+10%): 0.0233
+      Mean Δ (-10%): 0.0233
+
+   Most influential driver: EILI (elasticity = 0.2332)
+
+======================================================================

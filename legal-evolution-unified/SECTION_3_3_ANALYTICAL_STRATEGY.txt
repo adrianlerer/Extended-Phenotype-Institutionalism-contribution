@@ -1,0 +1,65 @@
+3.3 Analytical Strategy
+
+The empirical analysis proceeds through four complementary analytical approaches, each testing specific hypotheses and providing cumulative evidence for the relationship between institutional proportions and reform success.
+
+Analysis 1: Descriptive Statistics and Distributional Analysis
+
+The first analysis establishes baseline patterns through comprehensive descriptive statistics. For the full 60-case sample, I calculate means, standard deviations, minima, and maxima for all primary variables: H (heredity), V (variation), H/V ratio, d_φ (distance to golden ratio), and reform success. These statistics characterize the central tendency and dispersion of institutional configurations in the sample.
+
+Distributional analysis tests whether observed H/V ratios cluster around the golden ratio φ=1.618, as convergence theory predicts, or deviate systematically from this optimum, as path dependence theory predicts. I construct a histogram of H/V ratios with bin width 0.5, overlaying a vertical line at φ=1.618 and shading the "Goldilocks Zone" (1.1 < H/V < 2.1, corresponding to d_φ < 0.5). Visual inspection assesses whether the distribution is unimodal and centered near φ, or whether it exhibits skewness, multiple modes, or systematically high values.
+
+Formal statistical tests complement visual inspection. A chi-square goodness-of-fit test evaluates whether the observed distribution matches a normal distribution centered at φ with standard deviation σ=0.5. Rejection of this null hypothesis (p<0.05) provides evidence against convergence. Additionally, I calculate skewness and kurtosis statistics to characterize departure from normality. Right-skewness (skewness > 1.0) indicates systematic bias toward high H/V ratios, while high kurtosis (>4.0) indicates fat tails with extreme outliers.
+
+Regional and crisis-type breakdowns disaggregate the sample to test whether institutional patterns vary across contexts. I calculate mean H/V, mean d_φ, and success rates separately for Europe (n=40) and Latin America (n=20), and separately for crisis-catalyzed (n=30) and control cases (n=30). Independent samples t-tests evaluate whether regional or crisis-type differences in means are statistically significant (α=0.05). Non-significant differences support the hypothesis that H/V operates as a universal structural constraint independent of context.
+
+Analysis 2: Threshold and Bivariate Analysis
+
+The second analysis tests whether proximity to the golden ratio predicts reform success through threshold effects. I partition the sample into four bins by distance to optimum: Goldilocks Zone (d_φ < 0.5, n=7), High Evolvability Zone (0.5 ≤ d_φ < 1.0, n=8), Moderate Rigidity Zone (1.0 ≤ d_φ < 2.0, n=21), and Lock-in Zone (d_φ ≥ 2.0, n=24). For each bin, I calculate reform success rates and conduct Fisher's exact tests comparing extreme bins (Goldilocks vs. all others, Lock-in vs. all others) to assess statistical significance.
+
+Fisher's exact test is preferred over chi-square test due to small cell counts in some bins (n<10), which violate chi-square asymptotic assumptions. The test calculates exact p-values for the null hypothesis of independence between bin membership and success outcome. Rejection at p<0.001 provides strong evidence for threshold effects. I report odds ratios with 95% confidence intervals to quantify effect magnitudes: OR<0.2 indicates that Lock-in Zone systems face odds reduced by >80% compared to systems closer to optimum.
+
+Bivariate correlation analysis assesses the continuous relationship between d_φ and reform success. Point-biserial correlation (appropriate for binary outcomes) quantifies the strength of association. I also calculate Pearson correlations between d_φ and each control variable (GDP per capita, democracy index) to assess multicollinearity and identify potential confounders. Scatterplots with locally weighted regression (LOWESS) smoothing visualize the functional form of the d_φ-success relationship, testing for linearity vs. nonlinearity.
+
+Receiver Operating Characteristic (ROC) curve analysis evaluates d_φ as a binary classifier. The ROC curve plots true positive rate (sensitivity) against false positive rate (1-specificity) across all possible d_φ thresholds for predicting success. The Area Under Curve (AUC) quantifies discriminatory power: AUC>0.9 indicates excellent classification, 0.7<AUC<0.9 indicates good classification, and AUC<0.7 indicates poor classification. Optimal cut-point is identified via Youden's J statistic, which maximizes (sensitivity + specificity - 1). If the data-driven optimal cut-point approximates the theoretically derived Goldilocks Zone threshold (d_φ=0.5), this provides additional validation of the golden ratio hypothesis.
+
+Analysis 3: Logistic Regression Models
+
+The third analysis employs logistic regression to quantify the relationship between institutional predictors and reform success while controlling for confounders. Logistic regression is appropriate for binary outcomes and models the log-odds of success as a linear function of predictors:
+
+log(p / (1-p)) = β₀ + β₁(d_φ) + β₂(GDP) + β₃(Democracy) + β₄(Legal Family) + β₅(Crisis)
+
+where p is the probability of reform success.
+
+I estimate four nested models to isolate the explanatory power of different predictor sets:
+
+Model 1 (Base): Success ~ d_φ
+This specification tests the bivariate relationship, estimating the effect of distance to golden ratio without controls. A significant negative coefficient (β₁<0, p<0.05) confirms that greater distance from optimum reduces reform success probability.
+
+Model 2 (Full Controls): Success ~ d_φ + GDP + Democracy + Legal Family + Crisis
+This specification adds control variables: GDP per capita (log-transformed, from World Bank data at t-1), democracy index (Polity IV 0-10 scale at t-1), legal family (binary: 1=common law, 0=civil law, from La Porta et al. 1998), and crisis catalyst (binary: 1=reform within 2 years of financial/sovereign debt/regime crisis, 0=otherwise). If d_φ remains significant after controlling for these traditional predictors, this supports Hypothesis H3 that institutional proportions dominate alternative explanations. If control variables are insignificant, this further validates H3 by demonstrating that GDP, democracy, legal tradition, and crisis timing provide no additional explanatory power.
+
+Model 3 (CLI Alternative): Success ~ CLI
+This specification substitutes Constitutional Lock-in Index for d_φ to test whether reform blockage mechanisms provide equivalent or superior predictive power. CLI is measured on 0-1 scale using the formula CLI = 0.25(TV) + 0.25(JA) + 0.20(TH) + 0.15(PW) + 0.15(AD), where components measure text vagueness, judicial activism, treaty hierarchy, precedent weight, and amendment difficulty. A significant negative coefficient (p<0.001) and high pseudo-R² validate CLI as a complementary metric.
+
+Model 4 (Combined): Success ~ d_φ + CLI
+This specification tests whether d_φ and CLI capture distinct dimensions of institutional structure by including both simultaneously. If both remain significant, this indicates that structural proportions (H/V ratio) and specific blockage mechanisms (CLI components) provide independent information. If one becomes insignificant, this suggests redundancy. Model fit statistics (pseudo-R², AUC) identify whether the combined model improves prediction over either metric alone.
+
+For all models, I report coefficients, standard errors, p-values, and odds ratios. Odds ratios facilitate interpretation: OR=0.5 indicates a predictor halves the odds of success, while OR=2.0 doubles the odds. I assess model fit using McFadden's pseudo-R² (values >0.4 indicate strong fit) and Area Under Curve from ROC analysis (AUC>0.9 indicates excellent discrimination). Likelihood ratio tests compare nested models, testing whether additional predictors significantly improve fit.
+
+Diagnostic checks include variance inflation factors (VIF) to detect multicollinearity (VIF>5 indicates problematic collinearity), residual plots to assess model specification, and influence diagnostics (Cook's distance) to identify outliers driving results. Sensitivity analysis re-estimates models after excluding influential cases to verify robustness.
+
+Analysis 4: Sensitivity and Robustness Checks
+
+The fourth analysis assesses robustness of findings to alternative specifications and measurement assumptions. First, I test sensitivity to threshold definitions by varying the Goldilocks Zone boundary from d_φ<0.3 to d_φ<0.7 in increments of 0.1, recalculating success rates and Fisher's exact tests for each threshold. If the threshold effect persists across alternative definitions, this validates the finding as robust rather than artifact of arbitrary cut-point choice.
+
+Second, I test sensitivity to parameter coding by perturbing H and V estimates by ±10% and ±20%, recalculating H/V ratios and re-estimating logistic regressions. If coefficient signs, significance levels, and effect magnitudes remain stable across perturbations, this indicates results are robust to measurement error in institutional parameters. Given that H and V are estimated from qualitative indicators with inherent subjectivity (inter-rater reliability κ=0.83), this sensitivity analysis is critical for establishing credibility.
+
+Third, I conduct subgroup analysis by region (Europe vs. Latin America) and crisis type (crisis-catalyzed vs. control) to test whether relationships vary by context. I estimate separate logistic regressions for each subgroup and compare coefficients using Chow tests. Non-significant differences (p>0.05) support the universality hypothesis; significant differences would indicate context-dependent effects requiring theoretical refinement.
+
+Fourth, I test alternative functional forms of the d_φ-success relationship. The base specification assumes linearity in log-odds: log(p/(1-p)) = β₀ + β₁(d_φ). I estimate alternative specifications including quadratic terms (β₁(d_φ) + β₂(d_φ²)) to test for nonlinearity, and piecewise linear specifications with different slopes below and above d_φ=1.0 to test for threshold effects in the continuous relationship. Akaike Information Criterion (AIC) and Bayesian Information Criterion (BIC) select the best-fitting functional form, balancing fit against parsimony.
+
+Fifth, I conduct cross-validation to assess out-of-sample predictive performance. I partition the sample into 10 folds, estimate logistic regression on 9 folds, and predict outcomes for the held-out fold, rotating through all folds. Average cross-validated AUC quantifies predictive accuracy on data not used for model estimation, providing a more conservative assessment than in-sample AUC. High cross-validated AUC (>0.85) indicates genuine predictive power rather than overfitting.
+
+All statistical analyses are conducted using Stata 17.0 and R 4.3.1. Replication code, data files, and detailed coding protocols are available in the GitHub repository (https://github.com/adrianlerer/legal-evolvability-golden-ratio), enabling full reproducibility of results. Figures are generated using ggplot2 in R, with publication-quality resolution (300 dpi) and colorblind-friendly palettes.
+
+Through these four complementary analyses, the empirical strategy provides rigorous tests of the golden ratio hypothesis while addressing concerns about robustness, measurement error, and alternative explanations. The nested structure—from descriptive statistics to multivariate regression to sensitivity analysis—builds cumulative evidence, with each layer addressing potential objections to simpler analyses.

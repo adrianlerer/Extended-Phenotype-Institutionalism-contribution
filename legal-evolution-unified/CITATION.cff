@@ -1,0 +1,73 @@
+cff-version: 1.2.0
+message: "If you use this software or dataset in your research, please cite it as below."
+type: software
+title: "Legal Evolution Unified: PSM Analysis of Crisis Catalysis in International Law"
+abstract: "Propensity Score Matching analysis testing whether crisis events causally increase sovereignty-oriented outcomes in international law. Includes complete replication package with synthetic dataset (N=70), PSM methodology implementation, and academic reports. Based on Extended Phenotype Theory applied to legal systems."
+authors:
+  - family-names: "Lerer"
+    given-names: "Ignacio A."
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+    affiliation: "Universidad de Buenos Aires"
+    email: "ignacio.lerer@example.com"
+repository-code: "https://github.com/adrianlerer/legal-evolution-unified"
+url: "https://github.com/adrianlerer/legal-evolution-unified"
+license: MIT
+version: 1.0.0
+date-released: 2025-10-15
+keywords:
+  - propensity-score-matching
+  - causal-inference
+  - international-law
+  - sovereignty
+  - globalism
+  - extended-phenotype
+  - legal-evolution
+  - crisis-catalysis
+  - observational-studies
+  - replication-package
+references:
+  - type: article
+    authors:
+      - family-names: "Lerer"
+        given-names: "Ignacio A."
+    title: "Law as Extended Phenotype: An Evolutionary Framework for Legal Comparison"
+    year: 2025
+    journal: "SSRN Electronic Journal"
+    doi: "10.2139/ssrn.XXXXXXX"
+    notes: "Theoretical foundation for IusMorfos framework"
+  - type: article
+    authors:
+      - family-names: "Rosenbaum"
+        given-names: "Paul R."
+      - family-names: "Rubin"
+        given-names: "Donald B."
+    title: "The Central Role of the Propensity Score in Observational Studies for Causal Effects"
+    year: 1983
+    journal: "Biometrika"
+    volume: 70
+    issue: 1
+    pages: "41-55"
+    doi: "10.1093/biomet/70.1.41"
+    notes: "Original PSM methodology paper"
+  - type: article
+    authors:
+      - family-names: "Austin"
+        given-names: "Peter C."
+    title: "An Introduction to Propensity Score Methods for Reducing the Effects of Confounding in Observational Studies"
+    year: 2011
+    journal: "Multivariate Behavioral Research"
+    volume: 46
+    issue: 3
+    pages: "399-424"
+    doi: "10.1080/00273171.2011.568786"
+    notes: "Comprehensive PSM tutorial"
+  - type: book
+    authors:
+      - family-names: "Dawkins"
+        given-names: "Richard"
+    title: "The Extended Phenotype: The Long Reach of the Gene"
+    year: 1982
+    publisher:
+      name: "Oxford University Press"
+    isbn: "0-19-286088-7"
+    notes: "Theoretical foundation for evolutionary framework"

@@ -1,0 +1,11 @@
+case_id,country,event,predicted,actual,error,status
+1,United Kingdom,Withdrawal,23.7,8.0,N/A (ongoing),ongoing
+4,USA,Withdrawal,4.4,6.0,1.6,partial_reversal
+5,USA,Withdrawal,4.3,4.0,0.3,reversed
+6,Hungary,Resistance_Ongoing,2.8,14.0,N/A (ongoing),ongoing
+8,Venezuela,Withdrawal,1.4,12.0,N/A (ongoing),ongoing
+19,Argentina,Fontevecchia_Resistance,3.8,3.0,0.8,reversed
+24,USA,Non_Ratification,15.4,14.0,1.4,superseded
+26,European_Union,Integration_Deepening,202.6,32.0,N/A (ongoing),ongoing
+27,European_Union,Borderless_Europe,534.8,39.0,N/A (ongoing),ongoing
+28,Turkey,Integration_Stalled,2.0,8.0,N/A (ongoing),ongoing
