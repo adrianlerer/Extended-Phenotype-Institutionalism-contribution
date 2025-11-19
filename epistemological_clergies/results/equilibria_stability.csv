@@ -1,0 +1,5 @@
+equilibrium,x,y,lambda1_real,lambda1_imag,lambda2_real,lambda2_imag,det_J,trace_J,stability
+"Corner (0,0) - Mutualistic",0.0,0.0,-2.0,0.0,-2.0,0.0,4.0,-4.0,STABLE SINK (ESS)
+"Corner (0,1)",0.0,1.0,2.0,0.0,-0.5,0.0,-1.0,1.5,SADDLE POINT
+"Corner (1,0)",1.0,0.0,2.0,0.0,0.0,0.0,0.0,2.0,CENTER/NEUTRAL
+"Corner (1,1) - Parasitic",1.0,1.0,0.5,0.0,0.0,0.0,0.0,0.5,CENTER/NEUTRAL
