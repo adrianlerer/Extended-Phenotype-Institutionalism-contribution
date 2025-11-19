@@ -1,0 +1,151 @@
+jurisdiction,domain,csi,cli,rei
+New Zealand,Criminal,0.237,0.272,0.774
+New Zealand,Labor,0.226,0.399,0.819
+New Zealand,Constitutional,0.262,0.317,0.686
+Norway,Criminal,0.248,0.25,0.694
+Norway,Labor,0.265,0.314,0.553
+Norway,Constitutional,0.257,0.315,0.741
+Denmark,Criminal,0.311,0.353,0.762
+Denmark,Labor,0.345,0.408,0.572
+Denmark,Constitutional,0.248,0.273,0.826
+Sweden,Criminal,0.322,0.428,0.69
+Sweden,Labor,0.312,0.333,0.559
+Sweden,Constitutional,0.279,0.377,0.572
+Finland,Criminal,0.294,0.4,0.771
+Finland,Labor,0.385,0.397,0.598
+Finland,Constitutional,0.286,0.356,0.674
+Netherlands,Criminal,0.333,0.396,0.748
+Netherlands,Labor,0.398,0.524,0.638
+Netherlands,Constitutional,0.317,0.392,0.657
+Australia,Criminal,0.341,0.379,0.54
+Australia,Labor,0.355,0.376,0.608
+Australia,Constitutional,0.35,0.425,0.678
+Canada,Criminal,0.339,0.369,0.636
+Canada,Labor,0.387,0.307,0.649
+Canada,Constitutional,0.327,0.387,0.704
+UK,Criminal,0.382,0.435,0.492
+UK,Labor,0.381,0.439,0.823
+UK,Constitutional,0.4,0.421,0.576
+Ireland,Criminal,0.389,0.499,0.68
+Ireland,Labor,0.44,0.55,0.687
+Ireland,Constitutional,0.402,0.402,0.563
+Germany,Criminal,0.374,0.431,0.603
+Germany,Labor,0.461,0.45,0.682
+Germany,Constitutional,0.378,0.415,0.674
+France,Criminal,0.466,0.419,0.569
+France,Labor,0.519,0.467,0.604
+France,Constitutional,0.469,0.514,0.579
+Belgium,Criminal,0.484,0.524,0.606
+Belgium,Labor,0.451,0.582,0.604
+Belgium,Constitutional,0.468,0.464,0.461
+Austria,Criminal,0.505,0.57,0.673
+Austria,Labor,0.49,0.562,0.514
+Austria,Constitutional,0.455,0.478,0.781
+Switzerland,Criminal,0.46,0.497,0.548
+Switzerland,Labor,0.563,0.561,0.528
+Switzerland,Constitutional,0.457,0.47,0.624
+Spain,Criminal,0.509,0.542,0.418
+Spain,Labor,0.567,0.586,0.404
+Spain,Constitutional,0.497,0.541,0.572
+Italy,Criminal,0.57,0.623,0.417
+Italy,Labor,0.615,0.637,0.735
+Italy,Constitutional,0.547,0.572,0.499
+Portugal,Criminal,0.544,0.534,0.494
+Portugal,Labor,0.59,0.572,0.455
+Portugal,Constitutional,0.52,0.543,0.422
+Chile,Criminal,0.607,0.725,0.582
+Chile,Labor,0.63,0.521,0.43
+Chile,Constitutional,0.548,0.523,0.617
+Uruguay,Criminal,0.567,0.664,0.5
+Uruguay,Labor,0.601,0.619,0.571
+Uruguay,Constitutional,0.547,0.624,0.428
+Costa Rica,Criminal,0.561,0.559,0.623
+Costa Rica,Labor,0.634,0.613,0.311
+Costa Rica,Constitutional,0.6,0.593,0.403
+Poland,Criminal,0.633,0.575,0.449
+Poland,Labor,0.661,0.678,0.399
+Poland,Constitutional,0.611,0.715,0.275
+Czech Republic,Criminal,0.674,0.631,0.394
+Czech Republic,Labor,0.693,0.64,0.429
+Czech Republic,Constitutional,0.619,0.632,0.47
+Slovenia,Criminal,0.67,0.69,0.429
+Slovenia,Labor,0.655,0.608,0.486
+Slovenia,Constitutional,0.607,0.647,0.499
+Estonia,Criminal,0.61,0.582,0.507
+Estonia,Labor,0.663,0.663,0.376
+Estonia,Constitutional,0.64,0.54,0.371
+South Korea,Criminal,0.563,0.603,0.522
+South Korea,Labor,0.604,0.499,0.578
+South Korea,Constitutional,0.513,0.555,0.469
+Japan,Criminal,0.552,0.542,0.497
+Japan,Labor,0.588,0.518,0.338
+Japan,Constitutional,0.568,0.543,0.576
+Taiwan,Criminal,0.518,0.582,0.497
+Taiwan,Labor,0.584,0.554,0.45
+Taiwan,Constitutional,0.551,0.59,0.604
+Israel,Criminal,0.576,0.565,0.497
+Israel,Labor,0.501,0.537,0.525
+Israel,Constitutional,0.557,0.681,0.509
+South Africa,Criminal,0.64,0.673,0.421
+South Africa,Labor,0.621,0.61,0.5
+South Africa,Constitutional,0.561,0.464,0.431
+Argentina,Criminal,0.878,0.713,0.232
+Argentina,Labor,0.915,0.77,0.318
+Argentina,Constitutional,0.795,0.743,0.252
+Venezuela,Criminal,0.95,0.777,0.251
+Venezuela,Labor,0.95,0.74,0.07
+Venezuela,Constitutional,0.935,0.852,0.159
+Brazil,Criminal,0.747,0.695,0.187
+Brazil,Labor,0.795,0.782,0.184
+Brazil,Constitutional,0.652,0.651,0.559
+Mexico,Criminal,0.777,0.836,0.43
+Mexico,Labor,0.764,0.798,0.371
+Mexico,Constitutional,0.672,0.707,0.238
+Colombia,Criminal,0.689,0.677,0.19
+Colombia,Labor,0.714,0.6,0.339
+Colombia,Constitutional,0.674,0.712,0.262
+Peru,Criminal,0.704,0.696,0.276
+Peru,Labor,0.738,0.806,0.297
+Peru,Constitutional,0.654,0.614,0.33
+Ecuador,Criminal,0.728,0.624,0.316
+Ecuador,Labor,0.785,0.704,0.3
+Ecuador,Constitutional,0.687,0.708,0.317
+Bolivia,Criminal,0.805,0.74,0.082
+Bolivia,Labor,0.791,0.786,0.199
+Bolivia,Constitutional,0.759,0.713,0.229
+Russia,Criminal,0.803,0.743,0.263
+Russia,Labor,0.793,0.829,0.346
+Russia,Constitutional,0.73,0.816,0.411
+Turkey,Criminal,0.795,0.702,0.164
+Turkey,Labor,0.803,0.753,0.278
+Turkey,Constitutional,0.707,0.648,0.31
+India,Criminal,0.679,0.534,0.428
+India,Labor,0.692,0.64,0.422
+India,Constitutional,0.732,0.801,0.457
+Philippines,Criminal,0.718,0.65,0.195
+Philippines,Labor,0.737,0.626,0.388
+Philippines,Constitutional,0.713,0.652,0.348
+Nigeria,Criminal,0.774,0.7,0.353
+Nigeria,Labor,0.844,0.659,0.169
+Nigeria,Constitutional,0.801,0.76,0.276
+Egypt,Criminal,0.778,0.792,0.309
+Egypt,Labor,0.867,0.785,0.187
+Egypt,Constitutional,0.788,0.784,0.255
+Pakistan,Criminal,0.819,0.731,0.075
+Pakistan,Labor,0.882,0.828,0.183
+Pakistan,Constitutional,0.85,0.743,0.251
+Bangladesh,Criminal,0.864,0.815,0.182
+Bangladesh,Labor,0.849,0.762,0.261
+Bangladesh,Constitutional,0.822,0.77,0.213
+Indonesia,Criminal,0.756,0.782,0.272
+Indonesia,Labor,0.725,0.737,0.442
+Indonesia,Constitutional,0.678,0.605,0.333
+Malaysia,Criminal,0.731,0.731,0.324
+Malaysia,Labor,0.724,0.683,0.338
+Malaysia,Constitutional,0.672,0.678,0.397
+Thailand,Criminal,0.731,0.631,0.48
+Thailand,Labor,0.783,0.688,0.275
+Thailand,Constitutional,0.644,0.76,0.445
+Vietnam,Criminal,0.71,0.632,0.214
+Vietnam,Labor,0.791,0.807,0.212
+Vietnam,Constitutional,0.69,0.655,0.342
