@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/user/webapp/epistemological_clergies/analysis/egt_pilot_analysis.py", line 29, in <module>
+    from egt.g_function import GFunctionParams
+  File "/home/user/webapp/src/egt/__init__.py", line 50, in <module>
+    from .g_function import (
+ImportError: cannot import name 'VectorGFunction' from 'egt.g_function' (/home/user/webapp/src/egt/g_function.py). Did you mean: 'ScalarGFunction'?
