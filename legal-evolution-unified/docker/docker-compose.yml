@@ -1,0 +1,168 @@
+# Legal Evolution Unified - Docker Compose
+# Complete development and analysis environment
+# Base: peralta-metamorphosis + legal-specific services
+
+version: '3.8'
+
+services:
+  # ===== Jupyter Lab (from Peralta) =====
+  jupyter:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      target: development
+    container_name: legal-evolution-jupyter
+    ports:
+      - "8888:8888"  # Jupyter Lab
+      - "8050:8050"  # Dash apps
+    volumes:
+      - ../notebooks:/app/notebooks
+      - ../data:/app/data
+      - ../code:/app/code
+      - ../src:/app/src
+      - ../results:/app/results
+      - ../docs:/app/docs
+      - ../visualizations:/app/visualizations
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - PYTHONPATH=/app
+      - NEO4J_URI=bolt://neo4j:7687
+      - NEO4J_USER=neo4j
+      - NEO4J_PASSWORD=changeme
+      - REDIS_URL=redis://redis:6379
+    command: jupyter lab --allow-root --no-browser --ip=0.0.0.0 --port=8888
+    restart: unless-stopped
+    networks:
+      - legal-evolution-network
+    depends_on:
+      - neo4j
+      - redis
+
+  # ===== FastAPI REST API (NEW) =====
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      target: development
+    container_name: legal-evolution-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../src:/app/src
+      - ../code:/app/code
+      - ../data:/app/data
+      - ../results:/app/results
+    environment:
+      - PYTHONPATH=/app
+      - NEO4J_URI=bolt://neo4j:7687
+      - NEO4J_USER=neo4j
+      - NEO4J_PASSWORD=changeme
+      - REDIS_URL=redis://redis:6379
+    command: uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped
+    networks:
+      - legal-evolution-network
+    depends_on:
+      - neo4j
+      - redis
+
+  # ===== Neo4j Graph Database (NEW) =====
+  neo4j:
+    image: neo4j:5.11
+    container_name: legal-evolution-neo4j
+    environment:
+      NEO4J_AUTH: neo4j/changeme
+      NEO4J_PLUGINS: '["apoc", "graph-data-science"]'
+      NEO4J_dbms_security_procedures_unrestricted: apoc.*,gds.*
+      NEO4J_dbms_memory_heap_max__size: 2G
+    ports:
+      - "7474:7474"  # HTTP
+      - "7687:7687"  # Bolt
+    volumes:
+      - neo4j-data:/data
+      - neo4j-logs:/logs
+    restart: unless-stopped
+    networks:
+      - legal-evolution-network
+
+  # ===== Redis Cache (from Peralta) =====
+  redis:
+    image: redis:7-alpine
+    container_name: legal-evolution-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    restart: unless-stopped
+    networks:
+      - legal-evolution-network
+
+  # ===== Interactive Dashboard (from Peralta) =====
+  dashboard:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      target: development
+    container_name: legal-evolution-dashboard
+    ports:
+      - "5000:5000"
+    volumes:
+      - ../code:/app/code
+      - ../src:/app/src
+      - ../data:/app/data
+      - ../results:/app/results
+    environment:
+      - PYTHONPATH=/app
+      - NEO4J_URI=bolt://neo4j:7687
+      - NEO4J_USER=neo4j
+      - NEO4J_PASSWORD=changeme
+    # Note: Dashboard app to be implemented
+    command: echo "Dashboard service - To be implemented"
+    restart: "no"
+    networks:
+      - legal-evolution-network
+    depends_on:
+      - neo4j
+      - redis
+    profiles:
+      - dashboard
+
+  # ===== Production Web Server =====
+  web:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      target: production
+    container_name: legal-evolution-web
+    ports:
+      - "8080:8000"
+    environment:
+      - PYTHONPATH=/app
+      - NEO4J_URI=bolt://neo4j:7687
+      - NEO4J_USER=neo4j
+      - NEO4J_PASSWORD=changeme
+      - REDIS_URL=redis://redis:6379
+    restart: unless-stopped
+    networks:
+      - legal-evolution-network
+    depends_on:
+      - neo4j
+      - redis
+    profiles:
+      - production
+
+volumes:
+  neo4j-data:
+    driver: local
+  neo4j-logs:
+    driver: local
+  redis-data:
+    driver: local
+
+networks:
+  legal-evolution-network:
+    driver: bridge
+
+# Development override file
+# Create docker-compose.override.yml for local customizations

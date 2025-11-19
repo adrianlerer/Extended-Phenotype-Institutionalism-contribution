@@ -1,0 +1,46 @@
+{
+  "sistema": {
+    "nombre": "JurisRank",
+    "version": "1.0.0",
+    "descripcion": "Sistema automático de recolección y análisis de fallos de CSJN",
+    "fecha_creacion": "2025-09-10T02:38:59.652635"
+  },
+  "base_datos": {
+    "archivo": "jurisrank.db",
+    "total_fallos": 72,
+    "rango_fechas": {
+      "desde": "2025-08-08",
+      "hasta": "2025-09-07"
+    }
+  },
+  "scheduler": {
+    "horarios_recoleccion": [
+      "08:00",
+      "20:00"
+    ],
+    "monitoreo_salud": "cada 6 horas",
+    "configurado": true,
+    "auto_inicio": false
+  },
+  "algoritmo_jurisrank": {
+    "activo": true,
+    "factores": [
+      "similaridad_textual",
+      "factor_temporal",
+      "longitud_documento",
+      "palabras_clave",
+      "tema_juridico"
+    ]
+  },
+  "urls": {
+    "csjn_base": "https://www.csjn.gov.ar/",
+    "csjn_secretaria": "https://sj.csjn.gov.ar/",
+    "buscador_fallos": "https://www.csjn.gov.ar/archivo-cij/buscador-de-fallos.html"
+  },
+  "estado": {
+    "operativo": true,
+    "conectividad_csjn": true,
+    "base_datos_ok": true,
+    "ultima_verificacion": "2025-09-10T02:38:59.652648"
+  }
+}

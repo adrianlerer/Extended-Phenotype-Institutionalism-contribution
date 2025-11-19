@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "legal-evolution-unified": {
+      "command": "python",
+      "args": [
+        "-m",
+        "mcp_server.core.server"
+      ],
+      "cwd": "/home/user/webapp/legal-evolution-unified",
+      "env": {
+        "PYTHONPATH": "/home/user/webapp/legal-evolution-unified"
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+Case_ID,Country,Year,Institution,Event_Type,Sovereignty_Phenotype_Score,Globalism_Phenotype_Score,IusSpace_Dim12_IntegrationScore,Outcome,Crisis_Catalyzed,Notes
+1,United Kingdom,2016,European Union,Withdrawal,0.74,0.33,3.0,Sovereignty_Wins,Yes,"Brexit referendum: Leave 52%. High sovereignty phenotype (Parliamentary sovereignty, opt-outs, dualism). Post-2008+2015 migration crisis."
+2,United Kingdom,2020,European Union,Exit_Completed,0.82,0.25,2.0,Sovereignty_Wins,Yes,"Brexit finalized. UK reclaimed border control, regulatory autonomy. Sovereignty phenotype strengthened post-exit."
+3,Spain,2017,Catalonia_Independence,Referendum_Repressed,0.68,0.42,4.0,Sovereignty_Central_Wins,No,Catalonia illegal referendum. Central state sovereignty (Spanish unity) defeats sub-state sovereignty claim. Art 155 invoked.
+4,USA,2017,Trans-Pacific Partnership,Withdrawal,0.71,0.29,3.0,Sovereignty_Wins,No,"Trump withdraws from TPP day 1. 'America First' meme. High sovereignty phenotype, limited international integration."
+5,USA,2017,Paris Climate Agreement,Withdrawal,0.71,0.29,3.0,Sovereignty_Wins,No,Trump exits Paris Agreement citing sovereignty over climate policy. Dualist tradition enables easy withdrawal.
+6,Hungary,2010,European Union,Resistance_Ongoing,0.72,0.48,4.0,Sovereignty_Resists,Yes,Orb√°n 'illiberal democracy' challenges EU values. Rule of law backsliding. Constitutional amendments resist CJEU authority.
+7,Hungary,2015,European Union,Migration_Defiance,0.78,0.42,4.0,Sovereignty_Resists,Yes,"Orb√°n refuses EU migrant quotas, builds border fence. 2015 migration crisis catalyzes sovereignty assertion."
+8,Venezuela,2012,IACHR,Withdrawal,0.92,0.08,1.0,Sovereignty_Wins,No,Venezuela denounces IACHR. Authoritarian sovereignty phenotype. Zero compliance history.
+9,Trinidad_Tobago,1998,IACHR,Withdrawal,0.75,0.25,2.0,Sovereignty_Wins,No,Trinidad withdraws from IACHR over death penalty dispute. Sovereignty assertion against supranational court.
+10,Philippines,2018,International Criminal Court,Withdrawal,0.88,0.12,2.0,Sovereignty_Wins,No,Duterte withdraws from ICC citing sovereignty and colonial legacy. High sovereignty phenotype.
+11,Rwanda,2016,African Court on Human Rights,Withdrawal,0.85,0.15,2.0,Sovereignty_Wins,No,Rwanda withdraws from African Court individual petition protocol. Authoritarian sovereignty.
+12,Tanzania,2019,African Court on Human Rights,Withdrawal,0.82,0.18,2.0,Sovereignty_Wins,No,Tanzania follows Rwanda in withdrawing from African Court. Sovereignty over human rights adjudication.
+13,Benin,2020,African Court on Human Rights,Withdrawal,0.79,0.21,3.0,Sovereignty_Wins,No,Benin withdraws from African Court. Pattern of sovereignty assertion across continent.
+14,Poland,2015,European Union,Rule_of_Law_Conflict,0.68,0.52,5.0,Sovereignty_Resists,No,Poland judicial reforms defy CJEU. Constitutional Tribunal asserts Polish law > EU law. Ongoing conflict.
+15,Poland,2021,European Union,Constitutional_Confrontation,0.73,0.47,5.0,Sovereignty_Resists,Yes,Polish Constitutional Tribunal rules EU law incompatible with constitution. Direct challenge to supremacy doctrine.
+16,France,2017,European Union,Near_Exit,0.58,0.62,6.0,Globalism_Survives,No,Le Pen Frexit platform loses 66-34. Sovereignty meme strong (48% first round) but globalism holds.
+17,France,2022,European Union,Near_Exit_2,0.61,0.59,6.0,Globalism_Survives,Yes,Le Pen again loses but closer (42%). Sovereignty phenotype rising. Post-COVID context.
+18,Germany,2015,European Union,Migration_Crisis,0.42,0.78,8.0,Globalism_Strained,Yes,Merkel 'Wir schaffen das' welcomes 1M migrants. Globalism commitment but triggers sovereignty backlash (AfD rise).
+19,Argentina,2017,IACHR,Fontevecchia_Resistance,0.64,0.56,6.0,Sovereignty_Resists,No,Argentina initially resists IACHR Fontevecchia ruling. CSJN asserts sovereignty. Later complies partially.
+20,Argentina,2024,IACHR,Compliance_Restored,0.58,0.62,6.0,Globalism_Wins,No,Argentina complies with multiple IACHR rulings post-Fern√°ndez. Sovereignty phenotype moderated.
+21,Netherlands,1990,European Union,Maastricht_Integration,0.15,0.95,9.0,Globalism_Wins,No,"Netherlands among strongest EU integrationists. Monist tradition, direct effect, constitutional supremacy of treaties."
+22,Costa_Rica,1995,IACHR,Full_Compliance,0.12,0.94,8.0,Globalism_Wins,No,Costa Rica 100% IACHR compliance. Sala IV gives treaties constitutional rank. Ultra-low sovereignty phenotype.
+23,Russia,2022,Council_of_Europe,Expulsion,0.95,0.05,1.0,Sovereignty_Total,Yes,Russia expelled from CoE post-Ukraine invasion. Constitutional amendments 2020 asserted Russian law supremacy.
+24,USA,2001,Kyoto_Protocol,Non_Ratification,0.72,0.28,3.0,Sovereignty_Wins,No,Bush refuses Kyoto ratification. Dualist tradition + Senate sovereignty over treaties.
+25,China,1990,International_System,Selective_Integration,0.89,0.21,2.0,Sovereignty_Dominant,No,China joins WTO but rejects ICJ jurisdiction. Selective integration preserving CCP sovereignty.
+26,European_Union,1992,Maastricht_Treaty,Integration_Deepening,0.25,0.85,9.0,Globalism_Wins,No,"Maastricht creates EU citizenship, expands CJEU authority. Sovereignty pooling reaches peak."
+27,European_Union,1985,Schengen_Agreement,Borderless_Europe,0.18,0.92,10.0,Globalism_Wins,No,Schengen abolishes internal borders. Ultimate globalism phenotype: border control surrendered.
+28,Turkey,2016,European_Union,Integration_Stalled,0.78,0.42,4.0,Sovereignty_Wins,Yes,Erdoƒüan post-coup crackdown ends EU accession. Emergency powers invoked. Sovereignty over liberal democracy.
+29,Switzerland,1992,European_Economic_Area,Rejection,0.68,0.52,5.0,Sovereignty_Wins,No,Swiss referendum rejects EEA membership. Direct democracy expresses sovereignty preference over integration.
+30,Norway,1994,European_Union,Rejection,0.65,0.55,5.0,Sovereignty_Wins,No,Norway referendum rejects EU membership (second time). Sovereignty preference despite economic integration.
+31,France,1992,EU (Maastricht),Referendum,0.48,0.52,7.5,Globalism Wins,No,Maastricht referendum - narrow yes victory (51.05%)
+32,Denmark,1992,EU (Maastricht),Referendum,0.55,0.45,7.0,Negotiated,No,Initial rejection then second referendum with opt-outs
+33,Switzerland,1992,EEA,Referendum,0.78,0.22,2.0,Sovereignty Wins,No,Rejected EEA membership - maintained sovereignty
+34,Norway,1994,EU,Referendum,0.75,0.25,2.5,Sovereignty Wins,No,Second EU rejection referendum (first in 1972)
+35,Mexico,1994,NAFTA,Integration,0.35,0.65,6.5,Globalism Wins,No,NAFTA entry - economic integration
+36,Ireland,1992,EU (Maastricht),Referendum,0.31,0.69,8.0,Globalism Wins,No,Strong approval of Maastricht Treaty (69.1%)
+37,Canada,1994,NAFTA,Integration,0.42,0.58,6.0,Globalism Wins,No,NAFTA ratification despite sovereignty concerns
+38,UK,1993,EU (Maastricht),Parliamentary,0.58,0.42,6.5,Negotiated,No,"Ratified with opt-outs (Euro, Social Chapter)"
+39,Austria,1995,EU,Referendum,0.34,0.66,7.5,Globalism Wins,No,EU accession approved (66.6%)
+40,Sweden,1995,EU,Referendum,0.48,0.52,7.0,Globalism Wins,No,EU accession approved narrowly (52.3%)
+41,Finland,1995,EU,Referendum,0.43,0.57,7.2,Globalism Wins,No,EU accession approved (56.9%)
+42,Denmark,2000,EU (Euro),Referendum,0.67,0.33,4.5,Sovereignty Wins,No,Rejected Euro adoption (53.2% against)
+43,Ireland,2001,EU (Nice),Referendum,0.62,0.38,5.0,Sovereignty Wins,No,Initially rejected Nice Treaty (53.9% against)
+44,Switzerland,2005,Schengen,Referendum,0.45,0.55,5.5,Globalism Wins,No,Approved Schengen/Dublin (54.6%)
+45,France,2005,EU Constitution,Referendum,0.71,0.29,3.5,Sovereignty Wins,No,Rejected EU Constitution (54.7% against)
+46,Netherlands,2005,EU Constitution,Referendum,0.74,0.26,3.0,Sovereignty Wins,No,Rejected EU Constitution (61.5% against)
+47,Ireland,2008,EU (Lisbon),Referendum,0.63,0.37,4.8,Sovereignty Wins,Yes,Initially rejected Lisbon Treaty (53.4% against)
+48,Iceland,2009,EU,Parliamentary,0.52,0.48,5.5,Mixed,Yes,"Applied post-financial crisis, later withdrawn 2015"
+49,Greece,2010,EU/IMF,Crisis,0.28,0.72,8.5,Globalism Wins,Yes,Bailout conditionality - sovereignty constrained
+50,Hungary,2010,EU Courts,Constitutional,0.82,0.18,2.5,Sovereignty Wins,No,New constitution asserting national sovereignty
+51,UK,2011,EU,Legislative,0.68,0.32,4.0,Sovereignty Wins,No,European Union Act - sovereignty assertion
+52,Switzerland,2014,EU,Referendum,0.72,0.28,3.5,Sovereignty Wins,No,Immigration quotas initiative (50.3%)
+53,UK,2014,UK/EU,Referendum,0.42,0.58,6.8,Globalism Wins,No,Scotland voted to remain in UK (55% against independence)
+54,Greece,2015,EU/ECB,Referendum,0.76,0.24,3.0,Mixed,Yes,Rejected bailout terms (61% No) but government accepted anyway
+55,Denmark,2015,Schengen,Legislative,0.69,0.31,4.2,Sovereignty Wins,Yes,Reintroduced border controls during migration crisis
+56,Hungary,2016,EU,Referendum,0.88,0.12,1.5,Sovereignty Wins,Yes,"Rejected EU refugee quotas (98% No, low turnout)"
+57,Colombia,2016,IACHR/ICC,Referendum,0.64,0.36,4.5,Sovereignty Wins,No,Initially rejected peace deal with international oversight
+58,Italy,2016,EU,Referendum,0.73,0.27,3.8,Sovereignty Wins,No,"Rejected reforms, seen as anti-EU statement (59% No)"
+59,Austria,2016,EU,Election,0.51,0.49,5.8,Globalism Wins,Yes,Pro-EU candidate won narrowly over far-right (50.3%)
+60,Turkey,2017,EU/ECHR,Constitutional,0.85,0.15,2.0,Sovereignty Wins,No,Presidential system - de facto end to EU accession
+61,Spain,2017,EU/Spain,Referendum,0.81,0.19,2.8,Mixed,No,"Unilateral independence declaration, later suspended"
+62,Czech Republic,2017,EU,Judicial,0.77,0.23,3.2,Sovereignty Wins,No,"Refused EU refugee quotas, backed by domestic court"
+63,Italy,2018,EU,Election,0.79,0.21,3.0,Sovereignty Wins,No,Eurosceptic coalition government formed
+64,Sweden,2018,EU,Election,0.58,0.42,5.2,Mixed,No,Sweden Democrats gained but pro-EU parties maintained control
+65,Brazil,2019,ICC,Executive,0.83,0.17,2.2,Mixed,No,"Bolsonaro threatened ICC withdrawal, later suspended"
+66,Germany,2020,ECB/EU,Judicial,0.72,0.28,3.5,Sovereignty Wins,Yes,Constitutional Court ruled ECB bond buying partly illegal
+67,Poland,2020,EU Courts,Judicial,0.86,0.14,1.8,Sovereignty Wins,Yes,Disciplinary chamber despite EU Court rulings
+68,Hungary,2021,EU,Legislative,0.89,0.11,1.5,Sovereignty Wins,No,Anti-LGBT law despite EU opposition
+69,Australia,2021,Regional,Integration,0.58,0.42,5.0,Mixed,No,AUKUS security pact - sovereignty vs integration trade-off
+70,Philippines,2019,ICC,Withdrawal,0.91,0.09,1.2,Sovereignty Wins,No,Duterte withdrew from ICC citing sovereignty

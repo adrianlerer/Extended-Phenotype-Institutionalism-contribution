@@ -1,0 +1,11 @@
+case_id,split,weight,notes
+ARG_001,train,1.0,Canonical crystallized case - union ultraactividad
+ARG_002,train,1.0,Canonical crystallized case - federal coparticipation
+USA_002,train,1.0,Canonical crystallized case - Social Security third rail
+CHL_002,train,1.0,Contested case with high economic drivers
+BRA_001,train,1.0,Canonical crystallized case - CLT labor code
+CHL_001,validation,1.0,Failed crystallization - institutional abortion
+USA_001,test,1.0,Contested case - ACA low crystallization
+USA_003,test,1.0,Temporary crystallization - Chevron reversed 2024
+ESP_001,test,1.0,Contested case - reformed multiple times
+FRA_001,test,1.0,Contested case - weakened by Macron reforms

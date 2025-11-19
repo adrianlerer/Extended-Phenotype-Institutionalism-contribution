@@ -1,0 +1,45 @@
+# Legal Evolution Unified - Requirements
+# ========================================
+
+# Core Scientific Computing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Data Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.14.0
+
+# Progress Bars
+tqdm>=4.65.0
+
+# Data Structures
+pandas>=2.0.0
+
+# Type Checking (Development)
+mypy>=1.0.0
+
+# Testing (Development)
+pytest>=7.3.0
+pytest-cov>=4.0.0
+
+# Documentation (Development)
+sphinx>=6.0.0
+sphinx-rtd-theme>=1.2.0
+
+# Optional: Web Interface (not required for core functionality)
+# streamlit>=1.28.0
+# fastapi>=0.104.0
+# uvicorn>=0.24.0
+
+# Optional: RAG/Vector Search (proprietary implementation not included)
+# chromadb>=0.4.0
+# sentence-transformers>=2.2.0
+
+# Optional: LLM Integration (proprietary implementation not included)
+# openai>=1.0.0
+# anthropic>=0.7.0
+
+# Note: This system is designed to work WITHOUT external API dependencies
+# The core simulation engine, visualization suite, and reporting framework
+# are fully functional using only the packages listed above.

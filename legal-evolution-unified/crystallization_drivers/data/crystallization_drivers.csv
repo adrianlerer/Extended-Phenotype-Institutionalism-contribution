@@ -1,0 +1,11 @@
+case_id,country,institution,esri,pci,rca,vpfi,eili,cli_predicted,cli_observed,error,abs_error,pathway,crystallization_status
+ARG_001,Argentina,Ultraactividad Sindical,0.8118,0.0348,0.2851,0.7407,0.8162,0.766,0.87,-0.10399999999999998,0.10399999999999998,political,crystallized
+ARG_002,Argentina,Coparticipación Federal,0.8545,0.116,0.4291,1.0,0.5641,0.7865,0.82,-0.033499999999999974,0.033499999999999974,political,crystallized
+USA_001,USA,Affordable Care Act,0.4125,0.0,0.0374,0.0926,0.3823,0.2689,0.48,-0.2111,0.2111,hybrid,contested
+USA_002,USA,Social Security,0.7362,0.0629,0.0323,0.8395,0.8829,0.7792,0.94,-0.16079999999999994,0.16079999999999994,political,crystallized
+USA_003,USA,Chevron Doctrine,0.2829,0.0,0.88,0.2929,0.3429,0.359,0.68,-0.32100000000000006,0.32100000000000006,hybrid,crystallized
+CHL_001,Chile,Constitución 2022,0.0,0.0,0.0,0.7155,0.7147,0.4444,0.12,0.3244,0.3244,political,failed
+CHL_002,Chile,AFP Sistema Pensiones,0.7846,0.39,0.2082,0.7407,0.8149,0.7852,0.76,0.0252,0.0252,political,contested
+BRA_001,Brasil,CLT Consolidação Trabalhista,0.7949,0.0571,0.396,1.0,0.7722,0.8427,0.89,-0.04730000000000001,0.04730000000000001,political,crystallized
+ESP_001,España,Estatuto Trabajadores,0.5125,0.0,0.2407,0.1413,0.5251,0.3781,0.58,-0.20189999999999997,0.20189999999999997,hybrid,contested
+FRA_001,Francia,35 horas semanales,0.4034,0.0,0.0565,0.1481,0.5919,0.35,0.52,-0.17000000000000004,0.17000000000000004,political,contested

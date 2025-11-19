@@ -1,0 +1,49 @@
+{
+  "name": "Legal Evolution Unified",
+  "short_name": "LegalEvo",
+  "description": "Academic Research Platform for Legal Concept Analysis",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Academic Wizard",
+      "short_name": "Wizard",
+      "description": "Start comprehensive academic analysis",
+      "url": "/wizard",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "RootFinder",
+      "short_name": "RootFinder",
+      "description": "Trace legal genealogy",
+      "url": "/rootfinder",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Workspace",
+      "short_name": "Workspace",
+      "description": "View saved analyses",
+      "url": "/workspace",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

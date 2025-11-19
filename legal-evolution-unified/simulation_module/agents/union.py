@@ -69,12 +69,19 @@ class Union(BaseAgent):
         crisis_active = environment.get('crisis_active', False)
         government_support = environment.get('government_support', 0.5)
         
+        # TRIPLE CAPTURE: Unions respond primarily to CORPORATE capture
+        # (Their power comes from organized veto, not cultural memes or courts)
+        cli_sensitivity = self._calculate_cli_sensitivity(environment)
+        
         # Calculate threat level
         threat_level = 0.0
         if reform_proposed:
             threat_level += 0.5
         if reform_targets_ultraactivity:
             threat_level += 0.5 * self.state.beliefs['ultraactivity_value']
+        
+        # Modulate threat by CLI sensitivity (lower CLI = higher threat)
+        threat_level = threat_level * (1.0 - cli_sensitivity)
         
         self.state.beliefs['reform_threat'] = threat_level
         
@@ -244,3 +251,28 @@ class Union(BaseAgent):
         
         total_power = base_power * member_modifier * militancy_modifier * crisis_penalty + network_bonus
         return min(1.0, total_power)
+    
+    def _calculate_cli_sensitivity(self, environment: Dict[str, Any]) -> float:
+        """
+        Calculate union sensitivity to CLI components (Triple Capture)
+        
+        Unions respond primarily to CORPORATE capture:
+        - High sensitivity to cli_corporate (organized veto power)
+        - Moderate sensitivity to cli_memetic (cultural legitimacy)
+        - Low sensitivity to cli_oligarchic (judicial is downstream)
+        
+        Returns:
+            Weighted CLI sensitivity (0.0 to 1.0)
+        """
+        cli_memetic = environment.get('cli_memetic', 0.5)
+        cli_corporate = environment.get('cli_corporate', 0.5)
+        cli_oligarchic = environment.get('cli_oligarchic', 0.5)
+        
+        # Weighted sensitivity (sums to 1.0)
+        sensitivity = (
+            0.20 * cli_memetic +    # Low: Unions don't create culture, they exploit it
+            0.60 * cli_corporate +  # HIGH: Unions ARE corporate capture mechanism
+            0.20 * cli_oligarchic   # Low: Courts are battleground, not source of power
+        )
+        
+        return sensitivity
