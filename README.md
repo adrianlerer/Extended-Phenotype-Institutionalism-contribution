@@ -2,312 +2,390 @@
 
 **AI-Powered Constitutional Analysis & Policy Intelligence**
 
-Analyze constitutional rigidity, political stability, and governance outcomes for academic research, policy consulting, legal practice, and political analysis.
+Multi-sector platform for constitutional law research, policy consulting, legal practice, political analysis, journalism, government agencies, and investment risk assessment.
 
-[![CI/CD](https://github.com/your-org/legal-evolution-unified/actions/workflows/ai-powered-ci.yml/badge.svg)](https://github.com/your-org/legal-evolution-unified/actions)
-[![Security](https://github.com/your-org/legal-evolution-unified/actions/workflows/security-scan.yml/badge.svg)](https://github.com/your-org/legal-evolution-unified/actions)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+---
 
-## 🚀 Features
+## 🎯 What Can You Do With This Platform?
 
-### 📊 Calculation Tools
-- **CLI Calculator**: Constitutional Lock-In Index (rigidity measurement)
-- **CLI Cultural Calculator**: Cultural transmission strength (Extended Phenotype Theory)
-- **Dual-Index Analyzer**: Institutional profile classification (Brittle Rigidity, Adaptive Stability, etc.)
+### 📊 **Calculate Constitutional Metrics**
+- **CLI (Constitutional Lock-In Index)**: Measure constitutional rigidity
+- **CLI_cultural**: Assess cultural transmission strength (Extended Phenotype Theory)
+- **Dual-Index Analysis**: Classify institutional profiles (Brittle Rigidity, Adaptive Stability, etc.)
 
-### 🔍 Analysis Tools
-- **Rootfinder**: Constitutional genealogy tracing (identify provision origins)
-- **EPT Analyzer**: Extended Phenotype Theory application to cultural dimensions
-- **Paleontology Tool**: "Living fossil" provision identification
+### 📈 **Generate Publication-Quality Visualizations** ⭐
+- **CLI Matrix**: Quadrant charts showing collapse risk (300 DPI, publication-ready)
+- **Constitutional Timelines**: Track events from independence to present
+- **Correlation Plots**: CLI vs governance outcomes (Freedom House, conflict intensity, GDP)
+- **Export formats**: PNG (high-res), SVG (vector), base64 (web embedding)
 
-### 📄 Generation Tools
-- **Paper Builder**: Automated SSRN-ready document generation
-- **Appendix Generator**: Methodology appendix creation
+### 🌳 **Trace Constitutional Genealogy**
+- **Rootfinder**: Find origin clauses across constitutional versions
+- Identify "living fossil" provisions (unchanged 100+ years)
+- Map constitutional borrowing across countries
 
-### 📈 Visualization Tools
-- **CLI Matrix Visualizer**: Quadrant matrix with collapse risk threshold
-- **Timeline Generator**: Constitutional event timelines
-- **Correlation Plotter**: CLI vs governance outcomes
+### 📄 **Generate Professional Reports**
+- Automated report assembly with tables, sections, appendices
+- Multiple formats: research reports, policy briefs, legal memos, analysis documents
+- Professional structure and formatting for diverse audiences
 
-### 🤖 AI Assistant Tools
-- **Genspark Research Assistant**: Methodology Q&A chatbot
-- **AI Code Reviewer**: Statistical correctness verification
-- **Root Cause Analyzer**: Error diagnosis and fix suggestions
+### 🤖 **AI-Powered Research Assistant**
+- Ask questions about methodology, formulas, data sources
+- Get Python code examples
+- Receive interpretation guidance
 
-## 📦 Installation
+---
 
-### Quick Start
+## 🚀 Quick Start
+
+### Installation
 
 ```bash
 # Clone repository
-git clone https://github.com/your-org/legal-evolution-unified.git
+git clone https://github.com/adrianlerer/legal-evolution-unified.git
 cd legal-evolution-unified
 
 # Install dependencies
 pip install -r requirements.txt
-
-# Run Streamlit UI
-streamlit run frontend/streamlit/app.py
-
-# Run Backend API (separate terminal)
-cd backend
-python app.py
 ```
 
-### Docker Deployment
+### Run Backend API
 
 ```bash
-# Build and run with Docker Compose
-docker-compose up -d
+cd backend
+uvicorn app:app --reload --port 8000
 ```
 
-## 🎯 Quick Start Guide
+### Run Streamlit UI (Optional)
 
-### 1. Enable Features
+```bash
+streamlit run frontend/streamlit/app.py
+```
 
-Navigate to **Feature Manager** in the UI and enable the tools you need (all enabled by default).
+### Access API Documentation
 
-### 2. Calculate CLI
+Open http://localhost:8000/api/docs for interactive API documentation.
+
+---
+
+## 📊 Feature Inventory (15 Tools)
+
+| Category | Tool | Description | Tier | API Endpoint |
+|----------|------|-------------|------|--------------|
+| **Calculation** | CLI Calculator | Calculate constitutional rigidity (CLI = 0.35×CE + 0.40×UA + 0.25×JPI) | Free | `/api/cli/calculate` |
+| **Calculation** | CLI Cultural Calculator | Cultural transmission strength (CLI_cultural = 0.40×CT1 + 0.30×CT2 + 0.30×CT3) | Free | `/api/cli/calculate-cultural` |
+| **Calculation** | Dual-Index Analyzer | Classify profiles: Brittle Rigidity, Adaptive Stability, etc. | Basic | `/api/cli/dual-index` |
+| **Visualization** | **CLI Matrix Generator** | **Generate quadrant matrix with collapse risk threshold** | **Free** | `/api/figures/cli-matrix` |
+| **Visualization** | **Timeline Generator** | **Create constitutional event timelines** | **Free** | `/api/figures/timeline` |
+| **Visualization** | **Correlation Plotter** | **Scatterplots with trendlines (CLI vs outcomes)** | **Basic** | `/api/figures/correlation` |
+| **Analysis** | Rootfinder | Trace constitutional provision genealogy | Pro | `/api/methodology/rootfinder` |
+| **Generation** | Report Builder | Generate professional reports and documents | Basic | `/api/papers/build` |
+| **Generation** | Appendix Generator | Create methodology appendices | Free | `/api/papers/appendix` |
+| **AI Assistant** | Genspark Assistant | Methodology Q&A chatbot | Free | `/api/chat/query` |
+| **AI Assistant** | Code Reviewer | Statistical correctness verification | Basic | `/api/review/code` |
+| **AI Assistant** | Root Cause Analyzer | Error diagnosis and fix suggestions | Pro | `/api/analyze/error` |
+| **Methodology** | EPT Analyzer | Apply Extended Phenotype Theory | Pro | `/api/methodology/ept` |
+| **Methodology** | Paleontology Tool | Identify "living fossil" provisions | Enterprise | `/api/methodology/paleontology` |
+| **Methodology** | Golden Ratio Detector | Optimal constitutional flexibility | Enterprise | `/api/methodology/golden-ratio` |
+
+---
+
+## 📈 Visualization Tools (Detailed)
+
+### 1. CLI Matrix Visualizer
+
+**Generate publication-quality CLI × CLI_cultural matrices**
+
+```bash
+curl -X POST http://localhost:8000/api/figures/cli-matrix \
+  -H "Content-Type: application/json" \
+  -d '{
+    "countries": [
+      {"name": "Somalia Federal", "CLI": 0.76, "CLI_cultural": 0.34, "color": "red"},
+      {"name": "Somalilandia", "CLI": 0.54, "CLI_cultural": 0.70, "color": "green"},
+      {"name": "Uruguay", "CLI": 0.75, "CLI_cultural": 0.77, "color": "blue"}
+    ],
+    "title": "Dual-Index Framework: Horn of Africa",
+    "show_threshold": true,
+    "threshold_value": 0.30,
+    "dpi": 300
+  }'
+```
+
+**Output**: Base64-encoded PNG (300 DPI) with:
+- Quadrant shading (Stable Rigidity, Brittle Rigidity, Adaptive Stability, Chaotic Fragility)
+- Collapse risk threshold curve (hyperbola: CLI × CLI_cultural = 0.30)
+- Country data points with labels
+- Legend and grid
+
+**Use cases**:
+- Academic papers (SSRN, journal articles)
+- Policy briefs (World Bank, think tanks)
+- Journalism (infographics for news articles)
+- Presentations (board slides, conferences)
+
+### 2. Timeline Generator
+
+**Create constitutional event timelines**
+
+```bash
+curl -X POST http://localhost:8000/api/figures/timeline \
+  -H "Content-Type: application/json" \
+  -d '{
+    "country": "Somalia",
+    "events": [
+      {"year": 1960, "event": "Independence", "marker_color": "green"},
+      {"year": 1991, "event": "State Collapse", "marker_color": "red"},
+      {"year": 2012, "event": "Federal Constitution", "marker_color": "blue"}
+    ],
+    "title": "Somalia Constitutional Timeline (1960-2025)"
+  }'
+```
+
+**Output**: Base64-encoded PNG (300 DPI) with:
+- Horizontal timeline with year markers
+- Event labels (alternating high/low for readability)
+- Color-coded markers
+- Custom start/end years
+
+**Use cases**:
+- Historical analysis for papers
+- Legal briefs (constitutional evolution)
+- Journalism (timeline graphics)
+- Educational materials
+
+### 3. Correlation Plotter
+
+**Generate scatterplots showing CLI correlations**
+
+```bash
+curl -X POST http://localhost:8000/api/figures/correlation \
+  -H "Content-Type: application/json" \
+  -d '{
+    "x_values": [0.76, 0.54, 0.75, 0.68, 0.55],
+    "y_values": [2.5, 6.8, 7.2, 6.5, 5.8],
+    "x_label": "CLI (Constitutional Lock-In Index)",
+    "y_label": "Freedom House Political Rights Score",
+    "title": "CLI vs Political Rights",
+    "show_trendline": true
+  }'
+```
+
+**Output**: Base64-encoded PNG (300 DPI) with:
+- Scatterplot points
+- Linear regression trendline
+- Correlation coefficient (r)
+- R² value
+- Equation of line
+
+**Use cases**:
+- Validate CLI predictive power
+- Academic papers (results section)
+- Policy reports (governance outcomes)
+- Investment analysis (risk metrics)
+
+---
+
+## 💻 Code Examples
+
+### Calculate CLI
 
 ```python
-from backend.routes.cli_calculator import calculate_cli
+import requests
 
-result = calculate_cli({
+response = requests.post('http://localhost:8000/api/cli/calculate', json={
     "entity": "Somalia Federal",
     "CE": 0.80,
     "UA": 0.85,
     "JPI": 0.55
 })
 
-print(f"CLI: {result['CLI']}")  # 0.76
+data = response.json()
+print(f"CLI: {data['CLI']}")  # 0.76
+print(f"Classification: {data['classification']}")  # HIGH Lock-In
 ```
 
-### 3. Analyze Dual-Index
+### Generate CLI Matrix
 
 ```python
-result = analyze_dual_index({
-    "entity": "Somalia Federal",
-    "CLI": 0.76,
-    "CLI_cultural": 0.34
+import requests
+import base64
+from PIL import Image
+import io
+
+response = requests.post('http://localhost:8000/api/figures/cli-matrix', json={
+    "countries": [
+        {"name": "Somalia Federal", "CLI": 0.76, "CLI_cultural": 0.34, "color": "red"},
+        {"name": "Somalilandia", "CLI": 0.54, "CLI_cultural": 0.70, "color": "green"}
+    ],
+    "dpi": 300
 })
 
-print(f"Profile: {result['profile']}")  # Brittle Rigidity
-print(f"Risk: {result['risk_level']}")  # HIGH
+data = response.json()
+
+# Decode base64 image
+img_data = base64.b64decode(data['image_base64'])
+img = Image.open(io.BytesIO(img_data))
+img.save('cli_matrix.png')
+print("✅ Matrix saved: cli_matrix.png")
 ```
 
-### 4. Generate Paper
+### Query AI Assistant
 
-```bash
-# Via UI
-streamlit run frontend/streamlit/app.py
-# Navigate to Paper Builder
+```python
+import requests
 
-# Via API
-curl -X POST http://localhost:8000/api/papers/build \
-  -H "Content-Type: application/json" \
-  -d '{"paper_id": "somalia_somalilandia_ept"}'
+response = requests.post('http://localhost:8000/api/chat/query', json={
+    "question": "How is CLI_cultural calculated?"
+})
+
+data = response.json()
+print(f"Answer: {data['answer']}")
+print(f"Sources: {', '.join(data['sources'])}")
 ```
 
-## 📚 Documentation
+---
 
-- **Feature Inventory**: [FEATURE_INVENTORY.md](FEATURE_INVENTORY.md) - Complete list of 15 research tools
-- **AI DevOps Proposal**: [AI_DEVOPS_ENHANCEMENT_PROPOSAL.md](AI_DEVOPS_ENHANCEMENT_PROPOSAL.md) - Infrastructure enhancement plan
-- **API Reference**: http://localhost:8000/api/docs (when backend running)
-- **Deployment Guide**: [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) - Production deployment instructions
+## 🎯 Use Cases by Sector
+
+### 📚 Academic Researchers
+- **Reports**: Generate research papers with automated formatting
+- **Figures**: Publication-quality visualizations (300 DPI PNG)
+- **Validation**: Verify statistical correctness of CLI calculations
+- **Citations**: Reference management and bibliography
+
+### 🏛️ Policy Consultants & Think Tanks
+- **Assessments**: Evaluate constitutional reform proposals
+- **Reports**: Generate professional policy briefs
+- **Visuals**: Create infographics for presentations
+- **Risk Analysis**: Predict governance stability
+
+### ⚖️ Legal Practitioners
+- **Genealogy**: Trace constitutional provision origins with Rootfinder
+- **Arguments**: Build historical arguments for litigation
+- **Impact**: Assess constitutional amendment effects
+- **Memos**: Generate legal analysis documents
+
+### 📊 Political Analysts & Journalists
+- **Stability**: Score regime stability and collapse risk
+- **Graphics**: Generate data visualizations for articles
+- **Comparisons**: Compare constitutional rigidity across countries
+- **Predictions**: Forecast political outcomes
+
+### 💼 Investment Firms & Risk Analysis
+- **Country Risk**: Score political risk for portfolios
+- **Metrics**: Track governance quality metrics
+- **Crisis Prediction**: Predict constitutional crises
+- **Reports**: Generate client risk assessments
+
+### 🏢 Government & International Organizations
+- **Design**: Constitutional design consulting (UN, World Bank, USAID)
+- **Evaluation**: Post-conflict constitution assessment
+- **Forecasting**: Institutional stability predictions
+- **Programs**: Democratization program evaluation
+
+---
 
 ## 🎛️ Feature Management
 
-### Enable/Disable Tools
+All 15 tools can be enabled/disabled individually:
 
-**Via UI**:
-1. Navigate to **Feature Manager**
-2. Toggle individual features
-3. Changes apply immediately
-
-**Via API**:
-```bash
-# Enable feature
-curl -X POST http://localhost:8000/api/features/enable \
-  -H "Content-Type: application/json" \
-  -d '{"feature_id": "rootfinder"}'
-
-# Disable feature
-curl -X POST http://localhost:8000/api/features/disable \
-  -H "Content-Type: application/json" \
-  -d '{"feature_id": "paleontology_tool"}'
-```
-
-**Via Config File**:
-Edit `config/features.json`:
+**Via Configuration File** (`config/features.json`):
 ```json
 {
+  "cli_calculator": {"enabled": true},
+  "cli_matrix_visualizer": {"enabled": true},
   "rootfinder": {"enabled": true},
   "paleontology_tool": {"enabled": false}
 }
 ```
 
-## 🧪 Testing
-
+**Via API**:
 ```bash
-# Run all tests
-pytest tests/ -v
+# Enable feature
+curl -X POST http://localhost:8000/api/features/enable \
+  -d '{"feature_id": "rootfinder"}'
 
-# Run with coverage
-pytest tests/ --cov=. --cov-report=html
-
-# View coverage report
-open htmlcov/index.html
+# Disable feature
+curl -X POST http://localhost:8000/api/features/disable \
+  -d '{"feature_id": "paleontology_tool"}'
 ```
 
-## 🔒 Security
+---
 
-Automated security scanning with:
-- **Safety**: Python dependency vulnerabilities
-- **Bandit**: Code security linting
-- **Dependabot**: Automated dependency updates
+## 📚 Documentation
 
-```bash
-# Manual security scan
-safety check
-bandit -r . -f json
-```
+- **[FEATURE_INVENTORY.md](FEATURE_INVENTORY.md)**: Complete catalog of 15 tools with examples
+- **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)**: GitHub Pages, Streamlit Cloud, Vercel, Railway, Docker
+- **[AI_DEVOPS_ENHANCEMENT_PROPOSAL.md](AI_DEVOPS_ENHANCEMENT_PROPOSAL.md)**: Infrastructure enhancement plan
+- **API Reference**: http://localhost:8000/api/docs (interactive Swagger UI)
 
-## 🚢 Deployment
+---
 
-### GitHub Pages (Static UI)
-
-```bash
-# Build Streamlit to static HTML
-streamlit build frontend/streamlit/app.py
-
-# Deploy to GitHub Pages
-gh-pages deploy
-```
-
-### Vercel (Streamlit)
-
-```bash
-# Install Vercel CLI
-npm install -g vercel
-
-# Deploy
-vercel --prod
-```
-
-### Railway (Backend API)
-
-```bash
-# Install Railway CLI
-npm install -g @railway/cli
-
-# Deploy
-railway up
-```
-
-See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) for detailed instructions.
-
-## 📊 Usage Analytics (SaaS)
-
-Track feature usage per user:
-
-```bash
-# Get usage statistics
-curl http://localhost:8000/api/analytics/usage
-```
-
-**Metrics**:
-- Total usage count per feature
-- Last used timestamp
-- SaaS tier access (free, basic, pro, enterprise)
-
-## 🗺️ Architecture
+## 🔧 Backend Architecture
 
 ```
-┌─────────────────────────────────────┐
-│  Frontend (Streamlit UI)            │
-│  - Modular tool selection           │
-│  - Feature explanations             │
-│  - Real-time calculations           │
-└─────────────────────────────────────┘
-             ↓ HTTP/WebSocket
-┌─────────────────────────────────────┐
-│  Backend (FastAPI)                  │
-│  - Feature registry                 │
-│  - CLI calculation endpoints        │
-│  - Paper generation                 │
-│  - Genspark integration             │
-└─────────────────────────────────────┘
-             ↓ File System / Git
-┌─────────────────────────────────────┐
-│  Repository                         │
-│  - knowledge_base/                  │
-│  - simulation_module/               │
-│  - visualizations/                  │
-│  - reporting_engine/                │
-└─────────────────────────────────────┘
+backend/
+├── app.py                          # FastAPI main application
+├── routes/
+│   ├── cli_calculator.py           # CLI, CLI_cultural, Dual-Index endpoints
+│   ├── figure_generator.py         # CLI Matrix, Timeline, Correlations
+│   ├── paper_builder.py            # Report and document generation
+│   └── ai_assistant.py             # Genspark chat interface
+├── services/
+│   ├── feature_registry.py         # 15 tools with enable/disable
+│   └── monitoring.py               # Usage analytics, error tracking
+└── requirements.txt                # Python dependencies
 ```
+
+---
+
+## 🚢 Deployment Options
+
+| Platform | Use Case | Cost | Setup Time |
+|----------|----------|------|------------|
+| **Streamlit Cloud** | UI deployment | Free-$200/mo | 5 min |
+| **Vercel** | Frontend + Serverless API | Free-$20/mo | 10 min |
+| **Railway** | Backend API | $5-$50/mo | 10 min |
+| **GitHub Pages** | Static docs | Free | 15 min |
+| **Docker (self-hosted)** | Full control | $5-$100/mo | 30 min |
+
+See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) for step-by-step instructions.
+
+---
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-tool`)
-3. Commit changes (`git commit -m 'Add amazing tool'`)
-4. Push to branch (`git push origin feature/amazing-tool`)
-5. Open Pull Request (AI code review will run automatically)
+2. Create feature branch (`git checkout -b feature/new-tool`)
+3. Commit changes (`git commit -m 'Add new analysis tool'`)
+4. Push to branch (`git push origin feature/new-tool`)
+5. Open Pull Request
 
-## 🎯 Use Cases
+**AI Code Review**: Genspark automatically reviews all PRs for statistical correctness and reproducibility.
 
-### 📚 Academic Researchers
-- Publish papers on constitutional law, comparative politics
-- Generate SSRN-ready documents with automated formatting
-- Validate statistical models and methodologies
-
-### 🏛️ Policy Consultants & Think Tanks
-- Assess constitutional reform proposals
-- Predict governance stability risks
-- Generate policy briefs and reports
-- Compare constitutional frameworks across countries
-
-### ⚖️ Legal Practitioners
-- Trace constitutional provision genealogy (rootfinder)
-- Analyze amendment difficulty for litigation strategy
-- Identify "living fossil" provisions for historical arguments
-- Constitutional impact assessments
-
-### 📊 Political Analysts & Journalists
-- Analyze regime stability and collapse risk
-- Generate visualizations for reports and articles
-- Compare constitutional rigidity across regions
-- Predict political outcomes based on institutional design
-
-### 🏢 Government & International Organizations
-- Constitutional design consulting (UN, World Bank, USAID)
-- Democratization program assessment
-- Post-conflict constitution evaluation
-- Institutional stability forecasting
-
-### 💼 Investment Firms & Risk Analysis
-- Political risk assessment for investments
-- Country stability scoring
-- Governance quality metrics
-- Constitutional crisis prediction
+---
 
 ## 📝 License
 
-MIT License - see [LICENSE](LICENSE) for details
+MIT License - Open source for academic, commercial, and government use.
+
+---
 
 ## 👥 Team
 
 **Legal Evolution Analysis Platform**
-- Constitutional Law & Political Science
-- AI-Powered Policy Intelligence
-- Multi-Sector Analysis Tools
+- Constitutional Law & Political Science Research
+- AI-Powered Multi-Sector Policy Intelligence
+- Open-Source Analysis Tools
+
+---
 
 ## 📞 Support
 
-- **Documentation**: `/docs`
-- **API Reference**: http://localhost:8000/api/docs
-- **Issues**: [GitHub Issues](https://github.com/your-org/legal-evolution-unified/issues)
+- **API Docs**: http://localhost:8000/api/docs
+- **Issues**: [GitHub Issues](https://github.com/adrianlerer/legal-evolution-unified/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/adrianlerer/legal-evolution-unified/discussions)
 - **Email**: support@legal-evolution.ai
 - **Consulting**: consulting@legal-evolution.ai
 
@@ -315,4 +393,5 @@ MIT License - see [LICENSE](LICENSE) for details
 
 **Version**: 1.0.0  
 **Last Updated**: 2025-11-21  
-**Status**: ✅ Production Ready
+**Status**: ✅ Production Ready  
+**GitHub**: https://github.com/adrianlerer/legal-evolution-unified
