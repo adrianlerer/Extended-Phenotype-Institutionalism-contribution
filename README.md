@@ -34,6 +34,13 @@ Multi-sector platform for constitutional law research, policy consulting, legal 
 - Get Python code examples
 - Receive interpretation guidance
 
+### 🧠 **Neural Network-Powered Analysis** ⭐ NEW
+- **Auto-Score CLI**: Predict CLI from constitutional text (no manual scoring needed)
+- **Provision Classification**: Categorize clauses (executive, legislative, judicial)
+- **Ultraactivity Detection**: Predict if provisions will persist beyond expiration
+- **Semantic CT1**: Calculate narrative continuity using LegalBERT embeddings
+- **Inference Speed**: Seconds instead of hours for constitutional analysis
+
 ---
 
 ## 🚀 Quick Start
@@ -68,7 +75,7 @@ Open http://localhost:8000/api/docs for interactive API documentation.
 
 ---
 
-## 📊 Feature Inventory (15 Tools)
+## 📊 Feature Inventory (19 Tools)
 
 | Category | Tool | Description | Tier | API Endpoint |
 |----------|------|-------------|------|--------------|
@@ -87,6 +94,10 @@ Open http://localhost:8000/api/docs for interactive API documentation.
 | **Methodology** | EPT Analyzer | Apply Extended Phenotype Theory | Pro | `/api/methodology/ept` |
 | **Methodology** | Paleontology Tool | Identify "living fossil" provisions | Enterprise | `/api/methodology/paleontology` |
 | **Methodology** | Golden Ratio Detector | Optimal constitutional flexibility | Enterprise | `/api/methodology/golden-ratio` |
+| **🧠 ML/Neural** | **CLI Neural Predictor** ⭐ | **Auto-score CLI from text (LegalBERT + regression head)** | **Pro** | `/api/ml/predict-cli` |
+| **🧠 ML/Neural** | **Provision Classifier** ⭐ | **Categorize clauses (executive/legislative/judicial/rights)** | **Pro** | `/api/ml/classify-provision` |
+| **🧠 ML/Neural** | **Ultraactivity Detector** ⭐ | **Predict persistence beyond expiration (LSTM time series)** | **Pro** | `/api/ml/detect-ultraactivity` |
+| **🧠 ML/Neural** | **Semantic CT1 Calculator** ⭐ | **Narrative continuity via embeddings (vs Jaccard)** | **Basic** | `/api/ml/calculate-ct1` |
 
 ---
 
