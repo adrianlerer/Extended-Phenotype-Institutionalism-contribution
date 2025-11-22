@@ -626,9 +626,462 @@ Measurable via psychological survey (locus of control scale).
 
 ## III. CONCEPTUAL ARCHITECTURE
 
-### III.A. Three-Layer System
+### III.A. Design Principles
 
-[TO BE WRITTEN IN NEXT SECTION]
+I design CriptoIus around three principles derived from the theoretical framework:
+
+**Principle 1: Graduated Freedom Allocation**
+
+Not all contractual terms require the same level of flexibility. Simple conditions (payment upon delivery) benefit from mechanical execution. Complex terms (force majeure, material breach) require human judgment. I allocate freedom proportionally to interpretive difficulty.
+
+**Principle 2: Voluntary Opt-In**
+
+All governance mechanisms (precedents, arbitration rules, constitutional principles) must be adopted voluntarily. I reject coercive imposition of precedents. Parties choose which rules govern them at contract formation.
+
+**Principle 3: Memetic Accountability**
+
+Every rule must prove its fitness through adoption success. I measure fitness quantitatively via JurisRank. Rules that accumulate adoptions demonstrate practical value. Rules that fail to spread reveal deficiencies.
+
+### III.B. Layer 1: Hard Rules (Mechanical Execution)
+
+**Function**: Execute simple binary conditions without human interpretation.
+
+**Examples**:
+- Payment triggers: "Transfer 1000 USDC if oracle confirms delivery"
+- Time conditions: "Release escrow 30 days after signature"
+- Quantity verification: "Penalty of 50 USDC per day if quantity < 1000 units"
+
+**Implementation**:
+```solidity
+contract Layer1HardRule {
+    address payable seller;
+    address payable buyer;
+    IOracle oracle;
+    uint256 price;
+    
+    function executePayment() external {
+        require(oracle.verifyDelivery(contractId), "Delivery not confirmed");
+        seller.transfer(price);
+    }
+}
+```
+
+**Characteristics**:
+- Zero ambiguity: Conditions are binary (true/false)
+- No interpretation: Code executes exactly as written
+- Gas-efficient: Minimal computational cost
+- Predictable: Both parties can simulate outcome ex ante
+
+**When to use Layer 1**:
+- Routine commercial conditions
+- Objectively verifiable facts
+- High-frequency low-value transactions
+- Parties prioritize cost over flexibility
+
+**Dennett connection**: Layer 1 corresponds to "Stage 1" organisms in *Freedom Evolves*. Bacteria avoid toxins through tropistic responses. No deliberation required. Pure mechanical causation suffices.
+
+### III.C. Layer 2: Soft Rules (Interpretation Clauses)
+
+**Function**: Resolve ambiguous terms through exhaustive ex ante specification.
+
+**The Chess Not Poker Principle**
+
+As Dennett observes, chess is a game of perfect information. Both players see the entire board. Poker is imperfect information. Players hide cards.
+
+Traditional contracts are poker: parties conceal their interpretations until dispute arises. The judge holds a third hidden hand of interpretive principles. Outcome is unpredictable.
+
+I design Layer 2 to convert contracts from poker to chess. All interpretations are revealed ex ante through interpretation clauses.
+
+**Example: Force Majeure**
+
+Traditional clause (poker):
+```
+"Force majeure excuses performance if unforeseeable events beyond party's control occur."
+```
+
+Problems:
+- What counts as "unforeseeable"? (pandemic? strike? regulation?)
+- What degree of "control"? (could party have mitigated?)
+- What level of "excuse"? (full or partial?)
+
+CriptoIus interpretation clause (chess):
+```solidity
+contract Layer2ForceMajeure {
+    enum EventType { Pandemic, War, Strike, Regulation, NaturalDisaster }
+    
+    function isForceMajeure(
+        EventType eventType,
+        uint256 daysDelay,
+        bool mitigationAttempted
+    ) public pure returns (bool excused, uint256 damagesPercentage) {
+        
+        // Pandemic
+        if (eventType == EventType.Pandemic && daysDelay > 60 && mitigationAttempted) {
+            return (true, 0); // Full excuse, zero damages
+        }
+        
+        // War
+        if (eventType == EventType.War && daysDelay > 30) {
+            return (true, 0);
+        }
+        
+        // Strike (partial excuse)
+        if (eventType == EventType.Strike && daysDelay > 14 && mitigationAttempted) {
+            return (true, 50); // Partial excuse, 50% damages
+        }
+        
+        // Regulation (depends on foreseeability)
+        if (eventType == EventType.Regulation) {
+            if (daysDelay < 7) return (false, 100); // Foreseeable, full damages
+            if (daysDelay < 30 && mitigationAttempted) return (true, 30);
+            return (true, 0); // Fully unforeseeable
+        }
+        
+        // Default: not force majeure
+        return (false, 100);
+    }
+}
+```
+
+**Characteristics**:
+- Exhaustive enumeration: All scenarios specified
+- Perfect information: Both parties see function before signing
+- Deterministic: Same inputs always produce same outputs
+- Testable: Parties can simulate disputes ex ante
+
+**Precedent Integration**:
+
+If Party A and Party B cannot agree on force majeure parameters, they query PrecedentRegistry:
+
+```solidity
+function queryForceMajeurePrecedents() public view returns (Precedent[] memory) {
+    bytes32 clauseHash = keccak256("force_majeure");
+    return precedentRegistry.getPrecedentsByClause(clauseHash)
+        .sortByJurisRank()
+        .filterByFairnessScore(minScore: 0.7);
+}
+```
+
+Returns precedents ranked by:
+1. **JurisRank**: How many contracts adopted this interpretation?
+2. **Fairness Score**: Does it balance risks fairly?
+3. **Litigation Rate**: Did it prevent disputes in practice?
+
+Parties can adopt top-ranked precedent or customize parameters.
+
+**Cognitive Allopatry Application**:
+
+Henrich's theory predicts that geographically isolated populations evolve distinct norms. I apply this to contractual domains:
+
+- **Construction contracts** (FIDIC): May evolve force majeure definition focused on weather, labor strikes
+- **Software licenses** (SaaS): May evolve force majeure focused on cyber attacks, API changes
+- **International trade** (Incoterms): May evolve force majeure focused on customs, shipping disruptions
+
+Each domain is a separate "island" in precedent space. Within each island, precedents compete and adapt. Occasionally, successful precedents "migrate" across domains through analogical reasoning.
+
+**When to use Layer 2**:
+- Standard commercial terms with known ambiguities
+- Parties want predictability but need some flexibility
+- Sufficient precedent data exists to guide choices
+- Medium-value transactions where litigation cost matters
+
+**Dennett connection**: Layer 2 corresponds to "Stage 3" organisms. Organisms with internal representations can simulate outcomes before acting. Interpretation clauses are **representations** of possible futures. Parties evaluate representations and choose preferred governance.
+
+### III.D. Layer 3: Precedent-Binding Arbitration
+
+**Function**: Human arbitrators resolve novel disputes and create new precedents.
+
+**When to Escalate to Layer 3**:
+
+Layer 3 activates when:
+1. Dispute involves facts not covered by Layer 2 interpretation clauses
+2. Parties disagree on which Layer 2 clause applies
+3. Novel circumstance with no applicable precedent
+4. Dispute involves fundamental fairness concerns
+
+**Arbitration Process**:
+
+```
+Step 1: Dispute Filing
+    → Party A submits dispute to CriptoIusArbitration
+    → Party B responds within 7 days
+    → Parties stake tokens (economic incentive for honesty)
+
+Step 2: Arbitrator Selection
+    → Random selection from qualified pool (prevents capture)
+    → Parties can challenge arbitrators (up to 3 challenges each)
+    → Panel of 3 arbitrators assigned
+
+Step 3: Evidence Submission
+    → Parties submit evidence on-chain (IPFS hash)
+    → Arbitrators review (14 day deadline)
+    → Parties can submit rebuttal evidence
+
+Step 4: Deliberation
+    → Arbitrators discuss via secure channel
+    → Must reach 2/3 consensus
+    → Dissent permitted (published with rationale)
+
+Step 5: Precedent Creation
+    → If case is novel, arbitrators create new precedent P_new
+    → P_new includes:
+        - Fact pattern (abstracted from specific case)
+        - Legal reasoning (why this resolution is fair)
+        - RootFinder trace (derivation from constitutional principles)
+        - Initial JurisRank = 0
+    → P_new published to PrecedentRegistry
+
+Step 6: Appeal (Optional)
+    → Losing party can appeal within 30 days
+    → Requires supermajority (4/5) to overturn
+    → Appeal costs are high (discourages frivolous appeals)
+```
+
+**Example: Novel Pandemic Clause**
+
+**Scenario**: COVID-19 pandemic causes 180-day delay in manufacturing. Contract has standard force majeure clause but does not specify pandemics. Precedent P₁₂₃ addresses pandemics but involves shipping delays, not manufacturing.
+
+**Arbitration Ruling**:
+
+> "While P₁₂₃ addresses pandemic-related shipping delays, the present case involves manufacturing shutdown. We distinguish P₁₂₃ on the following grounds:
+>
+> 1. Manufacturing involves fixed capital (factory equipment) that cannot be relocated. Shipping involves mobile assets (cargo ships) that can be rerouted.
+> 2. Government lockdown orders directly closed factories. No such orders closed ports.
+> 3. The delay duration (180 days) exceeds the threshold in P₁₂₃ (60 days) by 3x.
+>
+> **Holding**: COVID-19 pandemic constitutes force majeure for manufacturing contracts when:
+> - Government lockdown order prevents factory operation
+> - Delay exceeds 90 days
+> - Party attempted mitigation (remote work, alternate suppliers)
+> - Party provided notice within 14 days of lockdown
+>
+> **Rationale**: This rule balances two competing principles:
+> - Pacta sunt servanda (contracts must be honored)
+> - Impossibilium nulla obligatio (no obligation for impossible acts)
+>
+> Requiring 90-day threshold prevents abuse (short delays are foreseeable business risk). Requiring mitigation ensures party is not passively accepting delay. Requiring notice enables counterparty to make alternate arrangements.
+>
+> **RootFinder Trace**:
+> - Constitutional Principle C₃: 'Obligations are excused when performance becomes objectively impossible'
+> - Legal Norm N₁₇: 'Impossibility requires unforeseeable external events beyond party's control'
+> - Precedent P₃₄₂ (NEW): Manufacturing delays >90 days due to government lockdown constitute impossibility
+> ✓ Valid derivation"
+
+**Precedent Publication**:
+
+New precedent P₃₄₂ is published with:
+- **Clause Template**: "force_majeure_manufacturing"
+- **Fact Pattern Hash**: keccak256(government_lockdown + manufacturing + 90_day_threshold)
+- **Resolution**: "Excuse with 0% damages if mitigation attempted"
+- **JurisRank**: 0 (initially)
+- **Arbitrator Consensus**: 3/3 (unanimous)
+- **Fairness Score**: 0.85 (calculated by algorithm)
+
+Future parties can now opt into P₃₄₂ when writing contracts involving manufacturing and pandemics.
+
+**Why Precedent-Binding?**
+
+Traditional arbitration is non-binding on future disputes. Each case is decided de novo. This creates:
+- Unpredictability: Parties cannot forecast outcomes
+- Inefficiency: Same issue litigated repeatedly
+- Divergence: Inconsistent rulings on similar facts
+
+CriptoIus makes precedents **voluntarily binding**: parties who adopt P₃₄₂ accept that future disputes matching P₃₄₂'s fact pattern will be resolved according to P₃₄₂'s holding. No relitigation.
+
+This is **Ulysses mechanism at scale**: parties bind themselves to precedents to gain credibility and reduce costs.
+
+**When to use Layer 3**:
+- Novel circumstances without applicable precedent
+- High-value transactions where fairness trumps cost
+- Complex disputes requiring expert judgment
+- Cases involving fundamental rights or public policy
+
+**Dennett connection**: Layer 3 corresponds to "Stage 5" organisms (humans with moral reasoning). Arbitrators exercise full autonomy: they consider reasons, evaluate alternatives, create new norms. This is genuine freedom in Dennett's sense. Not absence of constraints but capacity to reflect on constraints and modify them.
+
+### III.E. Constitutional Layer (Layer 0)
+
+**Function**: Immutable foundational principles that constrain all lower layers.
+
+I include a Layer 0 to solve the legitimacy problem identified in Section II.E. Without constitutional grounding, CriptoIus is pure conventionalism (rules are binding only because others adopt them). Layer 0 provides normative foundation.
+
+**CriptoIusConstitution** (example clauses):
+
+```
+Article 1: Pacta Sunt Servanda
+"Contracts voluntarily entered shall be honored in good faith."
+
+Article 2: No Unconscionability
+"Precedents that exploit information asymmetry or coerce vulnerable parties are void."
+
+Article 3: Proportionality
+"Remedies must be proportional to harms. Punitive damages prohibited unless expressly agreed."
+
+Article 4: Transparency
+"All precedents, arbitration reasoning, and JurisRank scores shall be publicly accessible."
+
+Article 5: Exit Right
+"Parties may opt out of CriptoIus by mutual consent at contract formation. No retroactive enforcement."
+
+Article 6: Amendment Process
+"Constitutional amendments require 80% approval by stakeholders and 1-year waiting period."
+```
+
+**RootFinder Enforcement**:
+
+Every precedent must trace back to constitutional principles. If trace fails, precedent is rejected:
+
+```solidity
+function validatePrecedent(Precedent p) public view returns (bool) {
+    bytes32[] memory trace = rootFinder.trace(p.resolutionHash);
+    
+    for (uint i = 0; i < trace.length; i++) {
+        if (constitution.contains(trace[i])) {
+            return true; // Valid: traces to constitution
+        }
+    }
+    
+    return false; // Invalid: no constitutional foundation
+}
+```
+
+**Example: Rejected Precedent**
+
+Hypothetical bad precedent:
+
+> "P₆₆₆: In employment contracts, employees waive all statutory protections including minimum wage and safety standards."
+
+RootFinder analysis:
+```
+P₆₆₆ attempts to trace to:
+    → Constitutional Article 1 (pacta sunt servanda)
+    ✗ REJECTED: Article 2 prohibits exploitation of vulnerable parties
+    ✗ REJECTED: Violates mandatory public policy (labor law)
+```
+
+P₆₆₆ is excluded from PrecedentRegistry. Parties cannot adopt it.
+
+**Why Layer 0 Matters**:
+
+Without constitutional constraints, precedent selection could become "race to the bottom": parties adopt efficient-but-unfair rules that maximize joint surplus while exploiting externalities (e.g., environmental damage, worker exploitation).
+
+Layer 0 ensures CriptoIus remains legitimate: rules evolve through voluntary adoption **within normative boundaries**.
+
+### III.F. Inter-Layer Interactions
+
+**Escalation Path**:
+
+```
+Dispute Arises
+    ↓
+Check Layer 1: Can this be resolved mechanically?
+    YES → Execute hard rule automatically
+    NO → Escalate to Layer 2
+    ↓
+Check Layer 2: Does interpretation clause cover this?
+    YES → Apply interpretation clause
+    NO → Escalate to Layer 3
+    ↓
+Layer 3: Human arbitration
+    → Create new precedent if novel
+    → Precedent becomes available for future Layer 2 adoption
+```
+
+**Precedent Lifecycle**:
+
+```
+Phase 1: Creation (Layer 3)
+    → Novel dispute arbitrated
+    → Precedent P published with JurisRank = 0
+
+Phase 2: Adoption (Layer 2)
+    → Parties discover P via search
+    → Evaluate JurisRank, fairness, outcomes
+    → Adopt P in new contracts
+    → Each adoption increments P.jurisRank++
+
+Phase 3: Maturity (Layer 2)
+    → P has high JurisRank (e.g., 500+ adoptions)
+    → P becomes "standard" for this clause type
+    → Parties default to P unless reason to customize
+
+Phase 4: Obsolescence (Possible)
+    → Environmental change makes P inefficient
+    → Competing precedent P' created
+    → P'.jurisRank overtakes P.jurisRank
+    → P fades into disuse
+
+Phase 5: Deprecation (If sunset clause triggered)
+    → P has low adoptions for 2 years
+    → Sunset clause activates
+    → P marked as deprecated (can still view history but not adopt)
+```
+
+**Example Flow: Construction Delay Dispute**
+
+**Contract**: Party A (developer) and Party B (contractor) sign construction contract.
+
+**Layer 1 Clause**: "Payment of $100K upon certificate of completion signed by architect."
+→ Architect signs → Payment executes automatically (no dispute)
+
+**Layer 2 Clause**: "Force majeure excuses delays >60 days if due to pandemic and mitigation attempted."
+→ Pandemic causes 90-day delay → Contractor provides evidence of mitigation → Layer 2 clause applies → Delay excused (no arbitration needed)
+
+**Layer 3 Required**: Contractor claims delay was due to "hybrid cause" (30 days pandemic + 30 days supply chain disruption). No Layer 2 clause covers hybrid causation. No precedent exists for hybrid delays.
+→ Dispute escalates to arbitration
+→ Arbitrators rule: "Hybrid delays require apportionment. Pandemic portion excused. Supply chain portion is contractor's risk. Liability = (30/60) × damages."
+→ New precedent P₄₅₆ created: "Hybrid force majeure apportioned by duration"
+→ P₄₅₆ published to registry with JurisRank = 0
+→ Future contracts can adopt P₄₅₆ as Layer 2 clause
+
+**Memetic Advantage**: Precedent P₄₅₆ originated from Layer 3 (human judgment) but migrates to Layer 2 (automated enforcement). Over time, successful Layer 3 rulings become Layer 2 standards. This is **institutionalization through memetic selection**.
+
+### III.G. Implementation Considerations
+
+**Blockchain Substrate**:
+
+I propose Ethereum for initial implementation:
+- Mature smart contract platform
+- Large developer ecosystem
+- Established infrastructure (oracles, IPFS integration)
+
+**Alternatives**:
+- Polygon: Lower gas costs for high-frequency contracts
+- Arbitrum: Layer 2 scaling for complex interpretation clauses
+- Hyperledger: Permissioned deployment for enterprise consortia
+
+**Gas Cost Optimization**:
+
+Layer 2 interpretation clauses can be gas-intensive if logic is complex. I propose:
+
+1. **Off-chain computation**: Store interpretation logic on IPFS, verify hash on-chain
+2. **ZK proofs**: Party proves "my dispute matches precedent P₁" without revealing details
+3. **Optimistic execution**: Assume Layer 2 applies, only verify on-chain if challenged
+
+**Scalability**:
+
+PrecedentRegistry will grow to millions of precedents. To maintain query performance:
+
+1. **Indexed by clause type**: O(log n) search via Merkle trees
+2. **Cached JurisRank scores**: Recompute daily, not per query
+3. **Sharding by domain**: Construction precedents separate from software precedents
+
+**Privacy Considerations**:
+
+Arbitration involves sensitive business information. I propose:
+
+1. **Public precedents, private facts**: Precedent P published with abstracted fact pattern. Specific contract details remain private.
+2. **Zero-knowledge disputes**: Party proves "my contract violates precedent P₁" without revealing contract terms.
+3. **Encrypted arbitration**: Arbitrators deliberate via secure channel. Only final ruling is public.
+
+**Governance**:
+
+Who controls CriptoIusConstitution? I propose:
+
+1. **Initial deployment**: Constitution deployed as immutable contract
+2. **Amendment process**: Requires 80% approval by CriptoIus token holders
+3. **Token distribution**: 40% to arbitrators (meritocratic), 40% to early adopters (Lindy effect), 20% treasury (public goods funding)
+
+This ensures governance by those with "skin in the game" while preventing capture.
 
 ---
 
