@@ -1,0 +1,77 @@
+{
+  "cli_calculator": {
+    "enabled": true,
+    "usage_count": 0,
+    "last_used": null
+  },
+  "cli_cultural_calculator": {
+    "enabled": true,
+    "usage_count": 0,
+    "last_used": null
+  },
+  "dual_index_analyzer": {
+    "enabled": true,
+    "usage_count": 0,
+    "last_used": null
+  },
+  "rootfinder": {
+    "enabled": true,
+    "usage_count": 0,
+    "last_used": null
+  },
+  "paper_builder": {
+    "enabled": true,
+    "usage_count": 0,
+    "last_used": null
+  },
+  "appendix_generator": {
+    "enabled": true,
+    "usage_count": 0,
+    "last_used": null
+  },
+  "cli_matrix_visualizer": {
+    "enabled": true,
+    "usage_count": 0,
+    "last_used": null
+  },
+  "timeline_generator": {
+    "enabled": true,
+    "usage_count": 0,
+    "last_used": null
+  },
+  "correlation_plotter": {
+    "enabled": true,
+    "usage_count": 0,
+    "last_used": null
+  },
+  "genspark_assistant": {
+    "enabled": true,
+    "usage_count": 0,
+    "last_used": null
+  },
+  "code_reviewer": {
+    "enabled": true,
+    "usage_count": 0,
+    "last_used": null
+  },
+  "root_cause_analyzer": {
+    "enabled": false,
+    "usage_count": 0,
+    "last_used": null
+  },
+  "ept_analyzer": {
+    "enabled": false,
+    "usage_count": 0,
+    "last_used": null
+  },
+  "paleontology_tool": {
+    "enabled": false,
+    "usage_count": 0,
+    "last_used": null
+  },
+  "golden_ratio_detector": {
+    "enabled": false,
+    "usage_count": 0,
+    "last_used": null
+  }
+}
