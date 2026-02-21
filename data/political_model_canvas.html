@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Political Model Canvas — Argentina: Dos Modelos, Un Equilibrio</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    padding: 24px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  .author {
+    text-align: center;
+    font-size: 0.78rem;
+    color: #888;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  /* Tab navigation */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.2px;
+  }
+  .tab-btn.prot { background: #c8e6c9; color: #1b5e20; }
+  .tab-btn.prot.active, .tab-btn.prot:hover { background: #2e7d32; color: #fff; }
+  .tab-btn.aper { background: #bbdefb; color: #0d47a1; }
+  .tab-btn.aper.active, .tab-btn.aper:hover { background: #1565c0; color: #fff; }
+  .tab-btn.ess { background: #ffe0b2; color: #e65100; }
+  .tab-btn.ess.active, .tab-btn.ess:hover { background: #e65100; color: #fff; }
+
+  .canvas-wrapper { display: none; }
+  .canvas-wrapper.active { display: block; }
+
+  /* Canvas grid layout */
+  .canvas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 6px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .block {
+    border-radius: 8px;
+    padding: 14px 12px;
+    min-height: 130px;
+    position: relative;
+  }
+  .block h3 {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+    opacity: 0.75;
+  }
+  .block ul {
+    list-style: none;
+    padding: 0;
+  }
+  .block ul li {
+    font-size: 0.82rem;
+    line-height: 1.4;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    position: relative;
+  }
+  .block ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 0.65rem;
+    top: 2px;
+    opacity: 0.6;
+  }
+  .block .tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-top: 8px;
+    opacity: 0.85;
+  }
+
+  /* Bottom row: revenue + costs full width */
+  .bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    max-width: 1200px;
+    margin: 6px auto 0;
+  }
+  .bottom-block {
+    border-radius: 8px;
+    padding: 12px 14px;
+    min-height: 80px;
+  }
+  .bottom-block h3 {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+    opacity: 0.75;
+  }
+  .bottom-block p {
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  /* Header block spanning all */
+  .canvas-header {
+    grid-column: 1 / -1;
+    border-radius: 8px;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .canvas-header .model-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .canvas-header .model-meta {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    text-align: right;
+  }
+
+  /* EPT badge */
+  .ept-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  /* PROTECCIONISTA colors — greens */
+  .prot-header { background: #1b5e20; color: #fff; }
+  .prot-a { background: #e8f5e9; border-left: 4px solid #4caf50; }
+  .prot-b { background: #c8e6c9; border-left: 4px solid #2e7d32; }
+  .prot-c { background: #a5d6a7; border-left: 4px solid #1b5e20; }
+  .prot-d { background: #dcedc8; border-left: 4px solid #558b2f; }
+  .prot-e { background: #f1f8e9; border-left: 4px solid #7cb342; }
+  .prot-cost { background: #ffebee; border-left: 4px solid #c62828; }
+  .prot-rev { background: #e8f5e9; border-left: 4px solid #2e7d32; }
+
+  /* APERTURISTA colors — blues */
+  .aper-header { background: #0d47a1; color: #fff; }
+  .aper-a { background: #e3f2fd; border-left: 4px solid #1976d2; }
+  .aper-b { background: #bbdefb; border-left: 4px solid #1565c0; }
+  .aper-c { background: #90caf9; border-left: 4px solid #0d47a1; }
+  .aper-d { background: #e8eaf6; border-left: 4px solid #3949ab; }
+  .aper-e { background: #f3e5f5; border-left: 4px solid #6a1b9a; }
+  .aper-cost { background: #fce4ec; border-left: 4px solid #b71c1c; }
+  .aper-rev { background: #e3f2fd; border-left: 4px solid #0d47a1; }
+
+  /* ESS SCENARIO colors — ambers/purples */
+  .ess-header { background: #bf360c; color: #fff; }
+  .ess-a { background: #fff8e1; border-left: 4px solid #f9a825; }
+  .ess-b { background: #ffe0b2; border-left: 4px solid #e65100; }
+  .ess-c { background: #ffd54f; border-left: 4px solid #f57f17; }
+  .ess-d { background: #f3e5f5; border-left: 4px solid #7b1fa2; }
+  .ess-e { background: #e8eaf6; border-left: 4px solid #283593; }
+  .ess-cost { background: #fce4ec; border-left: 4px solid #880e4f; }
+  .ess-rev { background: #e8f5e9; border-left: 4px solid #2e7d32; }
+
+  /* ESS scenario cards */
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto 20px;
+  }
+  .scenario-card {
+    border-radius: 10px;
+    padding: 18px 16px;
+    min-height: 280px;
+  }
+  .scenario-card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .scenario-card .prob {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  .scenario-card p {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .scenario-card .condition {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+
+  .sc1 { background: #1b5e20; color: #fff; }
+  .sc2 { background: #0d47a1; color: #fff; }
+  .sc3 { background: #bf360c; color: #fff; }
+  .sc1 .condition { background: rgba(255,255,255,0.25); }
+  .sc2 .condition { background: rgba(255,255,255,0.25); }
+  .sc3 .condition { background: rgba(255,255,255,0.25); }
+
+  /* Payoff matrix table */
+  .matrix-section {
+    max-width: 1200px;
+    margin: 0 auto 16px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .matrix-section h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #1a1a2e;
+  }
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+  }
+  .matrix-table th {
+    background: #37474f;
+    color: #fff;
+    padding: 8px 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.78rem;
+  }
+  .matrix-table td {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .matrix-table .row-header {
+    font-weight: 700;
+    background: #eceff1;
+    text-align: left;
+    font-size: 0.78rem;
+  }
+  .cell-good { background: #e8f5e9; color: #1b5e20; font-weight: 700; }
+  .cell-bad { background: #ffebee; color: #b71c1c; font-weight: 700; }
+  .cell-neutral { background: #fff8e1; color: #f57f17; }
+  .cell-ess { background: #e3f2fd; font-weight: 700; border: 2px solid #1565c0 !important; }
+
+  /* Footer note */
+  .canvas-note {
+    max-width: 1200px;
+    margin: 12px auto 0;
+    font-size: 0.75rem;
+    color: #666;
+    text-align: center;
+    padding: 8px;
+    background: #fff;
+    border-radius: 6px;
+    border-left: 4px solid #90a4ae;
+  }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+    font-size: 0.75rem;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .legend-dot {
+    width: 12px; height: 12px;
+    border-radius: 3px;
+  }
+
+  @media (max-width: 768px) {
+    .canvas { grid-template-columns: 1fr 1fr; }
+    .scenario-grid { grid-template-columns: 1fr; }
+    .canvas-header { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Political Model Canvas</h1>
+<p class="subtitle">Argentina: Dos Regímenes Institucionales como Modelos de Negocio Ideológico</p>
+<p class="author">Ignacio Adrián Lerer | Investigador independiente | Buenos Aires, Argentina | ORCID 0009-0007-6378-9749<br>
+Framework: Extended Phenotype Theory (EPT) + Evolutionary Game Theory (EGT) + Business Model Canvas (Osterwalder et al.)</p>
+
+<div class="tabs">
+  <button class="tab-btn prot active" onclick="showTab('prot')">Modelo Proteccionista</button>
+  <button class="tab-btn aper" onclick="showTab('aper')">Modelo Aperturista</button>
+  <button class="tab-btn ess" onclick="showTab('ess')">Escenarios ESS</button>
+</div>
+
+<!-- ═══════════════════ CANVAS 1: PROTECCIONISTA ═══════════════════ -->
+<div class="canvas-wrapper active" id="tab-prot">
+  <div class="canvas">
+    <div class="canvas-header prot-header" style="grid-column:1/-1">
+      <div>
+        <div class="model-name">MODELO PROTECCIONISTA</div>
+        <div style="font-size:0.8rem;opacity:0.85;margin-top:3px;">Memeplexo peronista-desarrollista | Período dominante: 1945–2023</div>
+      </div>
+      <div class="model-meta">
+        CLI = 0.89<br>
+        Tasa de reforma sostenida = 0%<br>
+        <span class="ept-badge" style="background:#fff;color:#1b5e20;margin-top:4px;display:inline-block">ESS dominante en ambiente AR</span>
+      </div>
+    </div>
+
+    <!-- Socios Clave -->
+    <div class="block prot-b" style="grid-column:1;grid-row:2">
+      <h3>🤝 Socios Clave</h3>
+      <ul>
+        <li>CGT (vehículo organizacional central)</li>
+        <li>Empresarios del mercado interno protegido</li>
+        <li>Organizaciones de economía popular</li>
+        <li>Gobiernos provinciales peronistas</li>
+        <li>Sectores de la Iglesia Católica (histórico)</li>
+      </ul>
+      <span class="tag" style="background:#2e7d32;color:#fff">Coalición orgánica</span>
+    </div>
+
+    <!-- Actividades Clave -->
+    <div class="block prot-c" style="grid-column:2;grid-row:2">
+      <h3>⚙️ Actividades Clave</h3>
+      <ul>
+        <li>Negociación colectiva anual (CGT-Estado)</li>
+        <li>Resistencia activa a reformas laborales</li>
+        <li>Dictación de DNU sin costo legislativo</li>
+        <li>Producción académica de legitimación</li>
+        <li>Reforma curricular universitaria</li>
+        <li>Administración de planes sociales</li>
+      </ul>
+      <span class="tag" style="background:#1b5e20;color:#fff">Reproducción memética</span>
+    </div>
+
+    <!-- Propuesta de Valor (centro, grande) -->
+    <div class="block prot-a" style="grid-column:3;grid-row:2;min-height:160px">
+      <h3>💎 Propuesta de Valor (Promesa Ideológica)</h3>
+      <ul>
+        <li><strong>Protección vs. mercado:</strong> seguridad laboral como derecho, no riesgo</li>
+        <li><strong>Acceso a bienes básicos</strong> por precio regulado</li>
+        <li><strong>Pertenencia identitaria:</strong> "ser trabajador" como ontología política</li>
+        <li><strong>Enemigo claro:</strong> capital concentrado / FMI / "establishment"</li>
+        <li>Señal costosa de pertenencia: alta sustituibilidad imposible</li>
+      </ul>
+      <span class="tag" style="background:#2e7d32;color:#fff">Baja sustituibilidad — Alta fidelidad</span>
+    </div>
+
+    <!-- Relaciones -->
+    <div class="block prot-d" style="grid-column:4;grid-row:2">
+      <h3>💬 Relaciones con Clientes</h3>
+      <ul>
+        <li>Corporativismo: negociación por organización, no individuo</li>
+        <li>Cuotas sindicales obligatorias (lock-in)</li>
+        <li>Obras sociales como mecanismo de retención</li>
+        <li>Planes sociales individualizados</li>
+        <li>Costos de salida prohibitivos del memeplexo</li>
+      </ul>
+      <span class="tag" style="background:#558b2f;color:#fff">Lock-in estructural</span>
+    </div>
+
+    <!-- Segmentos -->
+    <div class="block prot-e" style="grid-column:5;grid-row:2">
+      <h3>👥 Coalición Beneficiaria</h3>
+      <ul>
+        <li><strong>Núcleo:</strong> clase trabajadora formal sindicada</li>
+        <li><strong>2° círculo:</strong> industriales del mercado interno</li>
+        <li><strong>3° círculo:</strong> empleados públicos + informalidad periurbana</li>
+        <li>Segmentación funcional, no ideológica</li>
+      </ul>
+      <span class="tag" style="background:#33691e;color:#fff">Base amplia y organizada</span>
+    </div>
+
+    <!-- Recursos Clave -->
+    <div class="block prot-b" style="grid-column:1;grid-row:3">
+      <h3>🏛️ Activos Institucionales</h3>
+      <ul>
+        <li>INDEC (productor de datos administrables)</li>
+        <li>BCRA subordinado a política fiscal</li>
+        <li>Juzgados laborales con sesgo pro-trabajador formal</li>
+        <li>Universidades nacionales (cuadros técnicos)</li>
+        <li>Legislación laboral construida en 8 décadas</li>
+      </ul>
+      <span class="tag" style="background:#1b5e20;color:#fff">Fenotipo extendido consolidado</span>
+    </div>
+
+    <!-- Canales -->
+    <div class="block prot-c" style="grid-column:2;grid-row:3">
+      <h3>📡 Canales de Transmisión</h3>
+      <ul>
+        <li>Sistema educativo público (vector primario)</li>
+        <li>Sindicatos (red física de lealtad cotidiana)</li>
+        <li>Medios públicos + privados afines</li>
+        <li>Planes sociales como canal individualizado</li>
+        <li>Universidades (desde 1918)</li>
+      </ul>
+      <span class="tag" style="background:#2e7d32;color:#fff">Red densa de 80 años</span>
+    </div>
+
+    <div style="grid-column:3;grid-row:3;display:flex;align-items:center;justify-content:center;background:#f1f8e9;border-radius:8px;padding:12px">
+      <div style="text-align:center">
+        <div style="font-size:2.2rem;font-weight:800;color:#1b5e20">0.89</div>
+        <div style="font-size:0.75rem;color:#2e7d32;font-weight:600">Constitutional Lock-in Index</div>
+        <div style="font-size:0.7rem;color:#555;margin-top:6px">23 intentos de reforma<br>0% tasa de éxito sostenido<br>(1989-2023)</div>
+        <div style="margin-top:10px;font-size:0.72rem;color:#1b5e20;font-weight:600">EPT: arquitectura fenotípica<br>extendida más robusta en el ambiente AR</div>
+      </div>
+    </div>
+
+    <div class="block" style="grid-column:4;grid-row:3;background:#fffde7;border-left:4px solid #f9a825">
+      <h3>⚠️ Vulnerabilidades Evolutivas</h3>
+      <ul>
+        <li>Inflación crónica como costo sistémico</li>
+        <li>Fragmentación interna del memeplexo</li>
+        <li>Degradación del capital humano exportable</li>
+        <li>Dependencia del ciclo de commodities</li>
+        <li>Pérdida de jóvenes urbanos (disrupción memética)</li>
+      </ul>
+    </div>
+
+    <div class="block" style="grid-column:5;grid-row:3;background:#e8f5e9;border-left:4px solid #43a047">
+      <h3>🧬 Fitness EPT</h3>
+      <ul>
+        <li>Canales: ★★★★★</li>
+        <li>Fidelización: ★★★★★</li>
+        <li>Costos salida: ★★★★★</li>
+        <li>Activos instit.: ★★★★★</li>
+        <li>Eficiencia asig.: ★☆☆☆☆</li>
+      </ul>
+      <span class="tag" style="background:#2e7d32;color:#fff">ESS dominante histórico</span>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="bottom-block prot-rev">
+      <h3>💰 Captura de Recursos (Revenue Streams)</h3>
+      <p><strong>Retenciones agropecuarias</strong> (transferencia del sector eficiente al Estado) | <strong>Tipo de cambio diferencial</strong> (subsidio implícito a industria protegida) | <strong>Señoreaje / emisión monetaria</strong> (redistribuye del informal al formal sindicalizado) | <strong>Deuda externa</strong> cuando los anteriores se agotan. CLI 0.89 garantiza que ningún mecanismo pueda clausurarse sin costo político prohibitivo.</p>
+    </div>
+    <div class="bottom-block prot-cost">
+      <h3>💸 Estructura de Costos (Costos Sistémicos)</h3>
+      <p><strong>Inflación crónica</strong> (resultado inevitable del financiamiento monetario) | <strong>Lock-in institucional</strong> (ultraactividad de convenios, indemnizaciones sin tope real) | <strong>Desinversión productiva</strong> por incertidumbre regulatoria | <strong>Fuga de talentos</strong> con capital humano transable internacionalmente | <strong>Trampa de baja productividad</strong> autoperpetuada.</p>
+    </div>
+  </div>
+  <div class="canvas-note">
+    Figura 1: Political Model Canvas — Modelo Proteccionista (EPT + BMC Framework) | Lerer, I.A. (2025) | ORCID 0009-0007-6378-9749
+  </div>
+</div>
+
+<!-- ═══════════════════ CANVAS 2: APERTURISTA ═══════════════════ -->
+<div class="canvas-wrapper" id="tab-aper">
+  <div class="canvas">
+    <div class="canvas-header aper-header" style="grid-column:1/-1">
+      <div>
+        <div class="model-name">MODELO APERTURISTA</div>
+        <div style="font-size:0.8rem;opacity:0.85;margin-top:3px;">Memeplexo liberal-meritocrático | Períodos: 1976-83 / 1989-99 / 2015-19 / 2023-presente</div>
+      </div>
+      <div class="model-meta">
+        CLI = 0.89 (hereda el mismo ambiente)<br>
+        Dependencia crédito externo = Alta<br>
+        <span class="ept-badge" style="background:#fff;color:#0d47a1;margin-top:4px;display:inline-block">ESS inestable en ambiente AR actual</span>
+      </div>
+    </div>
+
+    <!-- Socios Clave -->
+    <div class="block aper-b" style="grid-column:1;grid-row:2">
+      <h3>🤝 Socios Clave</h3>
+      <ul>
+        <li>Campo pampeano + economías regionales exportadoras</li>
+        <li>Sector financiero formal</li>
+        <li>FMI / BID / Banco Mundial (legitimidad técnica)</li>
+        <li>Cámaras de comercio exterior</li>
+        <li>Gobernadores de distinto signo (alianza táctica)</li>
+      </ul>
+      <span class="tag" style="background:#1565c0;color:#fff">Coalición fragmentada</span>
+    </div>
+
+    <!-- Actividades Clave -->
+    <div class="block aper-c" style="grid-column:2;grid-row:2">
+      <h3>⚙️ Actividades Clave</h3>
+      <ul>
+        <li>Producción de evidencia del costo del proteccionismo</li>
+        <li>Negociación de acuerdos comerciales (hechos consumados)</li>
+        <li>Construcción de jurisprudencia constitucional favorable</li>
+        <li>Ajuste fiscal como reducción del costo operativo rival</li>
+        <li>Desregulación sectorial sistemática</li>
+      </ul>
+      <span class="tag" style="background:#0d47a1;color:#fff">Destrucción creativa</span>
+    </div>
+
+    <!-- Propuesta de Valor (centro) -->
+    <div class="block aper-a" style="grid-column:3;grid-row:2;min-height:160px">
+      <h3>💎 Propuesta de Valor (Promesa Ideológica)</h3>
+      <ul>
+        <li><strong>Eficiencia asignativa:</strong> bienes de calidad a precios internacionales</li>
+        <li><strong>Previsibilidad macroeconómica</strong> para inversión productiva</li>
+        <li><strong>Estado de derecho</strong> + independencia judicial real</li>
+        <li><strong>Meritocracia</strong> como principio distributivo</li>
+        <li><strong>Modernidad/integración:</strong> pertenencia al mundo desarrollado</li>
+      </ul>
+      <span class="tag" style="background:#1565c0;color:#fff">Alta sustituibilidad — Fidelización frágil</span>
+    </div>
+
+    <!-- Relaciones -->
+    <div class="block aper-d" style="grid-column:4;grid-row:2">
+      <h3>💬 Relaciones con Clientes</h3>
+      <ul>
+        <li>Expectativa de movilidad social (funciona en ciclo alcista)</li>
+        <li>Fidelización negativa: lealtad vs. "la casta" / el statu quo</li>
+        <li>Sin mecanismo corporativo equivalente a CGT</li>
+        <li>Carece de costos de salida estructurales</li>
+        <li>Colapso en recesión: payoff negativo visible</li>
+      </ul>
+      <span class="tag" style="background:#3949ab;color:#fff">Fidelización cíclica</span>
+    </div>
+
+    <!-- Segmentos -->
+    <div class="block aper-e" style="grid-column:5;grid-row:2">
+      <h3>👥 Coalición Beneficiaria</h3>
+      <ul>
+        <li><strong>Núcleo:</strong> sector exportador eficiente (campo, minería, hidrocarburos)</li>
+        <li><strong>2° círculo:</strong> profesionales con capital humano transable</li>
+        <li><strong>3° círculo:</strong> PyMEs de servicios, consumidores importados</li>
+        <li>Ganadores concentrados / perdedores difusos pero vocales</li>
+      </ul>
+      <span class="tag" style="background:#6a1b9a;color:#fff">Base fragmentada sin vehículo org.</span>
+    </div>
+
+    <!-- Recursos Clave -->
+    <div class="block aper-b" style="grid-column:1;grid-row:3">
+      <h3>🏛️ Activos Institucionales</h3>
+      <ul>
+        <li>BCRA independiente (nunca plenamente consolidado)</li>
+        <li>INDEC técnico (productor de datos creíbles)</li>
+        <li>Fundaciones de política pública (FIEL, CIPPEC, IAE)</li>
+        <li>Universidades privadas de elite</li>
+        <li>En versión 2023: desregulación como activo operativo</li>
+      </ul>
+      <span class="tag" style="background:#0d47a1;color:#fff">En construcción; vulnerables a reversión</span>
+    </div>
+
+    <!-- Canales -->
+    <div class="block aper-c" style="grid-column:2;grid-row:3">
+      <h3>📡 Canales de Transmisión</h3>
+      <ul>
+        <li>Medios privados masivos (penetración ABC1)</li>
+        <li>Universidades privadas (UCA, Di Tella, UTDT, IAE)</li>
+        <li>Redes sociales / influencers libertarios (innovación 2023)</li>
+        <li>Organismos internacionales (legitimidad externa)</li>
+        <li>Think tanks como productores de evidencia técnica</li>
+      </ul>
+      <span class="tag" style="background:#1565c0;color:#fff">Canales históricamente más débiles</span>
+    </div>
+
+    <div style="grid-column:3;grid-row:3;display:flex;align-items:center;justify-content:center;background:#e3f2fd;border-radius:8px;padding:12px">
+      <div style="text-align:center">
+        <div style="font-size:1.5rem;font-weight:800;color:#0d47a1">TRAMPA</div>
+        <div style="font-size:0.75rem;color:#0d47a1;font-weight:600">ADAPTATIVA</div>
+        <div style="font-size:0.7rem;color:#555;margin-top:6px">Necesita <strong>tiempo</strong> para resultados<br>Necesita <strong>crédito</strong> para tiempo<br>Necesita <strong>credibilidad</strong> para crédito<br>Necesita <strong>resultados</strong> para credibilidad</div>
+        <div style="margin-top:10px;font-size:0.72rem;color:#0d47a1;font-weight:600">Los resultados tardan más<br>que un ciclo electoral</div>
+      </div>
+    </div>
+
+    <div class="block" style="grid-column:4;grid-row:3;background:#fffde7;border-left:4px solid #f9a825">
+      <h3>⚠️ Vulnerabilidades Evolutivas</h3>
+      <ul>
+        <li>Asimetría de Olson: perdedores más motivados a organizarse</li>
+        <li>Dependencia del crédito externo (ciclo de vida corto)</li>
+        <li>Meritocracia creíble solo para quienes ya tienen credenciales</li>
+        <li>Recesión de transición visible antes que los beneficios</li>
+        <li>CLI 0.89 heredado: mismo ambiente, menor aptitud</li>
+      </ul>
+    </div>
+
+    <div class="block" style="grid-column:5;grid-row:3;background:#e3f2fd;border-left:4px solid #1565c0">
+      <h3>🧬 Fitness EPT</h3>
+      <ul>
+        <li>Canales: ★★★☆☆</li>
+        <li>Fidelización: ★★☆☆☆</li>
+        <li>Costos salida: ★☆☆☆☆</li>
+        <li>Activos instit.: ★★★☆☆</li>
+        <li>Eficiencia asig.: ★★★★★</li>
+      </ul>
+      <span class="tag" style="background:#0d47a1;color:#fff">ESS inestable sin reforma ambiente</span>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="bottom-block aper-rev">
+      <h3>💰 Captura de Recursos (Revenue Streams)</h3>
+      <p><strong>Ingresos fiscales genuinos</strong> del sector exportador (cuando macroeconomía es ordenada: Ganancias, IVA, aranceles moderados) | <strong>Ajuste fiscal</strong> como liberación de recursos que antes financiaban la coalición rival | <strong>Crédito externo</strong> (FMI, mercados de capitales) como financiamiento de transición: dependencia estructural que cierra el modelo cuando el acceso se interrumpe.</p>
+    </div>
+    <div class="bottom-block aper-cost">
+      <h3>💸 Estructura de Costos (Costos Sistémicos)</h3>
+      <p><strong>Recesión de transición</strong> (costo concentrado en el tiempo, no crónico) | <strong>Asimetría distributiva de Olson:</strong> ganadores difusos, perdedores organizados | <strong>Fragilidad frente al cierre del crédito externo</strong> antes de que los beneficios sean visibles | <strong>Costo reputacional</strong> cuando la austeridad impacta servicios públicos | <strong>CLI 0.89 heredado</strong> sin posibilidad de modificación legislativa rápida.</p>
+    </div>
+  </div>
+  <div class="canvas-note">
+    Figura 2: Political Model Canvas — Modelo Aperturista (EPT + BMC Framework) | Lerer, I.A. (2025) | ORCID 0009-0007-6378-9749
+  </div>
+</div>
+
+<!-- ═══════════════════ CANVAS 3: ESS SCENARIOS ═══════════════════ -->
+<div class="canvas-wrapper" id="tab-ess">
+
+  <div class="scenario-grid">
+    <div class="scenario-card sc1">
+      <div class="prob">35%</div>
+      <h3>ESS-1: Proteccionismo Refundado</h3>
+      <p><strong>Mecanismo:</strong> El ambiente político-jurídico (CLI 0.89) funciona como barrera de entrada infranqueable. El modelo proteccionista recupera la coalición luego de la recesión de transición aperturista.</p>
+      <p><strong>Condiciones de activación:</strong></p>
+      <span class="condition">Crisis externa o shock de crédito</span><br>
+      <span class="condition">Coalición aperturista sin consolidar</span><br>
+      <span class="condition">Reversión electoral post-ajuste</span>
+      <p style="margin-top:10px"><strong>Incentivo virtuoso posible:</strong> Solo si el modelo proteccionista incorpora disciplina fiscal como condición de sostenibilidad. Sin ella, reproduce el ciclo inflacionario.</p>
+    </div>
+    <div class="scenario-card sc2">
+      <div class="prob">25%</div>
+      <h3>ESS-2: Transición Aperturista Consolidada</h3>
+      <p><strong>Mecanismo:</strong> El modelo aperturista logra modificar el landscape de pagos antes de que el crédito externo se agote. Acuerdos comerciales crean hechos consumados; jurisprudencia consolida desregulación laboral.</p>
+      <p><strong>Condiciones de activación:</strong></p>
+      <span class="condition">Acuerdo Mercosur-UE ratificado</span><br>
+      <span class="condition">CSJN consolida jurisprudencia laboral</span><br>
+      <span class="condition">Crecimiento visible antes de 2027</span>
+      <p style="margin-top:10px"><strong>Incentivo virtuoso:</strong> Requiere que la coalición aperturista construya mecanismos de fidelización propios (no solo negativos) antes de la próxima crisis.</p>
+    </div>
+    <div class="scenario-card sc3">
+      <div class="prob">40%</div>
+      <h3>ESS-3: Equilibrio Híbrido Metaestable</h3>
+      <p><strong>Mecanismo:</strong> ESS mixta donde ningún actor puede mejorar su posición mediante defección unilateral. Emerge corporativismo "moderno": sindicatos aceptan límites fiscales a cambio de preservar poder de veto sectorial.</p>
+      <p><strong>Condiciones de activación:</strong></p>
+      <span class="condition">Déficit 1-2% PBI por 3 años consecutivos</span><br>
+      <span class="condition">Negociación sectorial sindical sostenida</span><br>
+      <span class="condition">CSJN valida reformas pro-mercado parciales</span>
+      <p style="margin-top:10px"><strong>Incentivo virtuoso:</strong> El más alcanzable. Requiere señales costosas creíbles de ambos lados: disciplina fiscal del aperturista + aceptación de mercado laboral más flexible del proteccionista.</p>
+    </div>
+  </div>
+
+  <!-- Payoff Matrix -->
+  <div class="matrix-section">
+    <h3>Matriz de Pagos: ¿Qué hace que la cooperación sea racional? (EGT Formal)</h3>
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th style="width:22%">Estrategia \ Actor</th>
+          <th>CGT / Sindicatos</th>
+          <th>Empresarios Exportadores</th>
+          <th>CSJN / Poder Judicial</th>
+          <th>Gobierno (aperturista)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="row-header">Cooperación con reforma laboral gradual</td>
+          <td class="cell-neutral">Preserva poder de veto sectorial; pierde monopolio central. Payoff: (+2, -1)</td>
+          <td class="cell-good">Reduce costos laborales; amplía mercado de trabajo formal. Payoff: (+4)</td>
+          <td class="cell-neutral">Extiende su rol institucional. Payoff: (+2)</td>
+          <td class="cell-good">Consolida reformas; mantiene coalición. Payoff: (+3)</td>
+        </tr>
+        <tr>
+          <td class="row-header">Resistencia total / Bloqueo</td>
+          <td class="cell-good">Preserva statu quo de corto plazo. Payoff: (+5, -3 largo)</td>
+          <td class="cell-bad">Continúa rigidez + inflación + tipo de cambio distorsionado. Payoff: (-2)</td>
+          <td class="cell-neutral">Evita conflicto institucional. Payoff: (0)</td>
+          <td class="cell-bad">Reforma colapsada; pérdida de credibilidad. Payoff: (-3)</td>
+        </tr>
+        <tr>
+          <td class="row-header">ESS Híbrida (equilibrio metaestable)</td>
+          <td class="cell-ess">Negociación sectorial permanente; preserva OOOO sociales. Payoff: (+3)</td>
+          <td class="cell-ess">Acceso a mercado laboral más flexible sin costo político de oposición. Payoff: (+3)</td>
+          <td class="cell-ess">Jurisprudencia consistent; mayor previsibilidad. Payoff: (+3)</td>
+          <td class="cell-ess">Reformas parciales consolidadas; gobernabilidad sostenida. Payoff: (+3)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.75rem;color:#555;margin-top:10px;text-align:center">
+      La ESS híbrida es la única donde ningún actor mejora su posición mediante defección unilateral. No es el óptimo de nadie, pero es el único equilibrio estable dado el CLI = 0.89.
+    </p>
+  </div>
+
+  <!-- Canvas de la ESS Virtuosa -->
+  <div class="canvas">
+    <div class="canvas-header ess-header" style="grid-column:1/-1">
+      <div>
+        <div class="model-name">CANVAS DE LA ESS VIRTUOSA: Equilibrio Híbrido Metaestable</div>
+        <div style="font-size:0.8rem;opacity:0.85;margin-top:3px;">Escenario 3 — Probabilidad estimada: 40% | Horizonte: 2025-2028</div>
+      </div>
+      <div class="model-meta">
+        Incentivo central: modificar payoffs<br>sin modificar el ambiente (CLI 0.89)<br>
+        <span class="ept-badge" style="background:#fff;color:#bf360c;margin-top:4px;display:inline-block">ESS mixta: la única racionalmente alcanzable</span>
+      </div>
+    </div>
+
+    <div class="block ess-b" style="grid-column:1;grid-row:2">
+      <h3>🤝 Nueva Coalición Habilitante</h3>
+      <ul>
+        <li>Sindicatos sectoriales moderados (no CGT unificada)</li>
+        <li>Cámaras exportadoras + industria modernizadora</li>
+        <li>Gobernadores con incentivos fiscales alineados</li>
+        <li>Organismos internacionales como garantes externos</li>
+        <li>Poder judicial con doctrina consolidada</li>
+      </ul>
+      <span class="tag" style="background:#e65100;color:#fff">Coalición de transición</span>
+    </div>
+
+    <div class="block ess-c" style="grid-column:2;grid-row:2">
+      <h3>⚙️ Actividades de Transición</h3>
+      <ul>
+        <li>Negociación sectorial permanente (reemplaza negociación central)</li>
+        <li>Acuerdos comerciales como hechos consumados irreversibles</li>
+        <li>Jurisprudencia constitucional que limita ultraactividad</li>
+        <li>Reforma educativa gradual con consenso universitario</li>
+        <li>Reducción del déficit por eficiencia, no solo ajuste</li>
+      </ul>
+      <span class="tag" style="background:#f57f17;color:#fff">Modificación del landscape de pagos</span>
+    </div>
+
+    <div class="block ess-a" style="grid-column:3;grid-row:2;min-height:160px">
+      <h3>💎 Propuesta de Valor Híbrida</h3>
+      <ul>
+        <li><strong>Para la coalición proteccionista:</strong> preservación del poder de veto sectorial + cobertura social mantenida</li>
+        <li><strong>Para la aperturista:</strong> reglas de juego previsibles + acceso a mercados internacionales</li>
+        <li><strong>Para la ciudadanía:</strong> inflación estructuralmente más baja + empleabilidad real</li>
+        <li>No requiere que nadie abandone su identidad ideológica</li>
+      </ul>
+      <span class="tag" style="background:#e65100;color:#fff">El único que no requiere cambio de identidad</span>
+    </div>
+
+    <div class="block ess-d" style="grid-column:4;grid-row:2">
+      <h3>💬 Mecanismos de Fidelización</h3>
+      <ul>
+        <li>Señales costosas creíbles de ambos lados</li>
+        <li>Disciplina fiscal del aperturista como compromiso observable</li>
+        <li>Garantías legales del proteccionista como reciprocidad</li>
+        <li>Jurisprudencia como enforcement descentralizado</li>
+        <li>Monitoreo externo (FMI, BID) como árbitro</li>
+      </ul>
+      <span class="tag" style="background:#7b1fa2;color:#fff">Enforcement sin agente central</span>
+    </div>
+
+    <div class="block ess-e" style="grid-column:5;grid-row:2">
+      <h3>👥 Beneficiarios del Equilibrio</h3>
+      <ul>
+        <li>Trabajador formal: preserva derechos, gana empleo genuino</li>
+        <li>Exportador: accede a mercados sin volatilidad cambiaria</li>
+        <li>Sector informal: se formaliza gradualmente</li>
+        <li>Inversión externa: encuentra previsibilidad</li>
+        <li>Estado: recupera capacidad fiscal sin inflación</li>
+      </ul>
+      <span class="tag" style="background:#283593;color:#fff">Beneficio Pareto-superior al statu quo</span>
+    </div>
+
+    <div class="block ess-b" style="grid-column:1;grid-row:3">
+      <h3>🏛️ Activos Institucionales Necesarios</h3>
+      <ul>
+        <li>BCRA con independencia operacional mínima</li>
+        <li>CSJN con doctrina laboral estable</li>
+        <li>Sistema de negociación colectiva por rama + empresa</li>
+        <li>Acuerdos comerciales ratificados (hechos consumados)</li>
+        <li>INDEC técnicamente creíble</li>
+      </ul>
+      <span class="tag" style="background:#e65100;color:#fff">Ninguno requiere reforma constitucional</span>
+    </div>
+
+    <div class="block ess-c" style="grid-column:2;grid-row:3">
+      <h3>📡 Canales de Transmisión</h3>
+      <ul>
+        <li>Medios que cubren beneficios concretos (no solo narrativa)</li>
+        <li>Sindicatos sectoriales como intermediarios del cambio</li>
+        <li>Academia técnica como legitimadora de evidencia</li>
+        <li>Redes sociales: comunicación de resultados verificables</li>
+      </ul>
+      <span class="tag" style="background:#f57f17;color:#fff">Comunicación de resultados, no de identidad</span>
+    </div>
+
+    <div style="grid-column:3;grid-row:3;display:flex;align-items:center;justify-content:center;background:#fff8e1;border-radius:8px;padding:12px">
+      <div style="text-align:center">
+        <div style="font-size:1rem;font-weight:800;color:#e65100">CONDICIÓN NECESARIA</div>
+        <div style="font-size:0.72rem;color:#555;margin-top:8px;line-height:1.6">Ningún actor puede mejorar<br>su posición mediante<br><strong>defección unilateral</strong><br><br>Análogo: tregua en dilema<br>del prisionero iterado con<br><strong>descuento temporal alto</strong></div>
+        <div style="margin-top:10px;font-size:0.72rem;color:#e65100;font-weight:700">No requiere CLI &lt; 0.89<br>Solo requiere: payoffs alterados</div>
+      </div>
+    </div>
+
+    <div class="block" style="grid-column:4;grid-row:3;background:#fff3e0;border-left:4px solid #e65100">
+      <h3>📋 Condiciones de Activación (Verificables)</h3>
+      <ul>
+        <li>Déficit fiscal entre 0-2% PBI por 3 años consecutivos</li>
+        <li>Negociación sectorial sindical con al menos 5 ramas</li>
+        <li>CSJN mantiene jurisprudencia pro-mercado en 2026</li>
+        <li>Acuerdo Mercosur-UE avanza a ratificación</li>
+        <li>Inflación mensual sostenida bajo 3% por 6 meses</li>
+      </ul>
+    </div>
+
+    <div class="block" style="grid-column:5;grid-row:3;background:#fff8e1;border-left:4px solid #f9a825">
+      <h3>🔬 Falsabilidad (Popper)</h3>
+      <ul>
+        <li>Si déficit supera 3% PBI → ESS-3 colapsa → ESS-1</li>
+        <li>Si CGT lanza paro general en 2026 → ESS-3 inviable</li>
+        <li>Si crédito externo se cierra → ESS-2 descartada</li>
+        <li>Horizonte de evaluación: junio 2027 (elecciones)</li>
+      </ul>
+      <span class="tag" style="background:#f57f17;color:#fff">Predicciones falsables</span>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="bottom-block ess-rev" style="background:#e8f5e9;border-left:4px solid #2e7d32">
+      <h3>💰 Recursos del Equilibrio Híbrido</h3>
+      <p><strong>Ingresos fiscales genuinos</strong> de un sector exportador que crece sin tipo de cambio distorsionado | <strong>Reducción gradual de subsidios</strong> sin corte abrupto (curva de aprendizaje política) | <strong>Inversión privada</strong> que retorna ante previsibilidad | <strong>Ayuda técnica internacional</strong> (BID, Banco Mundial) como recurso de transición no generador de deuda de corto plazo.</p>
+    </div>
+    <div class="bottom-block ess-cost" style="background:#fce4ec;border-left:4px solid #880e4f">
+      <h3>💸 Costos del Equilibrio Híbrido (Lo que cada actor resigna)</h3>
+      <p><strong>CGT resigna:</strong> monopolio de representación laboral (pero conserva poder sectorial) | <strong>Aperturistas resignan:</strong> reforma laboral completa (pero obtienen flexibilidad parcial real) | <strong>Estado resigna:</strong> velocidad máxima de ajuste (pero gana sustentabilidad) | <strong>Costo de coordinación:</strong> señales costosas creíbles de todos los actores simultáneamente.</p>
+    </div>
+  </div>
+  <div class="canvas-note">
+    Figura 3: Political Model Canvas — Escenarios ESS y Equilibrio Híbrido Virtuoso | Lerer, I.A. (2025) | ORCID 0009-0007-6378-9749<br>
+    Predicciones falsables con horizonte de evaluación: junio 2027
+  </div>
+</div>
+
+<script>
+function showTab(tab) {
+  document.querySelectorAll('.canvas-wrapper').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  document.querySelector('.tab-btn.' + tab).classList.add('active');
+}
+</script>
+</body>
+</html>
